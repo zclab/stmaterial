@@ -24,3 +24,18 @@ article
 
         ul.left
             padding-left: $sidenav-width
+
+
+a
+    &.github,
+    &.gitlab
+        &::before
+            color: var(--color-link)
+            font: var(--fa-font-brands)
+            margin-right: 0.25rem
+
+    &.github::before
+        content: "\f09b"
+
+    &.gitlab::before
+        content: "\f296"
