@@ -1,0 +1,6 @@
+- header: Interior Point Methods
+  website: _static/pdf/interior_point_lecture.pdf
+  image: /_images/books/内点法.png
+- header: Logic-based Benders Decomposition
+  website: _static/pdf/logic_based_bender_decomposition.pdf
+  image: /_images/books/benders分解.png

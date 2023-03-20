@@ -1,0 +1,16 @@
+- title: Matplotlib
+  website: https://matplotlib.org/stable/users/getting_started/
+  img-bottom: /_images/links/gallery/matplotlib.png
+  link: https://matplotlib.org/
+- title: Pandas
+  website: https://pandas.pydata.org/docs/
+  img-bottom: /_images/links/gallery/pandas.png
+  link: https://pandas.pydata.org/docs/
+- title: Sphinx Design
+  website: https://sphinx-design.readthedocs.io/
+  img-bottom: /_images/links/gallery/sphinx_design.png
+  link: https://sphinx-design.readthedocs.io/
+- title: Jupyter Book
+  website: https://jupyterbook.org/en/stable/intro.html
+  img-bottom: /_images/links/gallery/jupyter_book.png
+  link: https://jupyterbook.org/en/stable/intro.html

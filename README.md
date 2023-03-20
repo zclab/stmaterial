@@ -1,2 +1,2 @@
-# stmaterial
-sphinx materialize theme
+# stmaterial {WIP}
+sphinx theme of material

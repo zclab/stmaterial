@@ -1,0 +1,33 @@
+{
+    "name": "stmaterial",
+    "repository": "https://github.com/zclab/stmaterial",
+    "scripts": {
+        "build": "webpack"
+    },
+    "devDependencies": {
+        "material-design-color": "^2.3.2",
+        "material-shadows": "^3.0.1",
+        "dedent": "^0.7.0",
+        "html-webpack-plugin": "^5.5.0",
+        "copy-webpack-plugin": "^11.0.0",
+        "autoprefixer": "^10.4.14",
+        "sass": "^1.59.2",
+        "css-loader": "^6.7.3",
+        "css-minimizer-webpack-plugin": "^4.2.2",
+        "mini-css-extract-plugin": "^2.7.3",
+        "normalize.css": "^8.0.1",
+        "postcss-loader": "^6.2.0",
+        "sass-loader": "^13.2.0",
+        "style-loader": "^3.3.1",
+        "webpack": "^5.76.1",
+        "webpack-cli": "^5.0.1",
+        "extract-loader": "^5.1.0",
+        "file-loader": "^6.2.0",
+        "imports-loader": "^4.0.1",
+        "node-sass": "^8.0.0",
+        "postcss": "^8.4.21"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "6.3.0"
+    }
+}
