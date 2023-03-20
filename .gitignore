@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Sphinx compiled assets
+node_modules
+.nodeenv
+
+.DS_Store
+.vscode/
+.idea/

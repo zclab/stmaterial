@@ -1,0 +1,36 @@
+<ul class="sidenav sidenav-fixed" id="nav-mobile">
+
+    <li class="logo">
+        <a class="brand-logo" id="logo-container" href="/">
+            {%- if logo_url %}
+            <div class="sidebar-logo-container">
+                <img class="sidebar-logo" src="{{ logo_url }}" alt="Logo" />
+            </div>
+            {%- endif %}
+        </a>
+        {% if pagename == master_doc %}
+        <span class="sidebar-brand-text">{{ docstitle if docstitle else project }}</span>
+        {% else %}
+        {{ title|striptags|e }}
+        {% endif %}
+    </li>
+    <li class="search">
+        <form class="search-wrapper" method="get" action="{{ pathto('search') }}" role="search">
+            <input class="search-docs" placeholder="{{ _(" Search") }}" name="q" aria-label="{{ _(" Search" ) }}">
+            <input type="hidden" name="check_keywords" value="yes">
+            <input type="hidden" name="area" value="default">
+        </form>
+        <div id="searchbox"></div>
+    </li>
+
+
+    {{- generate_toctree_html(
+    startdepth=0,
+    kind="sidebar",
+    maxdepth=4,
+    collapse=False,
+    includehidden=True,
+    titles_only=True,
+    show_nav_level=theme_show_navbar_depth) }}
+
+</ul>

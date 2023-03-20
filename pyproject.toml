@@ -1,0 +1,59 @@
+[build-system]
+requires = ["sphinx-theme-builder >= 0.2.0a10"]
+build-backend = "sphinx_theme_builder"
+
+[tool.sphinx-theme-builder]
+node-version = "18.15.0"
+theme-name = "stmaterial"
+additional-compiled-static-assets = [
+  ".",
+  "locales/",
+  "vendor/",
+  "styles/stmaterial-extensions.css",
+]
+
+[project]
+name = "stmaterial"
+description = "A simple sphinx documentation theme."
+dynamic = ["version"]
+readme = "README.md"
+urls = { Organization = "https://github.com/zclab/stmaterial" }
+
+requires-python = ">=3.8"
+dependencies = [
+  "beautifulsoup4",
+  "sphinx >= 5.0,<7.0",
+  "sphinx-basic-ng",
+  "pygments >= 2.7",
+  "sphinx-tippy",
+  "sphinx-design2",
+  "sphinx-copybutton",
+  "sphinx-togglebutton",
+  "sphinx-subfigure",
+]
+
+license = { file = "LICENSE" }
+authors = [{ name = "zclab", email = "syfhub@hotmail.com" }]
+classifiers = [
+  "Framework :: Sphinx",
+  "Framework :: Sphinx :: Theme",
+  "Development Status :: 5 - Production/Stable",
+  "License :: OSI Approved :: MIT License",
+  "Environment :: Web Environment",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Operating System :: OS Independent",
+  "Topic :: Documentation",
+  "Topic :: Software Development :: Documentation",
+]
+
+[project.optional-dependencies]
+dev = ['sphinx-theme-builder[cli] >= 0.2.0a10']
+
+[project.entry-points]
+"sphinx.html_themes" = { stmaterial = "stmaterial" }
