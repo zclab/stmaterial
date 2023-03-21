@@ -133,8 +133,6 @@ def _html_page_context(
     # Basic constants
     context["theme_version"] = __version__
 
-    context["theme_features"] = ['navigation.top']
-
 
     # Translations
     translation = get_translation(MESSAGE_CATALOG_NAME)
