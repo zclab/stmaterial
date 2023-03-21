@@ -177,6 +177,18 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
     _update_default("html_permalinks_icon", new_default="#")
 
 
+def _update_config(app: sphinx.application.Sphinx) -> None:
+    theme_options = _get_theme_options(app)
+
+    header_icons = theme_options.get("header_icons", [])
+    source_repo = theme_options.get("source_repository", None)
+    if not(header_icons) and source_repo:
+        header_icons.append(
+            {"name":"Github", "url": source_repo, "class":"fa-brands fa-github"}
+            )
+        theme_options["header_icons"] = header_icons
+
+
 def activate_extensions(app, extensions):
     """Activate extensions bundled with this theme.
     
@@ -217,6 +229,7 @@ def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
 
     app.connect("html-page-context", _html_page_context)
     app.connect("builder-inited", _builder_inited)
+    app.connect("builder-inited", _update_config)
     app.connect("html-page-context", add_toctree_functions)
 
 

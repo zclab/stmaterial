@@ -39,14 +39,17 @@ todo_include_todos = True
 
 
 html_theme_options = {
-    "repo_url": "http://github.com/zclab/zcmaterial",
-    "repo_name": "zclab/zcmaterial",
+    "source_repository": "http://github.com/zclab/stmaterial",
     "logo":{
         "text": "Logo",
         "logo": "_static/logo.png"
     },
     "external_links": {},
     "show_toc_level": 1,
-    "navbar_style": "breadcrumbs" # options: None, breadcrumbs, navigation
+    "navbar_style": "breadcrumbs", # options: None, breadcrumbs, navigation,
+    "header_icons": [
+        {"name":"Github", "url": "http://github.com/zclab/stmaterial", "class":"fa-brands fa-github"},
+        {"name":"Gitlab", "url": "http://github.com/zclab/stmaterial", "class":"fa-brands fa-gitlab"},
+    ]
 }
     

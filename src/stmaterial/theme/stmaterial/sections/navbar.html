@@ -11,11 +11,15 @@
             </ul>
             <ul class="right">
                 <li><a id="theme-switch" href="#"><i class="fa-solid fa-circle-half-stroke"></i></a></li>
-                <li><a href="https://github.com/materializecss/materialize" target="_blank"
-                        title="Check out our GitHub"><i class="fa-brands fa-github"></i></a>
+                {% if theme_header_icons -%}
+                {% for icon_dict in theme_header_icons -%}
+                <li>
+                    <a href="{{ icon_dict.url }}" target="_blank" aria-label="{{ icon_dict.name }}">
+                        <i class="{{ icon_dict.class }}"></i>
+                    </a>
                 </li>
-                <li><a href="https://opencollective.com/materialize" target="_blank"
-                        title="Support us via OpenCollective"><i class="fa-brands fa-gitlab"></i></a></li>
+                {% endfor %}
+                {% endif %}
             </ul>
         </div>
     </nav>
