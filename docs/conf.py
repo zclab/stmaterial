@@ -47,6 +47,6 @@ html_theme_options = {
     },
     "external_links": {},
     "show_toc_level": 1,
-    "features": ['navigation.top', "navigation.tabs.sticky"]
+    "navbar_style": "breadcrumbs" # options: None, breadcrumbs, navigation
 }
     

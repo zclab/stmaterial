@@ -3,7 +3,11 @@
         <div class="nav-wrapper"><a class="sidenav-trigger" href="#" data-target="nav-mobile"><i
                     class="material-icons">menu</i></a>
             <ul class="left hide-on-small-only">
+                {% if theme_navbar_style == "breadcrumbs" %}
                 {% include "components/breadcrumbs.html" %}
+                {% elif theme_navbar_style == "navigation" %}
+                {{ generate_header_nav_html(n_links_before_dropdown=theme_header_links_before_dropdown) }}
+                {% endif %}
             </ul>
             <ul class="right">
                 <li><a id="theme-switch" href="#"><i class="fa-solid fa-circle-half-stroke"></i></a></li>

@@ -17,13 +17,6 @@
     </li>
 
 
-    {{- generate_toctree_html(
-    startdepth=0,
-    kind="sidebar",
-    maxdepth=4,
-    collapse=False,
-    includehidden=True,
-    titles_only=True,
-    show_nav_level=theme_show_navbar_depth) }}
+    {{ sidebar_nav_html }}
 
 </ul>

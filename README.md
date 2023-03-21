@@ -1,2 +1,2 @@
-# stmaterial {WIP}
-sphinx theme of material
+# A Materialize based sphinx theme
+

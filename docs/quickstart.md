@@ -8,6 +8,3 @@ This project enables writing documentation with Markdown in Sphinx[1]. This is a
 
 Markdown is a significantly more popular markup format than reStructuredText. This means that it’s likely that potential contributors/developers on the project are significantly more familiar with Markdown than reStructuredText. MyST gives you the best of both worlds – simplicity and familiarity of Markdown with the extensibility power of reST.
 
-This project provides a live-reloading server, that rebuilds the documentation and refreshes any open pages automatically when changes are saved. This enables a much shorter feedback loop which can help boost productivity when writing documentation.
-
-Disclaimer: I am the primary maintainer of sphinx-autobuild.
