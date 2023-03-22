@@ -9,7 +9,7 @@ additional-compiled-static-assets = [
   ".",
   "locales/",
   "vendor/",
-  "styles/stmaterial-extensions.css",
+  "scripts/materialize.js",
 ]
 
 [project]
@@ -25,7 +25,6 @@ dependencies = [
   "sphinx >= 5.0,<7.0",
   "sphinx-basic-ng",
   "pygments >= 2.7",
-  "sphinx-tippy",
   "sphinx-design2",
   "sphinx-copybutton",
   "sphinx-togglebutton",
