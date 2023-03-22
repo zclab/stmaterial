@@ -1,5 +1,3 @@
-import "./materialize.js";
-
 document.addEventListener("DOMContentLoaded", function () {
     document.body.parentNode.classList.remove("no-js");
 

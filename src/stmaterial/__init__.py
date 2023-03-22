@@ -1,7 +1,5 @@
-__version__ = "0.0.1"
+__version__ = "0.0.2dev"
 
-
-import hashlib
 import logging
 import os
 import logging
@@ -48,21 +46,6 @@ def _config_provided_by_user(app, key):
     return any(key in ii for ii in [app.config.overrides, app.config._raw_config])
 
 
-@lru_cache(maxsize=None)
-def _asset_hash(path: str) -> str:
-    """Append a `?digest=` to an url based on the file content."""
-    full_path = get_html_theme_path() / "static" / path
-    digest = hashlib.sha1(full_path.read_bytes()).hexdigest()
-
-    return f"_static/{path}?digest={digest}"
-
-
-def _add_asset_hashes(static: List[str], add_digest_to: List[str]) -> None:
-    for asset in add_digest_to:
-        index = static.index("_static/" + asset)
-        static[index].filename = _asset_hash(asset)  # type: ignore
-
-
 def _compute_hide_toc(
     context: Dict[str, Any],
     *,
@@ -107,23 +90,6 @@ def _html_page_context(
 
     assert isinstance(app.builder, StandaloneHTMLBuilder)
 
-    if "css_files" in context:
-        if "_static/styles/stmaterial.css" not in context["css_files"]:
-            raise Exception(
-                "This documentation is not using `stmaterial.css` as the stylesheet. "
-                "If you have set `html_style` in your conf.py file, remove it."
-            )
-
-        _add_asset_hashes(
-            context["css_files"],
-            ["styles/stmaterial.css"],
-        )
-    if "scripts" in context:
-        _add_asset_hashes(
-            context["scripts"],
-            ["scripts/stmaterial.js"],
-        )
-
     context["hide_toc"] = _compute_hide_toc(
         context, builder=app.builder, docname=pagename
     )
@@ -154,12 +120,6 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
             "stmaterial is being used as an extension in a non-HTML build. "
             "This should not happen."
         )
-
-    # Our JS file needs to be loaded as soon as possible.
-    app.add_js_file("scripts/stmaterial.js", priority=200)
-
-    # 500 is the default priority for extensions, we want this after this.
-    app.add_css_file("styles/stmaterial.css", priority=600)
 
     builder = app.builder
     assert builder, "what?"
