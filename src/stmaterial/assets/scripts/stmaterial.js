@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", function () {
-    document.body.parentNode.classList.remove("no-js");
+import Gumshoe from "./gumshoe-patched.js";
 
+function init_materialize() {
     // Detect touch screen and enable scrollbar if necessary
     function is_touch_device() {
         try {
@@ -93,4 +93,16 @@ document.addEventListener("DOMContentLoaded", function () {
         toolbarEnabled: true
     });
 
-});
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Main entrypoint
+////////////////////////////////////////////////////////////////////////////////
+function main() {
+    document.body.parentNode.classList.remove("no-js");
+
+    init_materialize();
+}
+
+document.addEventListener("DOMContentLoaded", main);

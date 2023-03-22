@@ -43,13 +43,6 @@
 
     {%- endblock site_meta -%}
 
-    {# inject fontawesome icons css style #}
-    {%- block css %}
-    {{ _webpack.head_pre_assets() }}
-    {{ _webpack.head_pre_icons() }}
-    {{ _webpack.head_js_preload() }}
-    {%- endblock css %}
-
     {#- Site title -#}
     {%- block htmltitle -%}
     {% if not docstitle %}
@@ -62,6 +55,7 @@
     {%- endblock -%}
 
     {%- block styles -%}
+    {{ _webpack.head_pre_icons() }}
 
     {# Custom stylesheets #}
     {%- block regular_styles -%}
@@ -77,6 +71,7 @@
     {%- block extra_styles %}
     {%- endblock -%}
 
+    {{ _webpack.head_js_preload() }}
     {%- endblock styles -%}
 
     {#- Custom front matter #}
