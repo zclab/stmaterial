@@ -8,18 +8,18 @@
         >.active>ul 
             display: block
 
-
-.toc-wrapper
-    position: relative
-    margin-top: 42px
-
-    .pin-bottom
-        margin-top: 84px
+.toc-sticky
+    display: flex
+    position: sticky
+    top: $navbar-height
+    height: min(100%,100vh)
+    height: 100vh
+    overflow: auto
+    margin-top: 2.8rem
 
 
 ul.table-of-contents
     margin-top: 0
-    padding-top: 48px
     font-size: 1rem
 
     li

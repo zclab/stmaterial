@@ -139,32 +139,6 @@ function init_materialize() {
         }
     }
 
-
-    // Floating-Fixed Table of Contents
-    const tocWrapperHeight = 260; // Max height of ads.
-    const socialHeight = 95; // Height of unloaded social media in footer.
-    const tocElem = document.querySelector('.toc-wrapper .table-of-contents');
-    const tocHeight = tocElem ? tocElem.getBoundingClientRect().height : 0;
-
-    const footerElem = document.querySelector('body > footer');
-    const footerOffset = footerElem ? (
-        // https://youmightnotneedjquery.com/#offset
-        footerElem.getBoundingClientRect().top - window.scrollY + document.documentElement.clientTop
-    ) : 0;
-    const bottomOffset = footerOffset - socialHeight - tocHeight - tocWrapperHeight;
-
-    const nav = document.querySelector('nav');
-    const indexBanner = document.querySelector('#index-banner');
-    const tocWrappers = document.querySelectorAll('.toc-wrapper');
-
-    if (nav)
-        M.Pushpin.init(tocWrappers, { top: nav.getBoundingClientRect().height, bottom: bottomOffset });
-    else if (indexBanner)
-        M.Pushpin.init(tocWrappers, { top: indexBanner.getBoundingClientRect().height, bottom: bottomOffset });
-    else
-        M.Pushpin.init(tocWrappers, { top: 0, bottom: bottomOffset });
-
-
     // Mobile Overflow
     if (is_touch_device()) {
         document.querySelector('#nav-mobile').style.overflow = 'auto';
@@ -229,9 +203,7 @@ function init_materialize() {
 ////////////////////////////////////////////////////////////////////////////////
 function main() {
     document.body.parentNode.classList.remove("no-js");
-
     init_materialize();
-
     header = document.querySelector("header");
     tocScroll = document.querySelector(".toc-scroll");
     setup();
