@@ -1,27 +1,18 @@
+.navbar-fixed 
+  .nav-wrapper
+    .nav-breadcrumbs 
+      display: flex
+      flex-wrap: wrap
 
+      a.breadcrumb
+        display: flex
+        align-items: center
 
-ul.bd-breadcrumbs
-  list-style: none
-  padding-left: 0
-  display: flex
-  flex-wrap: wrap
-  font-size: 1rem
-  margin-bottom: 0
+        &.breadcrumb-home
+          padding: 0 10px
 
-  li.breadcrumb-item
-    display: flex
-    align-items: center
-    font-weight: bold
+        &:not(.breadcrumb-home)
+          padding: 0
 
-    &:not(.breadcrumb-home):before
-      font: var(--fa-font-solid)
-      font-size: 0.8rem
-      content: "\f105"
-      padding: 0 0.5rem
-
-    a
-      text-decoration: none
-      padding: 0
-
-      i
-        padding-left: 15px
+        &:before
+          margin: 0
