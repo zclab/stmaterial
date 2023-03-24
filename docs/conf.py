@@ -50,6 +50,7 @@ html_theme_options = {
     "header_icons": [
         {"name":"Github", "url": "http://github.com/zclab/stmaterial", "class":"fa-brands fa-github"},
         {"name":"Gitlab", "url": "http://github.com/zclab/stmaterial", "class":"fa-brands fa-gitlab"},
-    ]
+    ],
+    "use_edit_page_button": True
 }
     
