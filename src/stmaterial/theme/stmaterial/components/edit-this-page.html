@@ -1,0 +1,24 @@
+{% extends "basic-ng/components/edit-this-page.html" %}
+{% from "basic-ng/components/edit-this-page.html" import determine_page_edit_link with context %}
+
+{%- macro page_edit_button(url) -%}
+<div class="fixed-action-btn">
+    <a href="{{ url }}" class="btn-floating btn-large" title="{{ translate('Edit this page') }}">
+        <i class="large material-icons">mode_edit</i>
+    </a>
+</div>
+{%- endmacro -%}
+
+{% block link_available -%}
+{{ page_edit_button(determine_page_edit_link()) }}
+{%- endblock %}
+
+{% block link_not_available %}
+{# Make nice things happen, on Read the Docs #}
+{%- if READTHEDOCS and conf_py_path and page_source_suffix and github_user != "None" and github_repo != "None" and
+github_version and pagename and page_source_suffix %}
+{% set url = "https://github.com/" + github_user + "/" + github_repo + "/edit/" + github_version + conf_py_path +
+pagename + page_source_suffix %}
+{{ page_edit_button(url) }}
+{%- endif -%}
+{% endblock %}

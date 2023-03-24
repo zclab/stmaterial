@@ -44,14 +44,6 @@ const ma_stylesheets = [
 const ma_fonts = [
     `vendor/material-icons/${maVersions.maIcons}/iconfont/material-icons.woff2`,
     `vendor/material-icons/${maVersions.maIcons}/iconfont/material-icons.woff`,
-    `vendor/material-icons/${maVersions.maIcons}/iconfont/material-icons-outlined.woff2`,
-    `vendor/material-icons/${maVersions.maIcons}/iconfont/material-icons-outlined.woff`,
-    `vendor/material-icons/${maVersions.maIcons}/iconfont/material-icons-round.woff2`,
-    `vendor/material-icons/${maVersions.maIcons}/iconfont/material-icons-round.woff`,
-    `vendor/material-icons/${maVersions.maIcons}/iconfont/material-icons-sharp.woff2`,
-    `vendor/material-icons/${maVersions.maIcons}/iconfont/material-icons-sharp.woff`,
-    `vendor/material-icons/${maVersions.maIcons}/iconfont/material-icons-two-tone.woff2`,
-    `vendor/material-icons/${maVersions.maIcons}/iconfont/material-icons-two-tone.woff`,
 ];
 
 function macroTemplate({ compilation }) {
@@ -101,8 +93,18 @@ const copyPlugin = new CopyPlugin({
             to: resolve(maPath.maIcons, "LICENSE.txt"),
         },
         {
-            context: "./node_modules/material-icons",
-            from: "iconfont",
+            context: "./node_modules/material-icons/iconfont",
+            from: "filled.css",
+            to: resolve(maPath.maIcons, "iconfont", "material-icons.css"),
+        },
+        {
+            context: "./node_modules/material-icons/iconfont",
+            from: "material-icons.woff2",
+            to: resolve(maPath.maIcons, "iconfont"),
+        },
+        {
+            context: "./node_modules/material-icons/iconfont",
+            from: "material-icons.woff",
             to: resolve(maPath.maIcons, "iconfont"),
         },
     ]
