@@ -9,23 +9,19 @@ https://github.com/pydata/pydata-sphinx-theme/blob/main/src/pydata_sphinx_theme/
 {% set parents=[parents[0], {"title": '<i class="fa-solid fa-ellipsis"></i>'}, parents[-1]] %}
 {% endif %}
 
+
 {#- Hide breadcrumbs on the home page #}
-<!-- <div aria-label="breadcrumbs"> -->
-<ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
-    {# Home icon #}
-    <li class="breadcrumb-item breadcrumb-home">
-        <a href="{{ pathto(root_doc) }}" class="nav-link" aria-label="Home">
-            <i class="material-icons">home</i>
-        </a>
-    </li>
+
+<div class="nav-breadcrumbs">
+    <a href="{{ pathto(root_doc) }}" class="breadcrumb breadcrumb-home"><i class="material-icons">home</i></a>
     {%- for doc in parents %}
     {% if doc.link %}
-    <li class="breadcrumb-item"><a href="{{ doc.link|e }}" class="nav-link">{{ doc.title }}</a></li>
+    <a href="{{ doc.link|e }}" class="breadcrumb">{{ doc.title }}</a>
     {% else %}
-    <li class="breadcrumb-item">{{ doc.title }}</li>
+    <a class="breadcrumb">{{ doc.title }}</a>
     {% endif %}
     {%- endfor %}
-    <li class="breadcrumb-item active" aria-current="page">{{ title }}</li>
-</ul>
-<!-- </div> -->
+    <a class="breadcrumb" aria-current="page">{{ title }}</a>
+</div>
+
 {%- endblock %}

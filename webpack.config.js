@@ -13,10 +13,9 @@ const scriptPath = resolve(__dirname, "src/stmaterial/assets/scripts");
 const stylePath = resolve(__dirname, "src/stmaterial/assets/styles");
 const staticPath = resolve(__dirname, "src/stmaterial/theme/stmaterial/static");
 const vendorPath = resolve(staticPath, "vendor");
-const faVersions = { fontAwesome: require("@fortawesome/fontawesome-free/package.json").version };
-const faPath = { fontAwesome: resolve(vendorPath, "fontawesome", faVersions.fontAwesome) };
 
-
+const maVersions = { maIcons: require("material-icons/package.json").version };
+const maPath = { maIcons: resolve(vendorPath, "material-icons", maVersions.maIcons) };
 /*******************************************************************************
  * functions to load the assets in the html head
  * the css, and js (preload/scripts) are digested for cache busting
@@ -39,13 +38,20 @@ const theme_scripts = [
     "scripts/materialize.js",
     "scripts/stmaterial.js",
 ];
-const fa_stylesheets = [
-    `vendor/fontawesome/${faVersions.fontAwesome}/css/all.min.css`,
+const ma_stylesheets = [
+    `vendor/material-icons/${maVersions.maIcons}/iconfont/material-icons.css`,
 ];
-const fa_fonts = [
-    `vendor/fontawesome/${faVersions.fontAwesome}/webfonts/fa-solid-900.woff2`,
-    `vendor/fontawesome/${faVersions.fontAwesome}/webfonts/fa-brands-400.woff2`,
-    `vendor/fontawesome/${faVersions.fontAwesome}/webfonts/fa-regular-400.woff2`,
+const ma_fonts = [
+    `vendor/material-icons/${maVersions.maIcons}/iconfont/material-icons.woff2`,
+    `vendor/material-icons/${maVersions.maIcons}/iconfont/material-icons.woff`,
+    `vendor/material-icons/${maVersions.maIcons}/iconfont/material-icons-outlined.woff2`,
+    `vendor/material-icons/${maVersions.maIcons}/iconfont/material-icons-outlined.woff`,
+    `vendor/material-icons/${maVersions.maIcons}/iconfont/material-icons-round.woff2`,
+    `vendor/material-icons/${maVersions.maIcons}/iconfont/material-icons-round.woff`,
+    `vendor/material-icons/${maVersions.maIcons}/iconfont/material-icons-sharp.woff2`,
+    `vendor/material-icons/${maVersions.maIcons}/iconfont/material-icons-sharp.woff`,
+    `vendor/material-icons/${maVersions.maIcons}/iconfont/material-icons-two-tone.woff2`,
+    `vendor/material-icons/${maVersions.maIcons}/iconfont/material-icons-two-tone.woff`,
 ];
 
 function macroTemplate({ compilation }) {
@@ -57,8 +63,8 @@ function macroTemplate({ compilation }) {
         -->
         {# Load FontAwesome icons #}
         {% macro head_pre_icons() %}
-            ${fa_stylesheets.map(stylesheet.bind(compilation)).join("\n")}
-            ${fa_fonts.map(font).join("\n")}
+            ${ma_stylesheets.map(stylesheet.bind(compilation)).join("\n")}
+            ${ma_fonts.map(font).join("\n")}
         {% endmacro %}
 
         {% macro head_pre_assets() %}
@@ -90,19 +96,14 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
 const copyPlugin = new CopyPlugin({
     patterns: [
         {
-            context: "./node_modules/@fortawesome/fontawesome-free",
-            from: "LICENSE.txt",
-            to: resolve(faPath.fontAwesome, "LICENSE.txt"),
+            context: "./node_modules/material-icons",
+            from: "LICENSE",
+            to: resolve(maPath.maIcons, "LICENSE.txt"),
         },
         {
-            context: "./node_modules/@fortawesome/fontawesome-free/css",
-            from: "all.min.css",
-            to: resolve(faPath.fontAwesome, "css"),
-        },
-        {
-            context: "./node_modules/@fortawesome/fontawesome-free",
-            from: "webfonts",
-            to: resolve(faPath.fontAwesome, "webfonts"),
+            context: "./node_modules/material-icons",
+            from: "iconfont",
+            to: resolve(maPath.maIcons, "iconfont"),
         },
     ]
 });
