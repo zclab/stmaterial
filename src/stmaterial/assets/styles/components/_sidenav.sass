@@ -19,6 +19,9 @@ ul.sidenav
     box-shadow: none
     border-right: 1px solid var(--separator-color)
 
+    &:hover
+      overflow-y: auto
+
     li
       line-height: 44px
       overflow: hidden
@@ -54,6 +57,8 @@ ul.sidenav
 
 
 .sidenav
+  background-color: var(--background-color)
+  
   ul
     display: block
     list-style: none
@@ -96,6 +101,9 @@ ul.sidenav
     &.has-children 
       >.reference
         padding-right: 30px
+
+      >ul
+        background-color: $sidenav-bg-color
 
     &.search
       padding-left: 30px
