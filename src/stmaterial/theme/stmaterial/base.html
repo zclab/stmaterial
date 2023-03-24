@@ -76,6 +76,10 @@
 
     {#- Custom front matter #}
     {%- block extrahead -%}{%- endblock -%}
+    <script>
+        const theme = localStorage.getItem('theme');
+        if (theme) document.documentElement.setAttribute('theme', theme);
+    </script>
 </head>
 
 <body>
