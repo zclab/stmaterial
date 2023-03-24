@@ -42,7 +42,9 @@ show_nav_level=theme_show_nav_level|int)
                 <article role="main" class="section">
                     {% block body %}{{ body }}{% endblock %}
                 </article>
-                {% include "components/actions.html" %}
+                {% if theme_use_edit_page_button %}
+                {% include "components/edit-this-page.html" %}
+                {% endif %}
             </div>
             {% set page_toc = generate_toc_html() %}
             {%- if page_toc | length >= 1 %}

@@ -39,7 +39,9 @@ todo_include_todos = True
 
 
 html_theme_options = {
-    "source_repository": "http://github.com/zclab/stmaterial",
+    "source_repository": "https://github.com/zclab/stmaterial",
+    "source_branch": "main",
+    "source_directory": "docs/",
     "logo":{
         "text": "Logo",
         "logo": "_static/logo.png"
