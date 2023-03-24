@@ -2,7 +2,7 @@ project = "Simple Sphinx Doc"
 copyright = "2023"
 author = "zclab"
 master_doc = "index"
-version = "0.0.2"
+version = "0.0.3"
 language = 'zh_CN'
 
 extensions = [
