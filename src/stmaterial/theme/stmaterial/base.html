@@ -76,13 +76,14 @@
 
     {#- Custom front matter #}
     {%- block extrahead -%}{%- endblock -%}
+    <script>
+        const theme = localStorage.getItem('theme');
+        if (theme) document.documentElement.setAttribute('theme', theme);
+    </script>
 </head>
 
 <body>
     {% block htmlbody %}
-    <script>
-        document.body.dataset.theme = localStorage.getItem("theme") || "auto";
-    </script>
     {% endblock %}
 
     {%- block scripts -%}
