@@ -50,6 +50,7 @@
   --color-background-hover--transparent: #efeff400;
   --color-background-border: #eeebee;
   --color-highlight-on-target: #ffffcc;
+  --color-table-border: var(--color-background-border);
 }
 
 @mixin colors-dark {
