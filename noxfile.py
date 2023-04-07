@@ -1,6 +1,5 @@
 """Development automation
 """
-import datetime
 import glob
 import os
 
@@ -8,27 +7,67 @@ import nox
 
 PACKAGE_NAME = "stmaterial"
 nox.options.sessions = ["lint", "test"]
-
+KWARGS = dict(level1=None, level2=9, level3=5)
 
 #
 # Helpers
 #
-def _determine_versions(current_version, date):
-    """Returns (version_in_release, version_after_release)"""
-    dev_num = int(current_version.rsplit(".dev", 1)[-1])
-    today_version = date.strftime("%Y.%m.%d")
+def _versions_bump_helper(version_number, max_version=None):
+    
+    if not(max_version) or int(version_number) <= max_version:
+        return 0, int(version_number)
+    else:
+        return 1, 0
 
-    if current_version.startswith(today_version):
-        # There was a release earlier today. Let's tack on another version
-        # number segment onto this to make it unique.
-        return (
-            today_version + f".{dev_num}",
-            today_version + f".dev{dev_num+1}",
-        )
+
+def _determine_versions(current_version, **kwargs):
+    """Returns (version_in_release, version_after_release)"""
+    version_in_release = current_version.rsplit(".dev", 1)[0]
+    version_split = version_in_release.split('.')
+
+    plus, version_after_release = 1, []
+    for idx, vs in enumerate(version_split[::-1]):
+        vs = int(vs) + plus
+        max_version = kwargs[f'level{len(version_split)-idx}']
+        plus, version_number = _versions_bump_helper(vs, max_version)
+        version_after_release.insert(0, str(version_number))
+
     return (
-        today_version,
-        today_version + ".dev1",
+        version_in_release,
+        '.'.join(version_after_release) + ".dev",
     )
+
+
+# fmt: off
+assert (
+    _determine_versions("0.9.1.dev", **KWARGS)
+    == ("0.9.1", "0.9.2.dev")
+), "bump 1"
+assert (
+    _determine_versions("0.9.5.dev", **KWARGS)
+    == ("0.9.5", "1.0.0.dev")
+), "bump 2"
+assert (
+    _determine_versions("0.1.5.dev", **KWARGS)
+    == ("0.1.5", "0.2.0.dev")
+), "bump 3"
+assert (
+    _determine_versions("0.1.1.dev", **KWARGS)
+    == ("0.1.1", "0.1.2.dev")
+), "bump 4"
+assert (
+    _determine_versions("1.1.1.dev", **KWARGS)
+    == ("1.1.1", "1.1.2.dev")
+), "bump 5"
+assert (
+    _determine_versions("1.9.1.dev", **KWARGS)
+    == ("1.9.1", "1.9.2.dev")
+), "bump 6"
+assert (
+    _determine_versions("1.9.5.dev", **KWARGS)
+    == ("1.9.5", "2.0.0.dev")
+), "bump 7"
+# fmt: on
 
 
 def get_release_versions(version_file):
@@ -42,7 +81,7 @@ def get_release_versions(version_file):
         else:
             raise RuntimeError("Could not find current version.")
 
-    return _determine_versions(current_version, date=datetime.date.today())
+    return _determine_versions(current_version, **KWARGS)
 
 
 #
