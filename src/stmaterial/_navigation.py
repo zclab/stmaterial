@@ -371,7 +371,7 @@ def add_toctree_functions(app, pagename, templatename, context, doctree):
         def add_header_level_recursive(ul, level):
             if ul is None:
                 return
-            if level <= (context["theme_show_toc_level"] + 1):
+            if level <= (int(context["theme_show_toc_level"]) + 1):
                 ul["class"] = ul.get("class", []) + ["table-of-contents", "visible"]
             for li in ul("li", recursive=False):
                 li["class"] = li.get("class", []) + [f"toc-h{level}"]

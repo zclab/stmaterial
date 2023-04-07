@@ -1,8 +1,14 @@
-project = "Simple Sphinx Doc"
+import sys
+from os.path import abspath, join, dirname
+sys.path.insert(0, abspath(join(dirname(__file__), "../src")))
+import stmaterial
+
+
+project = "sphinx theme of material"
 copyright = "2023"
 author = "zclab"
 master_doc = "index"
-version = "0.0.3"
+version = stmaterial.__version__
 language = 'zh_CN'
 
 extensions = [
@@ -26,11 +32,10 @@ exclude_patterns = [
 ]
 
 
-
 templates_path = ["_templates"]
 html_static_path = ["_static"]
 html_theme = "stmaterial"
-html_title = "Simple Sphinx Doc"
+html_title = "sphinx theme of material"
 html_favicon = "_static/favicon.png"
 html_last_updated_fmt = ""
 html_logo = "_static/logo.png"
