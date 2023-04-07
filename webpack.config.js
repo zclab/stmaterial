@@ -2,6 +2,7 @@ const { resolve } = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const dedent = require("dedent");
 const { Compilation } = require("webpack");
 
@@ -123,6 +124,7 @@ module.exports = {
     },
     output: { filename: "scripts/[name].js", path: staticPath },
     plugins: [new MiniCssExtractPlugin({ filename: "styles/[name].css" }), htmlWebpackPlugin, copyPlugin],
+    optimization: { minimizer: [`...`, new CssMinimizerPlugin()] },
     module: {
         rules: [{
             test: /\.s[ac]ss$/i,

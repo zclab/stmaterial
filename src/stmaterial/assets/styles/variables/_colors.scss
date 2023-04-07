@@ -46,7 +46,11 @@
   --secondary-color: #EF5350;
   --secondary-color-hover-solid: #FE625F;
   --secondary-color-focus-solid: #FF7B78;
-  --md_sys_color_on-surface: 28, 27, 31
+  --md_sys_color_on-surface: 28, 27, 31;
+  --color-background-hover--transparent: #efeff400;
+  --color-background-border: #eeebee;
+  --color-highlight-on-target: #ffffcc;
+  --color-table-border: var(--color-background-border);
 }
 
 @mixin colors-dark {
@@ -80,5 +84,8 @@
   --secondary-color: #CDDC39;
   --secondary-color-hover-solid: #DCEB48;
   --secondary-color-focus-solid: #F5FF61;
-  --md_sys_color_on-surface: 230, 225, 229
+  --md_sys_color_on-surface: 230, 225, 229;
+  --color-background-hover--transparent: #1e212400;
+  --color-background-border: #303335;
+  --color-highlight-on-target: #333300;
 }

@@ -3,30 +3,6 @@
 }
 
 
-ul.sidenav.sidenav-fixed li.logo:hover,
-ul.sidenav.sidenav-fixed li.logo #logo-container:hover {
-    background-color: rgba(0, 0, 0, 0)
-}
-
-
-ul.sidenav.sidenav-fixed li a .new.badge {
-    margin-top: 11px
-}
-
-ul.sidenav.sidenav-fixed ul.collapsible-accordion {
-    background-color: var(--surface-color)
-}
-
-ul.sidenav.sidenav-fixed ul.collapsible-accordion a.collapsible-header {
-    padding: 0 30px
-}
-
-ul.sidenav.sidenav-fixed ul.collapsible-accordion .collapsible-body li a {
-    font-weight: 400;
-    padding: 0 37.5px 0 45px
-}
-
-
 .sidenav li.has-children>ul:not(.collapsible)>li.active,
 .sidenav.sidenav-fixed li.has-children>ul:not(.collapsible)>li.active {
     background-color: var(--primary-color-raised-focus-solid);
