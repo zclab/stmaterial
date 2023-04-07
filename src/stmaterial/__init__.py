@@ -174,9 +174,6 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
 def _update_config(app: sphinx.application.Sphinx) -> None:
     theme_options = _get_theme_options(app)
 
-    show_toc_level = int(theme_options.get("show_toc_level", 1))
-    theme_options['show_toc_level'] = show_toc_level
-
     header_icons = theme_options.get("header_icons", [])
     source_repo = theme_options.get("source_repository", None)
     if not(header_icons) and source_repo:
