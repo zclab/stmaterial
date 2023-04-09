@@ -55,8 +55,7 @@ html_theme_options = {
     "show_toc_level": 1,
     "navbar_style": "navigation", # options: None, breadcrumbs, navigation,
     "header_icons": [
-        {"name":"Github", "url": "http://github.com/zclab/stmaterial", "class":"fa-brands fa-github"},
-        {"name":"Gitlab", "url": "http://github.com/zclab/stmaterial", "class":"fa-brands fa-gitlab"},
+        {"name":"Github", "url": "http://github.com/zclab/stmaterial", "svg":"github.svg"},
     ],
     "use_edit_page_button": True
 }

@@ -1,0 +1,38 @@
+nav {
+    ul {
+        a {
+            display: flex;
+        }
+
+        li {
+
+            img {
+                max-width: 260px;
+            }
+
+            a.ext-link {
+                img {
+                    max-width: 26px;
+                    margin: 20px 0;
+                }
+            }
+
+        }
+    }
+}
+
+
+ul.sidenav.sidenav-fixed {
+    li {
+        a.brand-logo {
+            display: flex;
+            padding: 0 30px;
+        }
+
+    }
+}
+
+
+.page-footer {
+    padding-top: 0;
+}
