@@ -53,7 +53,7 @@ html_theme_options = {
     },
     "external_links": {},
     "show_toc_level": 1,
-    "navbar_style": "breadcrumbs", # options: None, breadcrumbs, navigation,
+    "navbar_style": "navigation", # options: None, breadcrumbs, navigation,
     "header_icons": [
         {"name":"Github", "url": "http://github.com/zclab/stmaterial", "class":"fa-brands fa-github"},
         {"name":"Gitlab", "url": "http://github.com/zclab/stmaterial", "class":"fa-brands fa-gitlab"},
