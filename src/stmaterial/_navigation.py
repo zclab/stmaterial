@@ -258,7 +258,7 @@ def add_toctree_functions(app, pagename, templatename, context, doctree):
             links_dropdown_html = "\n".join(links_dropdown)
             out += f"""
             <li class="nav-item dropdown">
-                <a class='dropdown-trigger' href='#' data-target='dropdown1'>More</a>
+                <a class='dropdown-trigger' href='#' data-target='dropdown1'>More <i class="material-icons">arrow_drop_down</i></a>
                 <ul id='dropdown1' class='dropdown-content'>
                     {links_dropdown_html}
                 </ul>

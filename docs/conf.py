@@ -60,6 +60,7 @@ html_theme_options = {
     "navbar_style": "navigation", # options: None, breadcrumbs, navigation,
     "header_icons": [
         {"name":"Github", "url": "http://github.com/zclab/stmaterial", "svg":"github.svg"},
+        {"name":"Email", "url": "example@example.com", "material_icons":"email"},
     ],
     "use_edit_page_button": True,
     "custom_fonts": {
