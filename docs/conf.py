@@ -51,12 +51,15 @@ html_theme_options = {
         "text": "Logo",
         "logo": "_static/logo.png"
     },
-    "external_links": {},
+    "external_links": [
+        {"name": "Furo", "url": "https://pradyunsg.me/furo/quickstart/"},
+        {"name": "Sphinx book theme", "url": "https://sphinx-book-theme.readthedocs.io/en/latest/"},
+        {"name": "Pydata sphinx theme", "url": "https://pydata-sphinx-theme.readthedocs.io/"},
+    ],
     "show_toc_level": 1,
     "navbar_style": "navigation", # options: None, breadcrumbs, navigation,
     "header_icons": [
-        {"name":"Github", "url": "http://github.com/zclab/stmaterial", "class":"fa-brands fa-github"},
-        {"name":"Gitlab", "url": "http://github.com/zclab/stmaterial", "class":"fa-brands fa-gitlab"},
+        {"name":"Github", "url": "http://github.com/zclab/stmaterial", "svg":"github.svg"},
     ],
     "use_edit_page_button": True
 }

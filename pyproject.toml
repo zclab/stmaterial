@@ -6,7 +6,8 @@ build-backend = "sphinx_theme_builder"
 node-version = "18.15.0"
 theme-name = "stmaterial"
 additional-compiled-static-assets = [
-  ".",
+  "webpack-macros.html",
+  "images/",
   "locales/",
   "vendor/",
   "scripts/materialize.js",
