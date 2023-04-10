@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="msapplication-tap-highlight" content="no">
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
 
     {%- if metatags %}{{ metatags }}{% endif -%}
 
@@ -67,6 +68,11 @@
     {%- endif %}
     {% endfor -%}
     {%- endblock regular_styles -%}
+
+    {#- Theme-related stylesheets -#}
+    {%- block theme_styles %}
+    {% include "partials/_head_css_variables.html" with context %}
+    {%- endblock -%}
 
     {%- block extra_styles %}
     {%- endblock -%}

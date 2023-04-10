@@ -6,14 +6,12 @@
   font-display: swap
   src: url(https://cdn.jsdelivr.net/gh/zclab/static/fonts/blockdole.woff2) format("woff2"), url(https://cdn.jsdelivr.net/gh/zclab/static/fonts/blockdole.woff) format("woff"), url(https://cdn.jsdelivr.net/gh/zclab/static/fonts/blockdole.eot) format("embedded-opentype")
 
-$font-stack: blockdole
-
-html
-    font-family: $font-stack
-
 main 
     padding-left: 300px
     flex: 1 0 auto
+
+    @media (max-width: $medium-screen-up)
+        padding-left: 0
 
 .container
     width: 94%
