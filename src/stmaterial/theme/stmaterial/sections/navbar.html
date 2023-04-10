@@ -23,7 +23,7 @@
                     {% if icon_dict.class %}
                     <i class="{{ icon_dict.class }}"></i>
                     {% elif icon_dict.svg %}
-                    <img src="/_static/images/{{ icon_dict.svg }}" style="transform: scale(0.8);">
+                    <img src="{{ pathto(icon_dict.svg, 1) }}" style="transform: scale(0.8);">
                     {% endif %}
                 </a>
             </li>

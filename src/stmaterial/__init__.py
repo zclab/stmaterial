@@ -182,6 +182,13 @@ def _update_config(app: sphinx.application.Sphinx) -> None:
             )
         theme_options["header_icons"] = header_icons
 
+    else:
+        for icon in header_icons:
+            svg = icon.get("svg")
+            if svg:
+                svg = f"_static/images/{svg}"
+                icon["svg"] = svg
+
 
 def activate_extensions(app, extensions):
     """Activate extensions bundled with this theme.

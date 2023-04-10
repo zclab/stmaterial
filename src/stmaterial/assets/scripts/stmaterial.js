@@ -182,6 +182,7 @@ function init_materialize() {
 
 
     M.Sidenav.init(document.querySelectorAll('.sidenav'), {});
+    M.Dropdown.init(document.querySelectorAll('.dropdown-trigger'), { constrainWidth: false, });
 
     M.FloatingActionButton.init(document.querySelectorAll('.fixed-action-btn'), {});
     M.FloatingActionButton.init(document.querySelectorAll('.fixed-action-btn.horizontal'), {
