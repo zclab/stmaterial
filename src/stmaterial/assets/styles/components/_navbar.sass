@@ -10,3 +10,20 @@ nav
 
         @media (max-width: $medium-screen-up)
             padding-left: 0
+
+    ul 
+        a
+            display: flex
+
+        li
+            img
+                max-width: 260px
+
+            a
+                &.ext-link
+                    img
+                        max-width: 26px
+                        margin: 20px 0
+
+                        @media (max-width: $medium-screen-up)
+                            margin: 15px 0
