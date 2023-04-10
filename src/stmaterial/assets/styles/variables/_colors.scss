@@ -52,6 +52,10 @@
   --color-background-border: #eeebee;
   --color-highlight-on-target: #ffffcc;
   --color-table-border: var(--color-background-border);
+
+  //tmp definition
+  --color-highlighted-background: var(--focus-color);
+  --color-highlighted-text: var(--secondary-color-focus-solid);
 }
 
 @mixin colors-dark {
@@ -90,4 +94,8 @@
   --color-background-hover--transparent: #1e212400;
   --color-background-border: #303335;
   --color-highlight-on-target: #333300;
+
+  //tmp definition
+  --color-highlighted-background: var(--focus-color);
+  --color-highlighted-text: var(--secondary-color-focus-solid);
 }
