@@ -61,6 +61,17 @@ html_theme_options = {
     "header_icons": [
         {"name":"Github", "url": "http://github.com/zclab/stmaterial", "svg":"github.svg"},
     ],
-    "use_edit_page_button": True
+    "use_edit_page_button": True,
+    "custom_fonts": {
+        "name": 'LXGWWenKaiLite',
+        "type": 'truetype',
+        "src": [
+            {"weight": 200, "url":"https://cdn.jsdelivr.net/gh/zclab/static/fonts/LxgwWenKai-Lite/LXGWWenKaiLite-Light.ttf"},
+            {"weight": 300, "url":"https://cdn.jsdelivr.net/gh/zclab/static/fonts/LxgwWenKai-Lite/LXGWWenKaiLite-Light.ttf"},
+            {"weight": 400, "url":"https://cdn.jsdelivr.net/gh/zclab/static/fonts/LxgwWenKai-Lite/LXGWWenKaiLite-Regular.ttf"},
+            {"weight": 500, "url":"https://cdn.jsdelivr.net/gh/zclab/static/fonts/LxgwWenKai-Lite/LXGWWenKaiLite-Bold.ttf"},
+            {"weight": 600, "url":"https://cdn.jsdelivr.net/gh/zclab/static/fonts/LxgwWenKai-Lite/LXGWWenKaiLite-Bold.ttf"},
+        ],
+    },
 }
     
