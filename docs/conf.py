@@ -83,6 +83,8 @@ blog_post_pattern = "posts/*/*"
 blog_authors = {
     "zclab": ("子川", "https://github.com/zclab"),
 }
+fontawesome_link_cdn = "https://cdn.staticaly.com/gh/hung1001/font-awesome-pro-v6/44659d9/css/all.min.css"
+fontawesome_included = True
 
 html_sidebars = {
     "posts/**": [
