@@ -1,0 +1,62 @@
+.timeline {
+    .sd-card {
+        border: 0px;
+
+        .sd-card-header {
+            background-color: var(--color-highlighted-background);
+        }
+    }
+
+    .sd-w-50 {
+        width: 50.05% !important;
+    }
+
+    .left {
+        margin-right: auto;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        border-right: 1px solid black;
+
+        p {
+            &.sd-card-text {
+                text-align: right;
+            }
+        }
+    }
+
+    .right {
+        margin-left: auto;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        border-left: 1px solid black;
+
+        p {
+            &.sd-card-text {
+                text-align: left;
+            }
+        }
+    }
+
+    .entry {
+        &::after {
+            width: 1em;
+            height: 1em;
+            background: white;
+            border-radius: 50%;
+            content: "";
+            top: 1em;
+            display: block;
+            position: absolute;
+            border: 1px black solid;
+            z-index: 999;
+        }
+
+        &.left::after {
+            right: -.6em;
+        }
+
+        &.right::after {
+            left: -.6em;
+        }
+    }
+}
