@@ -5,7 +5,7 @@ hide-toc: true
 
 # A Materialize based sphinx theme
 
-This is a materialize based sphinx theme, see the [materialize documentation](https://materializeweb.com/) for reference. It is a combination of [Furo](https://github.com/pradyunsg/furo), [pydata sphinx theme](https://github.com/pydata/pydata-sphinx-theme) and materialize style.
+This is a materialize based sphinx theme, see the [materialize documentation](https://materializeweb.com/) for reference. 
 
 
 
