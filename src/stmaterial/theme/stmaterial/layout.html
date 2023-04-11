@@ -37,12 +37,9 @@ show_nav_level=theme_show_nav_level|int)
         <div class="stm-doc">
             <aside class="stm-sidenav hide-on-small-only">
                 <div class="sidenav-viewport">
-                    <div class="sidenav-drawer">
-                        <a tabindex="-1" class="sidenav-logo" href="/"><img src="{{ logo_url }}" class=""></a>
-                        <div class="sidenav-nemu">
-                            {% include "sections/sidenav.html" %}
-                        </div>
-                    </div>
+                    {% block left_sidebar %}
+                    {%- include "sections/sidebar-primary.html" -%}
+                    {% endblock left_sidebar %}
                 </div>
             </aside>
             <main>
