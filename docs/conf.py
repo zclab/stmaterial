@@ -9,7 +9,7 @@ copyright = "2023"
 author = "zclab"
 master_doc = "index"
 version = stmaterial.__version__
-language = 'zh_CN'
+language = 'en'
 
 extensions = [
     "sphinx.ext.autodoc",
@@ -83,6 +83,8 @@ blog_post_pattern = "posts/*/*"
 blog_authors = {
     "zclab": ("子川", "https://github.com/zclab"),
 }
+
+# https://github.com/hung1001/font-awesome-pro-v6
 fontawesome_link_cdn = "https://cdn.staticaly.com/gh/hung1001/font-awesome-pro-v6/44659d9/css/all.min.css"
 fontawesome_included = True
 
