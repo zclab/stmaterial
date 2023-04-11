@@ -20,6 +20,7 @@ extensions = [
     "stmaterial.demo.sphinxext",
     "myst_parser",
     "sphinx_inline_tabs",
+    "ablog",
 ]
 
 
@@ -76,3 +77,21 @@ html_theme_options = {
     },
 }
     
+
+blog_path = "blog"
+blog_post_pattern = "posts/*/*"
+blog_authors = {
+    "zclab": ("子川", "https://github.com/zclab"),
+}
+
+html_sidebars = {
+    "posts/**": [
+        "sidebar/brand.html", "ablog/postcard.html","ablog/categories.html","ablog/tagcloud.html", "ablog/recentposts.html",
+    ],
+    "blog": [
+        "sidebar/brand.html", "ablog/categories.html","ablog/tagcloud.html","ablog/archives.html","ablog/recentposts.html",
+    ],
+    "blog/**": [
+        "sidebar/brand.html", "ablog/categories.html","ablog/tagcloud.html","ablog/archives.html","ablog/recentposts.html",
+    ],
+}

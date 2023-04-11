@@ -17,5 +17,4 @@ Some of the content here builds upon [`sphinx-rtd-theme`'s demo documentation](h
 :glob:
 
 *
-kitchen-sink/index
 ```

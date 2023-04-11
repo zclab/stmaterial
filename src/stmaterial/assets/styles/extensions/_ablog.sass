@@ -1,0 +1,105 @@
+.ablog-sidebar-item
+  margin-top: var(--sidebar-tree-space-above)
+  margin-bottom: var(--sidebar-item-spacing-vertical)
+  font-size: var(--sidebar-item-font-size)
+    
+  h2,
+  h3
+    color: var(--color-sidebar-link-text)
+    padding: 0
+    font-size: 1.30em
+    margin-left: var(--sidebar-item-spacing-horizontal)
+    margin-right: var(--sidebar-item-spacing-horizontal)
+    a
+      color: var(--color-sidebar-link-text)
+      text-decoration: none
+
+  ul
+    list-style: none
+    padding-top: 0
+    padding-left: 0
+    overflow-y: hidden
+    display: flex
+    flex-direction: column
+    gap: 0.5em
+    margin: 0 var(--sidebar-item-spacing-horizontal)
+
+    li
+      &:hover
+        background: var(--color-sidebar-item-background--hover)
+
+      a
+        text-decoration: none
+            
+      i
+        color: var(--color-sidebar-link-text)
+
+    &.ablog-cloud
+      flex-direction: row
+      flex-flow: wrap
+      gap: 0.5rem
+
+      li
+        display: flex
+        align-items: center
+
+
+.ablog__prev-next
+  font-size: 0.9em
+  display: flex
+  padding: 1rem 0
+
+  >span
+    display: flex
+    max-width: 45%
+
+    a
+      display: flex
+      align-items: center
+      margin-left: auto
+      gap: 1rem
+      line-height: 1.5rem
+
+  span
+    &.ablog__spacer
+      display: none
+
+    &.ablog__next
+      margin-left: auto
+      text-align: right
+
+
+.ablog__collection
+  padding-left: 0
+
+  .ablog-post
+
+    ul>li
+      list-style: none
+
+    .ablog-archive
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      gap: 1rem
+      list-style: none
+      font-size: 0.75rem
+      padding-left: 0
+
+    .ablog-post-title
+      margin-top: 0
+      font-size: 1.85rem
+
+      a
+        font-weight: 500
+        text-decoration: none
+
+    .ablog-post-expand
+      margin-bottom: 0.5rem
+
+
+.ablog__catalog_header
+
+  .section
+    padding-bottom: 0
+    padding-top: 0

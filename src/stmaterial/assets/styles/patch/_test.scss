@@ -1,52 +1,25 @@
-ul.sidenav.sidenav-fixed {
-    li {
-        a.brand-logo {
-            display: flex;
-            padding: 0 30px;
-        }
+.stm-main {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
 
+    .main-wrapper {
+        display: flex;
+        flex: 1 0 auto;
+
+        .stm-doc {
+            display: flex;
+            width: 100%;
+        }
     }
 }
 
-.prev-next-area {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-
-    a {
-        overflow-x: hidden;
-        text-decoration: none;
-
-        p {
-            margin: 0;
-        }
-
-        &.btn-large {
-            height: auto;
-            width: 48%;
-            line-height: 30px;
-            padding: 10px;
-            // border: 1px solid var(--primary-color);
-
-            div.right-next {
-                float: right;
-                display: flex;
-                align-items: center;
-
-                div.prev-next-info {
-                    text-align: right;
-                }
-            }
-
-            div.left-prev {
-                float: left;
-                display: flex;
-                align-items: center;
-
-                div.prev-next-info {
-                    text-align: left;
-                }
-            }
-        }
-    }
+.sidenav-logo {
+    align-items: center;
+    display: flex !important;
+    color: inherit !important;
+    max-height: $navbar-height;
+    min-height: $navbar-height;
+    max-width: $sidenav-width - 40px;
+    // margin: 0 0 0 30px;
 }
