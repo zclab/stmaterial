@@ -88,12 +88,12 @@ fontawesome_included = True
 
 html_sidebars = {
     "posts/**": [
-        "sidebar/brand.html", "ablog/postcard.html","ablog/categories.html","ablog/tagcloud.html", "ablog/recentposts.html",
+        "sidebar/brand.html", "sidebar/search.html", "ablog/postcard.html","ablog/categories.html","ablog/tagcloud.html", "ablog/recentposts.html",
     ],
     "blog": [
-        "sidebar/brand.html", "ablog/categories.html","ablog/tagcloud.html","ablog/archives.html","ablog/recentposts.html",
+        "sidebar/brand.html", "sidebar/search.html", "ablog/categories.html","ablog/tagcloud.html","ablog/archives.html","ablog/recentposts.html",
     ],
     "blog/**": [
-        "sidebar/brand.html", "ablog/categories.html","ablog/tagcloud.html","ablog/archives.html","ablog/recentposts.html",
+        "sidebar/brand.html", "sidebar/search.html", "ablog/categories.html","ablog/tagcloud.html","ablog/archives.html","ablog/recentposts.html",
     ],
 }
