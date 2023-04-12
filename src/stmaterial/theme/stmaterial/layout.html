@@ -34,6 +34,7 @@ show_nav_level=theme_show_nav_level|int)
 
 <div class="stm-main">
     <div class="main-wrapper">
+        {%- include "components/back-to-top.html" -%}
         <div class="stm-doc">
             <aside class="stm-sidenav hide-on-small-only">
                 <div class="sidenav-viewport">
@@ -45,22 +46,20 @@ show_nav_level=theme_show_nav_level|int)
             <main>
                 <div class="container">
                     <div class="row">
-                        <a href="#" class="back-to-top muted-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
-                            </svg>
-                            <span> {{ translate('Back to top') }} </span>
-                        </a>
-                        <div class="section col s12 m10 xl9">
+                        <div class="section col s12 m10 xl9 stm-article">
                             <article role="main" class="section">
                                 {% block body %}{{ body }}{% endblock %}
                             </article>
-                            {% if theme_show_prev_next %}
-                            {% include "components/prev-next.html" %}
-                            {% endif %}
+
                             {% if theme_use_edit_page_button %}
                             {% include "components/edit-this-page.html" %}
                             {% endif %}
+
+                            <div class="stm-footer">
+                                {% if theme_show_prev_next %}
+                                {% include "components/prev-next.html" %}
+                                {% endif %}
+                            </div>
                         </div>
                         {% set page_toc = generate_toc_html() %}
                         {%- if page_toc | length >= 1 %}

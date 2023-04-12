@@ -1,5 +1,5 @@
 .prev-next-area {
-    margin-top: 20px;
+    // margin-top: 20px;
     display: flex;
     justify-content: space-between;
 
@@ -16,7 +16,7 @@
             width: 48%;
             line-height: 30px;
             padding: 10px;
-            // border: 1px solid var(--primary-color);
+            border: 1px solid var(--separator-color);
 
             div.right-next {
                 float: right;

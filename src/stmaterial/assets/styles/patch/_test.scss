@@ -23,3 +23,19 @@
     max-width: $sidenav-width - 40px;
     // margin: 0 0 0 30px;
 }
+
+
+.row {
+    height: 100%;
+}
+
+.stm-footer {
+    margin-top: auto;
+}
+
+.stm-article {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    height: 100%;
+}

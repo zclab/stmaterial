@@ -9,7 +9,7 @@ copyright = "2023"
 author = "zclab"
 master_doc = "index"
 version = stmaterial.__version__
-language = 'zh_CN'
+language = 'en'
 
 extensions = [
     "sphinx.ext.autodoc",
@@ -84,14 +84,18 @@ blog_authors = {
     "zclab": ("子川", "https://github.com/zclab"),
 }
 
+# https://github.com/hung1001/font-awesome-pro-v6
+fontawesome_link_cdn = "https://cdn.staticaly.com/gh/hung1001/font-awesome-pro-v6/44659d9/css/all.min.css"
+fontawesome_included = True
+
 html_sidebars = {
     "posts/**": [
-        "sidebar/brand.html", "ablog/postcard.html","ablog/categories.html","ablog/tagcloud.html", "ablog/recentposts.html",
+        "sidebar/brand.html", "sidebar/search.html", "ablog/postcard.html","ablog/categories.html","ablog/tagcloud.html", "ablog/recentposts.html",
     ],
     "blog": [
-        "sidebar/brand.html", "ablog/categories.html","ablog/tagcloud.html","ablog/archives.html","ablog/recentposts.html",
+        "sidebar/brand.html", "sidebar/search.html", "ablog/categories.html","ablog/tagcloud.html","ablog/archives.html","ablog/recentposts.html",
     ],
     "blog/**": [
-        "sidebar/brand.html", "ablog/categories.html","ablog/tagcloud.html","ablog/archives.html","ablog/recentposts.html",
+        "sidebar/brand.html", "sidebar/search.html", "ablog/categories.html","ablog/tagcloud.html","ablog/archives.html","ablog/recentposts.html",
     ],
 }
