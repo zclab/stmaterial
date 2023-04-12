@@ -10,7 +10,7 @@ from sphinx.locale import get_translation
 from ._navigation import add_toctree_functions
 from ._transforms import ShortenLinkTransform, WrapTableAndMathInAContainerTransform
 
-__version__ = "0.0.5"
+__version__ = "0.0.6.dev"
 MESSAGE_CATALOG_NAME = "stmaterial"
 logger = logging.getLogger(__name__)
 
