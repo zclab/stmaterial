@@ -7,12 +7,7 @@
             <li>
                 <a href="{{ pathto(root_doc) }}"><img src="{{ logo_url }}" alt="Logo" /></a>
             </li>
-
-            {% if theme_navbar_style == "breadcrumbs" %}
-            {% include "components/breadcrumbs.html" %}
-            {% elif theme_navbar_style == "navigation" %}
             {{ generate_header_nav_html(n_links_before_dropdown=theme_header_links_before_dropdown) }}
-            {% endif %}
         </ul>
         <ul class="right">
             <li><a id="theme-switch" href="#"><i class="material-icons">dark_mode</i></a></li>

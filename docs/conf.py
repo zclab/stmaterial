@@ -58,7 +58,6 @@ html_theme_options = {
         {"name": "Pydata sphinx theme", "url": "https://pydata-sphinx-theme.readthedocs.io/"},
     ],
     "show_toc_level": 1,
-    "navbar_style": "navigation", # options: None, breadcrumbs, navigation,
     "header_icons": [
         {"name":"Github", "url": "http://github.com/zclab/stmaterial", "svg":"github.svg"},
         {"name":"Email", "url": "example@example.com", "material_icons":"email"},
