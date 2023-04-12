@@ -55,10 +55,14 @@ show_nav_level=theme_show_nav_level|int)
                             {% include "components/edit-this-page.html" %}
                             {% endif %}
 
-                            <div class="stm-footer">
-                                {% if theme_show_prev_next %}
-                                {% include "components/prev-next.html" %}
-                                {% endif %}
+                            <div class="stm-article-footer">
+                                <div class="row">
+                                    <div class="prev-next-area">
+                                        {% if theme_show_prev_next %}
+                                        {% include "components/prev-next.html" %}
+                                        {% endif %}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         {% set page_toc = generate_toc_html() %}

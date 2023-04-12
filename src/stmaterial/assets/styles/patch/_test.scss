@@ -14,23 +14,8 @@
     }
 }
 
-.sidenav-logo {
-    align-items: center;
-    display: flex !important;
-    color: inherit !important;
-    max-height: $navbar-height;
-    min-height: $navbar-height;
-    max-width: $sidenav-width - 40px;
-    // margin: 0 0 0 30px;
-}
-
-
 .row {
     height: 100%;
-}
-
-.stm-footer {
-    margin-top: auto;
 }
 
 .stm-article {
@@ -38,4 +23,12 @@
     flex-direction: column;
     justify-content: start;
     height: 100%;
+}
+
+.stm-article-footer {
+    margin-top: auto;
+}
+
+.sphinx-version {
+    margin-bottom: 0;
 }
