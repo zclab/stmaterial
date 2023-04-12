@@ -13,11 +13,10 @@ A Materialize based sphinx theme
 
 To use this theme in the repository, follow these steps:
 
-- Add this theme to the `pip` install requirements of the repo. For now, point it to the `main` branch like so:
+- Install the `stmaterial` in your doc build environment::
 
   ```
-  # in requirements.txt
-  git+git@github.com:zclab/stmaterial.git
+  pip install -i https://test.pypi.org/simple/ stmaterial
   ```
 - Configure the Sphinx docs to use the theme by editing `conf.py`
 
