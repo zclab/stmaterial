@@ -21,6 +21,11 @@ kitchen-sink/index
 :maxdepth: 2
 
 Components <web-components>
+```
+
+```{toctree}
+:hidden:
+
 blog
 ```
 
