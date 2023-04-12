@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 
-{% if theme_navbar_style == "navigation" %}
 {%- set sidebar_nav_html = generate_toctree_html(
 "sidebar",
 show_nav_level=theme_show_nav_level|int,
@@ -9,18 +8,6 @@ collapse=theme_collapse_navigation|tobool,
 includehidden=True,
 titles_only=True)
 -%}
-{% else %}
-{%- set sidebar_nav_html = generate_toctree_html(
-startdepth=0,
-kind="sidebar",
-maxdepth=4,
-collapse=False,
-includehidden=True,
-titles_only=True,
-show_nav_level=theme_show_nav_level|int)
--%}
-{% endif %}
-
 
 {% block htmlbody -%}
 {{ super() }}
