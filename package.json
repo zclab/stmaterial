@@ -13,16 +13,10 @@
         "css-loader": "^6.7.3",
         "css-minimizer-webpack-plugin": "^4.2.2",
         "mini-css-extract-plugin": "^2.7.3",
-        "normalize.css": "^8.0.1",
         "postcss-loader": "^6.2.0",
         "sass-loader": "^13.2.0",
-        "style-loader": "^3.3.1",
         "webpack": "^5.76.1",
         "webpack-cli": "^5.0.1",
-        "extract-loader": "^5.1.0",
-        "file-loader": "^6.2.0",
-        "imports-loader": "^4.0.1",
-        "node-sass": "^8.0.0",
         "postcss": "^8.4.21"
     },
     "dependencies": {
