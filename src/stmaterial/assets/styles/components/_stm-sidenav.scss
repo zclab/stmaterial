@@ -1,3 +1,14 @@
+.sidenav-logo {
+    align-items: center;
+    display: flex !important;
+    color: inherit !important;
+    max-height: $navbar-height;
+    min-height: $navbar-height;
+    max-width: $sidenav-width - 40px;
+    // margin: 0 0 0 30px;
+}
+
+
 aside.stm-sidenav {
     border-right: 1px solid var(--separator-color);
     clip-path: inset(0);
@@ -19,7 +30,7 @@ aside.stm-sidenav {
 
             .sidenav-menu {
                 flex-grow: 1;
-                padding: 0 0 0 30px;
+                padding: 0 0 0 var(--header-horizontal-spacing);
                 overflow: auto;
 
                 .sidenav-menulist {
@@ -37,10 +48,19 @@ aside.stm-sidenav {
                             height: 44px;
                             color: var(--font-color-main);
                             display: block;
+                            padding-left: var(--sidenav-item-horizontal-spacing);
+
+                            &:hover {
+                                background: var(--focus-color);
+                            }
                         }
 
                         &.active {
                             background-color: var(--focus-color);
+
+                            &:not(.has-children) {
+                                border-left: .2rem solid var(--primary-color-dark);
+                            }
                         }
                     }
                 }
@@ -66,6 +86,10 @@ aside.stm-sidenav {
         i {
             display: inline-block;
             text-align: center;
+        }
+
+        &:hover {
+            background: var(--focus-color);
         }
     }
 

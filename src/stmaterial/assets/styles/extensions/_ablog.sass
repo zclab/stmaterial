@@ -8,31 +8,32 @@
     color: var(--color-sidebar-link-text)
     padding: 0
     font-size: 1.30em
-    margin-left: var(--sidebar-item-spacing-horizontal)
-    margin-right: var(--sidebar-item-spacing-horizontal)
+    margin-right: var(--sidenav-item-horizontal-spacing)
+    margin-left: var(--sidenav-item-horizontal-spacing)
     a
       color: var(--color-sidebar-link-text)
       text-decoration: none
 
+    i
+      color: var(--font-color-medium)
+
   ul
     list-style: none
-    padding-top: 0
-    padding-left: 0
     overflow-y: hidden
     display: flex
     flex-direction: column
     gap: 0.5em
-    margin: 0 var(--sidebar-item-spacing-horizontal)
+    margin: 0 var(--sidenav-item-horizontal-spacing)
 
     li
       &:hover
-        background: var(--color-sidebar-item-background--hover)
+        background: var(--focus-color)
 
       a
         text-decoration: none
             
       i
-        color: var(--color-sidebar-link-text)
+        color: var(--font-color-medium)
 
     &.ablog-cloud
       flex-direction: row
