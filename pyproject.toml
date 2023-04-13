@@ -14,7 +14,7 @@ additional-compiled-static-assets = [
 
 [project]
 name = "stmaterial"
-description = "A simple sphinx documentation theme."
+description = "A sphinx theme of materializecss."
 dynamic = ["version"]
 readme = "README.md"
 urls = { Organization = "https://github.com/zclab/stmaterial" }
