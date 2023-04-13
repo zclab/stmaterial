@@ -50,6 +50,7 @@ html_theme_options = {
     "source_branch": "main",
     "source_directory": "docs/",
     "show_back_to_top": True,
+    "fix_header_nav": False,
     "logo":{
         "text": "Logo",
         "logo": "_static/logo.png"

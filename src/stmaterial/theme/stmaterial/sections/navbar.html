@@ -1,31 +1,33 @@
-<nav>
-    <div class="nav-wrapper">
-        <a class="sidenav-trigger" href="#" data-target="nav-mobile">
-            <i class="material-icons">menu</i>
-        </a>
-        <ul class="left hide-on-small-only">
-            <li>
-                <a href="{{ pathto(root_doc) }}"><img src="{{ logo_url }}" alt="Logo" /></a>
-            </li>
-            {{ generate_header_nav_html(n_links_before_dropdown=theme_header_links_before_dropdown) }}
-        </ul>
-        <ul class="right">
-            <li><a id="theme-switch" href="#"><i class="material-icons">dark_mode</i></a></li>
-            {% if theme_header_icons -%}
-            {% for icon_dict in theme_header_icons -%}
-            <li>
-                <a href="{{ icon_dict.url }}" target="_blank" aria-label="{{ icon_dict.name }}" class="ext-link">
-                    {% if icon_dict.class %}
-                    <i class="{{ icon_dict.class }}"></i>
-                    {% elif icon_dict.svg %}
-                    <img src="{{ pathto(icon_dict.svg, 1) }}" style="transform: scale(0.8);">
-                    {% elif icon_dict.material_icons %}
-                    <i class="material-icons">{{ icon_dict.material_icons }}</i>
-                    {% endif %}
-                </a>
-            </li>
-            {% endfor %}
-            {% endif %}
-        </ul>
-    </div>
-</nav>
+<div class="{% if theme_fix_header_nav -%} navbar-fixed {% endif %}">
+    <nav>
+        <div class="nav-wrapper">
+            <a class="sidenav-trigger" href="#" data-target="nav-mobile">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul class="left hide-on-small-only">
+                <li>
+                    <a href="{{ pathto(root_doc) }}"><img src="{{ logo_url }}" alt="Logo" /></a>
+                </li>
+                {{ generate_header_nav_html(n_links_before_dropdown=theme_header_links_before_dropdown) }}
+            </ul>
+            <ul class="right">
+                <li><a id="theme-switch" href="#"><i class="material-icons">dark_mode</i></a></li>
+                {% if theme_header_icons -%}
+                {% for icon_dict in theme_header_icons -%}
+                <li>
+                    <a href="{{ icon_dict.url }}" target="_blank" aria-label="{{ icon_dict.name }}" class="ext-link">
+                        {% if icon_dict.class %}
+                        <i class="{{ icon_dict.class }}"></i>
+                        {% elif icon_dict.svg %}
+                        <img src="{{ pathto(icon_dict.svg, 1) }}" style="transform: scale(0.8);">
+                        {% elif icon_dict.material_icons %}
+                        <i class="material-icons">{{ icon_dict.material_icons }}</i>
+                        {% endif %}
+                    </a>
+                </li>
+                {% endfor %}
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+</div>
