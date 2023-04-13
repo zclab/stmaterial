@@ -49,6 +49,7 @@ html_theme_options = {
     "source_repository": "https://github.com/zclab/stmaterial",
     "source_branch": "main",
     "source_directory": "docs/",
+    "show_back_to_top": True,
     "logo":{
         "text": "Logo",
         "logo": "_static/logo.png"

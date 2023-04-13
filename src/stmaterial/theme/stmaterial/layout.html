@@ -21,7 +21,9 @@ titles_only=True)
 
 <div class="stm-main">
     <div class="main-wrapper">
+        {% if theme_show_back_to_top %}
         {%- include "components/back-to-top.html" -%}
+        {% endif %}
         <div class="stm-doc">
             <aside class="stm-sidenav {% if hide_sidenav %} hide {% else %} hide-on-small-only {% endif %} ">
                 <div class="sidenav-viewport">
