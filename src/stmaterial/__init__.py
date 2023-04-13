@@ -62,7 +62,7 @@ def _compute_hide_sidenav(
     builder: StandaloneHTMLBuilder,
     docname: str,
 ) -> bool:
-    # Should the table of contents be hidden?
+    # Should the sidenav be hidden?
     file_meta = context.get("meta", None) or {}
     if "hide-sidenav" in file_meta:
         return True
