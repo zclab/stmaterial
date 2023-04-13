@@ -23,7 +23,7 @@ titles_only=True)
     <div class="main-wrapper">
         {%- include "components/back-to-top.html" -%}
         <div class="stm-doc">
-            <aside class="stm-sidenav hide-on-small-only">
+            <aside class="stm-sidenav {% if hide_sidenav %} hide {% else %} hide-on-small-only {% endif %} ">
                 <div class="sidenav-viewport">
                     {% block left_sidebar %}
                     {%- include "sections/sidebar-primary.html" -%}

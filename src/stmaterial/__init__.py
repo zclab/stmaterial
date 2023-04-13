@@ -77,7 +77,7 @@ def _compute_hide_toc(
     return False
 
 
-def _compute_hide_navigation(
+def _compute_hide_sidenav(
     context: Dict[str, Any],
     *,
     builder: StandaloneHTMLBuilder,
@@ -85,7 +85,7 @@ def _compute_hide_navigation(
 ) -> bool:
     # Should the table of contents be hidden?
     file_meta = context.get("meta", None) or {}
-    if "hide-navigation" in file_meta:
+    if "hide-sidenav" in file_meta:
         return True
     
     return False
@@ -123,7 +123,7 @@ def _html_page_context(
     context["hide_toc"] = _compute_hide_toc(
         context, builder=app.builder, docname=pagename
     )
-    context["hide_navigation"] = _compute_hide_navigation(
+    context["hide_sidenav"] = _compute_hide_sidenav(
         context, builder=app.builder, docname=pagename
     )
     # Basic constants
