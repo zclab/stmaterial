@@ -9,45 +9,24 @@ from sphinx.builders.html import StandaloneHTMLBuilder
 from sphinx.locale import get_translation
 from ._navigation import add_toctree_functions
 from ._transforms import ShortenLinkTransform, WrapTableAndMathInAContainerTransform
+from .utils import get_theme_options, activate_extensions
 
 __version__ = "0.0.6.dev"
 MESSAGE_CATALOG_NAME = "stmaterial"
 logger = logging.getLogger(__name__)
 
 
-def get_html_theme_path():
+def _get_html_theme_path():
     """Return list of HTML theme paths."""
     parent = Path(__file__).parent.resolve()
     theme_path = parent / "theme" / "stmaterial"
     return theme_path
 
 
-def _get_theme_options(app):
-    """Return theme options for the application w/ a fallback if they don't exist.
-    In general we want to modify app.builder.theme_options if it exists, so prefer that first.
-    """
-    if hasattr(app.builder, "theme_options"):
-        # In most HTML build cases this will exist except for some circumstances (see below).
-        return app.builder.theme_options
-    elif hasattr(app.config, "html_theme_options"):
-        # For example, linkcheck will have this configured but won't be in builder obj.
-        return app.config.html_theme_options
-    else:
-        # Empty dictionary as a fail-safe.
-        return {}
-
-
-def _config_provided_by_user(app, key):
-    """Check if the user has manually provided the config.
-    REMOVE when pydata v0.14 is released and import from there.
-    """
-    return any(key in ii for ii in [app.config.overrides, app.config._raw_config])
-
-
 @lru_cache(maxsize=None)
 def _asset_hash(path: str) -> str:
     """Append a `?digest=` to an url based on the file content."""
-    full_path = get_html_theme_path() / "static" / path
+    full_path = _get_html_theme_path() / "static" / path
     digest = hashlib.sha1(full_path.read_bytes()).hexdigest()
 
     return f"_static/{path}?digest={digest}"
@@ -169,7 +148,7 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
 
 
 def _update_config(app: sphinx.application.Sphinx) -> None:
-    theme_options = _get_theme_options(app)
+    theme_options = get_theme_options(app)
 
     header_icons = theme_options.get("header_icons", [])
     source_repo = theme_options.get("source_repository", None)
@@ -187,36 +166,9 @@ def _update_config(app: sphinx.application.Sphinx) -> None:
                 icon["svg"] = svg
 
 
-def activate_extensions(app, extensions):
-    """Activate extensions bundled with this theme.
-    
-    This also manually triggers the `config-inited` build step to account for
-    added extensions that hook into this event.
-    """
-
-    # Remove all of the `config-inited` event listeners because they've already triggered
-    # We'll then re-trigger this event after adding extensions so that *only* their event hooks trigger
-    old_listeners = app.events.listeners["config-inited"]
-    app.events.listeners["config-inited"] = []
-    
-    for extension in extensions:
-        # If it's already been activated just skip it
-        if extension in app.config.extensions:
-            continue
-        app.setup_extension(extension)
-
-    # Emit the config-inited event so that the new extensions run their hooks
-    app.emit("config-inited", app.config)
-
-    # Finally join back the lists
-    app.events.listeners["config-inited"][:0] = old_listeners
-################################################################################
-
-
-
 def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
     """Entry point for sphinx theming."""
-    theme_dir = get_html_theme_path()
+    theme_dir = _get_html_theme_path()
     app.add_html_theme("stmaterial", theme_dir)
 
     app.add_post_transform(ShortenLinkTransform)
