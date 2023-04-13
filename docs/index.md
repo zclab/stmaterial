@@ -12,8 +12,13 @@ This is a materialize based sphinx theme, see the [materialize documentation](ht
 ```{toctree}
 :maxdepth: 2
 
-quickstart
-kitchen-sink/index
+user_guide/index
+```
+
+```{toctree}
+:maxdepth: 2
+
+examples/index
 ```
 
 ```{toctree}
@@ -21,6 +26,11 @@ kitchen-sink/index
 :maxdepth: 2
 
 Components <web-components>
+```
+
+```{toctree}
+:hidden:
+
 blog
 ```
 

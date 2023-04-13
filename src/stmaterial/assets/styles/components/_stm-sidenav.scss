@@ -38,6 +38,12 @@ aside.stm-sidenav {
                     margin: 0;
                     padding-left: 0;
 
+                    p {
+                        padding-left: var(--sidenav-item-horizontal-spacing);
+                        font-weight: 900;
+                        margin: 10px 0 0 0;
+                    }
+
                     li {
                         line-height: 44px;
                         overflow: hidden;

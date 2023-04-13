@@ -45,6 +45,7 @@ todo_include_todos = True
 
 
 html_theme_options = {
+    "header_links_before_dropdown": 5,
     "source_repository": "https://github.com/zclab/stmaterial",
     "source_branch": "main",
     "source_directory": "docs/",

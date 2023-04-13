@@ -9,17 +9,24 @@
 A Materialize based sphinx theme
 
 
-## Installation and usage
+## Quickstart
+
+<!-- start quickstart -->
 
 To use this theme in the repository, follow these steps:
 
-- Install the `stmaterial` in your doc build environment::
+1. Install the `stmaterial` in your doc build environment:
 
   ```
   pip install -i https://test.pypi.org/simple/ stmaterial
   ```
-- Configure the Sphinx docs to use the theme by editing `conf.py`
+
+2. Configure the Sphinx docs to use the theme by editing `conf.py`
 
   ```python
   html_theme = "stmaterial"
   ```
+
+3. Your Sphinx documentation's HTML pages will now be generated with this theme! 🎉
+
+<!-- end quickstart -->
