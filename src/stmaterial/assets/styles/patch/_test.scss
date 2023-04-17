@@ -7,10 +7,6 @@
         display: flex;
         flex: 1 0 auto;
 
-        .stm-doc {
-            display: flex;
-            width: 100%;
-        }
     }
 }
 
@@ -27,6 +23,7 @@
 
 .stm-article-footer {
     margin-top: auto;
+    margin-bottom: 20px;
 }
 
 .sphinx-version {

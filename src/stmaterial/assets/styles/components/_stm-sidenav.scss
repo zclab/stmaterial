@@ -15,6 +15,7 @@ aside.stm-sidenav {
     display: block;
     background-color: var(--sidenav-background-color);
     margin-top: calc($navbar-height *-1);
+    width: 20%;
 
     .sidenav-viewport {
         height: 100%;
@@ -26,7 +27,7 @@ aside.stm-sidenav {
             display: flex;
             flex-direction: column;
             height: 100%;
-            width: $sidenav-width;
+            // width: $sidenav-width;
 
             .sidenav-menu {
                 flex-grow: 1;
