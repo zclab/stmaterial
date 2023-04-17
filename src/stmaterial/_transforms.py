@@ -3,18 +3,8 @@ from urllib.parse import urlparse, urlunparse
 from docutils import nodes
 from sphinx.transforms.post_transforms import SphinxPostTransform
 from sphinx.util.nodes import NodeMatcher
+from .utils import traverse_or_findall
 
-
-def _traverse_or_findall(node, condition, **kwargs):
-    """Triage node.traverse (docutils <0.18.1) vs node.findall.
-    TODO: This check can be removed when the minimum supported docutils version
-    for numpydoc is docutils>=0.18.1
-    """
-    return (
-        node.findall(condition, **kwargs)
-        if hasattr(node, "findall")
-        else node.traverse(condition, **kwargs)
-    )
 
 
 class ShortenLinkTransform(SphinxPostTransform):
@@ -39,7 +29,7 @@ class ShortenLinkTransform(SphinxPostTransform):
     def run(self, **kwargs):
         matcher = NodeMatcher(nodes.reference)
         # TODO: just use "findall" once docutils min version >=0.18.1
-        for node in _traverse_or_findall(self.document, matcher):
+        for node in traverse_or_findall(self.document, matcher):
             uri = node.attributes.get("refuri")
             text = next(iter(node.children), None)
             # only act if the uri and text are the same
