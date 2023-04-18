@@ -8,8 +8,30 @@ main
     flex-grow: 1
     width: calc(100% - $sidenav-width)
 
+.stm-main
+    display: flex
+    flex: 1 0 auto
+    flex-direction: column
+
+    .main-wrapper
+        display: flex
+        flex: 1 0 auto
+
 .container
     width: 94%
+
+.row
+    height: 100%
+
+.stm-article
+    display: flex
+    flex-direction: column
+    justify-content: start
+    height: 100%
+
+.stm-article-footer
+    margin-top: auto
+    margin-bottom: 20px
 
 a
     &.github,

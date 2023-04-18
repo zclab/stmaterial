@@ -13,7 +13,7 @@ aside.stm-sidenav {
     border-right: 1px solid var(--separator-color);
     clip-path: inset(0);
     display: block;
-    background-color: var(--sidenav-background-color);
+    background-color: var(--background-color-sidenav);
     margin-top: calc($navbar-height *-1);
     width: $sidenav-width;
 
@@ -125,7 +125,7 @@ aside.stm-sidenav {
             }
 
             >ul {
-                background-color: var(--sidenav-background-color);
+                background-color: var(--background-color-sidenav);
                 padding: 0 0 0 1rem;
             }
         }
