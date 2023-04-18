@@ -1,5 +1,4 @@
 .prev-next-area {
-    // margin-top: 20px;
     display: flex;
     justify-content: space-between;
 
@@ -17,6 +16,10 @@
             line-height: 30px;
             padding: 10px;
             border: 1px solid var(--separator-color);
+
+            &:hover {
+                background-color: var(--button-raised-background-hover);
+            }
 
             div.right-next {
                 float: right;

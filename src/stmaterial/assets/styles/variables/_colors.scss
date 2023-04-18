@@ -53,9 +53,10 @@
   --color-highlight-on-target: #ffffcc;
   --color-table-border: var(--color-background-border);
 
-  //tmp definition
+  //dependent variables
   --color-highlighted-background: var(--focus-color);
   --color-highlighted-text: var(--secondary-color-focus-solid);
+  --button-raised-background-hover: var(--primary-color-raised-hover-solid);
 }
 
 @mixin colors-dark {

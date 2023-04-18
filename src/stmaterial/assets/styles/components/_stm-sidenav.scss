@@ -15,7 +15,7 @@ aside.stm-sidenav {
     display: block;
     background-color: var(--sidenav-background-color);
     margin-top: calc($navbar-height *-1);
-    width: $smt-sidenav-width;
+    width: $sidenav-width;
 
     .sidenav-viewport {
         height: 100%;
