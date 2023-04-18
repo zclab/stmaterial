@@ -9,9 +9,18 @@ includehidden=True,
 titles_only=True)
 -%}
 
+{%- set page_toc = generate_toc_html() -%}
+{%- if page_toc | length >= 1 %}
+{%- set have_toc = true -%}
+{%- else -%}
+{%- set have_toc = false -%}
+{%- endif -%}
+
+{%- set remove_toc = hide_toc or not have_toc -%}
+
+
 {% block htmlbody -%}
 {{ super() }}
-
 
 {% block mainbody -%}
 
@@ -24,44 +33,54 @@ titles_only=True)
         {% if theme_show_back_to_top %}
         {%- include "components/back-to-top.html" -%}
         {% endif %}
-        <div class="stm-doc">
-            <aside class="stm-sidenav {% if hide_sidenav %} hide {% else %} hide-on-small-only {% endif %} ">
-                <div class="sidenav-viewport">
-                    {% block left_sidebar %}
-                    {%- include "sections/sidebar-primary.html" -%}
-                    {% endblock left_sidebar %}
-                </div>
-            </aside>
-            <main>
-                <div class="container">
-                    <div class="row">
-                        <div class="stm-article section col s12 m10 xl9">
-                            <article role="main" class="section">
-                                {% block body %}{{ body }}{% endblock %}
-                            </article>
 
-                            {% if theme_use_edit_page_button %}
-                            {% include "components/edit-this-page.html" %}
-                            {% endif %}
+        <aside class="stm-sidenav {% if hide_sidenav %} hide {% else %} hide-on-small-only {% endif %} "
+            id="nav-mobile">
+            <div class="sidenav-viewport">
+                {% block left_sidebar %}
+                {%- include "sections/sidebar-primary.html" -%}
+                {% endblock left_sidebar %}
+            </div>
+        </aside>
+        <main class="stm-content">
+            <div class="container">
+                <div class="row">
+                    <div class="stm-article section col s12 {% if not remove_toc %} m10 xl9 {% endif %}">
+                        <article role="main" class="section">
+                            {% block body %}{{ body }}{% endblock %}
+                        </article>
 
-                            <div class="stm-article-footer">
-                                <div class="row">
-                                    <div class="prev-next-area">
-                                        {% if theme_show_prev_next %}
-                                        {% include "components/prev-next.html" %}
-                                        {% endif %}
-                                    </div>
-                                </div>
+                        {% if theme_use_edit_page_button %}
+                        {% include "components/edit-this-page.html" %}
+                        {% endif %}
+
+                        <div class="stm-article-footer">
+                            <div class="prev-next-area">
+                                {% if theme_show_prev_next %}
+                                {% include "components/prev-next.html" %}
+                                {% endif %}
                             </div>
                         </div>
-                        {% set page_toc = generate_toc_html() %}
-                        {%- if page_toc | length >= 1 %}
-                        {% include "sections/page-toc.html" %}
-                        {% endif %}
+                    </div>
+
+                    {%- if not remove_toc %}
+                    {% include "sections/page-toc.html" %}
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="stm-content-footer">
+                <div class="container">
+                    <div class="row" style="margin-bottom: 0;">
+                        <div class="col s12 m12">
+                            {% include "components/sphinx-version.html" %}
+                            {% include "components/copyright.html" %}
+
+                        </div>
                     </div>
                 </div>
-            </main>
-        </div>
+            </div>
+        </main>
     </div>
 </div>
 {% block footer %}

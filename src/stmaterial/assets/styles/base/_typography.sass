@@ -1,23 +1,38 @@
-@font-face
-  font-family: 'blockdole'
-  font-weight: normal
-  font-style: normal
-  size-adjust: 92%
-  font-display: swap
-  src: url(https://cdn.jsdelivr.net/gh/zclab/static/fonts/blockdole.woff2) format("woff2"), url(https://cdn.jsdelivr.net/gh/zclab/static/fonts/blockdole.woff) format("woff"), url(https://cdn.jsdelivr.net/gh/zclab/static/fonts/blockdole.eot) format("embedded-opentype")
-
-main 
-    display: flex
-    flex-grow: 1
-    width: 100%
-
-.container
-    width: 96%
-
 body
     display: flex
     min-height: 100vh
     flex-direction: column
+
+main 
+    display: flex
+    flex-grow: 1
+    width: calc(100% - $sidenav-width)
+    flex-direction: column
+
+.stm-main
+    display: flex
+    flex: 1 0 auto
+    flex-direction: column
+
+    .main-wrapper
+        display: flex
+        flex: 1 0 auto
+
+.container
+    width: 94%
+
+.row
+    height: 100%
+
+.stm-article
+    display: flex
+    flex-direction: column
+    justify-content: start
+    height: 100%
+
+.stm-article-footer
+    margin-top: auto
+    margin-bottom: 20px
 
 a
     &.github,

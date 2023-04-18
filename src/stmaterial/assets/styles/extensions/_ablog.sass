@@ -1,14 +1,14 @@
 .ablog-sidebar-item
-  margin-top: var(--sidebar-tree-space-above)
-  margin-bottom: var(--sidebar-item-spacing-vertical)
+  margin-top: var(--sidenav-ablog-space-above)
+  margin-bottom: var(--sidenav-ablog-space-below)
   font-size: var(--sidebar-item-font-size)
     
   h2,
   h3
     padding: 0
     font-size: 1.30em
-    margin-right: var(--sidenav-item-horizontal-spacing)
-    margin-left: var(--sidenav-item-horizontal-spacing)
+    margin: 0 var(--sidenav-item-horizontal-spacing) calc(var(--sidenav-ablog-space-below) * 0.5) var(--sidenav-item-horizontal-spacing)
+
     a
       color: var(--font-color-main)
       text-decoration: none
