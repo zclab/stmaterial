@@ -66,6 +66,8 @@ aside.stm-sidenav {
                             background-color: var(--focus-color);
 
                             &:not(.has-children) {
+                                border-top: 1px solid var(--separator-color);
+                                border-bottom: 1px solid var(--separator-color);
                                 border-left: .2rem solid var(--primary-color-dark);
                             }
                         }

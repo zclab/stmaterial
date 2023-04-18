@@ -69,22 +69,29 @@ titles_only=True)
                 </div>
             </div>
 
+            {% if theme_footer_content %}
             <div class="stm-content-footer">
                 <div class="container">
                     <div class="row" style="margin-bottom: 0;">
                         <div class="col s12 m12">
-                            {% include "components/sphinx-version.html" %}
-                            {% include "components/copyright.html" %}
+
+                            {%- for footer_content in theme_footer_content %}
+                            {%- include footer_content %}
+                            {%- endfor %}
 
                         </div>
                     </div>
                 </div>
             </div>
+            {% endif %}
         </main>
     </div>
 </div>
+
 {% block footer %}
+{% if theme_footer %}
 {% include "sections/footer.html" %}
+{% endif %}
 {% endblock %}
 
 {%- endblock %}
