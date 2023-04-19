@@ -18,7 +18,7 @@ This is a materialize based sphinx theme, see the [materialize documentation](ht
 - header: "{fas}`circle-half-stroke;pst-color-primary` Light / Dark theme"
   content: "Users can toggle between light and dark themes interactively."
 - header: "{fas}`palette;pst-color-primary` Customizable UI and themes"
-  content: "Customize colors and branding with CSS variables, and build custom UIs with [Sphinx Design](user_guide/web-components)."
+  content: "Customize colors and branding with CSS variables, and build custom UIs with [Sphinx Design](web-components)."
 - header: "{fab}`python;pst-color-primary` Supports PyData and Jupyter"
   content: "CSS and UI support for Jupyter extensions and PyData execution outputs."
   link: "examples/pydata.html"
