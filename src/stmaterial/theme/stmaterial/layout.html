@@ -50,9 +50,12 @@ titles_only=True)
                             {% block body %}{{ body }}{% endblock %}
                         </article>
 
-                        {% if theme_use_edit_page_button %}
-                        {% include "components/edit-this-page.html" %}
-                        {% endif %}
+                        <div class="stm-edit-update-meta">
+                            {% include "components/last-updated.html" %}
+                            {% if theme_use_edit_page_button %}
+                            {% include "components/edit-this-page.html" %}
+                            {% endif %}
+                        </div>
 
                         <div class="stm-article-footer">
                             <div class="prev-next-area">

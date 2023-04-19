@@ -7,3 +7,12 @@
     margin-bottom: 10px;
     border-top: 1px solid var(--separator-color);
 }
+
+.stm-edit-update-meta {
+    padding: 0 10px;
+
+    .right {
+        display: flex;
+        gap: 0.25rem;
+    }
+}
