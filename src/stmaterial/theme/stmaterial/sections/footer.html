@@ -1,10 +1,10 @@
 <footer class="page-footer docs-footer">
     <div class="row" style="margin-bottom: 0;">
         <div class="col s12 m12">
-            {# todo custom footer_items #}
 
-            {% include "components/sphinx-version.html" %}
-            {% include "components/copyright.html" %}
+            {%- for footer_section in theme_footer %}
+            {%- include footer_section %}
+            {%- endfor %}
 
         </div>
     </div>

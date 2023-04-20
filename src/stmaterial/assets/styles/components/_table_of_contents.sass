@@ -1,5 +1,13 @@
-.toc-wrapper.toc-scroll
+.stm-toc
+    display: flex
+    height: 100%
+
+.toc-wrapper
+    position: sticky
+    top: calc($navbar-height + 1rem)
     overflow: auto
+    margin-top: 2.8rem
+    max-height: calc(100vh - $navbar-height - 2rem)
 
 .toc-scroll
     .nav
@@ -11,18 +19,8 @@
         >.active>ul 
             display: block
 
-.toc-sticky
-    display: flex
-    position: sticky
-    top: $navbar-height
-    height: min(100%,100vh)
-    height: 100vh
-    overflow: auto
-    margin-top: 2.8rem
-
-
 ul.table-of-contents
-    margin-top: 0
+    margin-bottom: 0
     font-size: 1rem
 
     li

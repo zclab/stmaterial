@@ -517,8 +517,6 @@ pip install pytest-html
 pytest --html=report.html
 ```
 
-:::{figure} /_images/posts/2022-08-17-22-12-39.png
-:::
 
 上面生成的报告包括html和一个assets文件（里面是报告CSS样式），如果要合成一个文件可以添加下面的参数
 ```bash

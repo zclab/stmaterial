@@ -9,7 +9,7 @@
 A Materialize based sphinx theme
 
 
-## Quickstart
+## Installation and usage
 
 <!-- start quickstart -->
 

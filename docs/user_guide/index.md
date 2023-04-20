@@ -28,7 +28,7 @@ Note that only the configuration options listed here are supported (not the ones
 
 ### `light_css_variables`/`dark_css_variables`
 
-Stmaterial makes extensive use of [CSS variables][css-variables]. These can be overridden by the user and are used for stylizing nearly all elements of the documentation. {doc}`colors` contains important details of how these variables are used.
+Stmaterial makes extensive use of [CSS variables][css-variables]. These can be overridden by the user and are used for stylizing nearly all elements of the documentation. 
 
 Setting `*_css_variables` is the recommended mechanism to override Stmaterial's default values for these variables.
 
@@ -70,9 +70,6 @@ Changes the icons presented in the site header. See {doc}`./header` for the deta
 
 The “Contents” sidebar is automatically hidden for any pages that don’t have any inner headings. It is possible to hide it even when a page has inner headings, by setting `hide-toc` at the page level. See {doc}`./toc` for an example.
 
-## Custom CSS files
-
-If you want more control than what is provided by the above theme options, see {any}`customisation/injecting.md#injecting-code`.
 
 [css-variables]: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 [sphinx-html_theme_options]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_theme_options

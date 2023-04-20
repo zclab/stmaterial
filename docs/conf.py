@@ -32,6 +32,11 @@ exclude_patterns = [
     "contributing"
 ]
 
+intersphinx_mapping = {
+    "python": ("https://docs.python.org/3.7", None),
+    "sphinx": ("https://www.sphinx-doc.org/en/master", None),
+    "markdown_it": ("https://markdown-it-py.readthedocs.io/en/latest", None),
+}
 
 templates_path = ["_templates"]
 html_static_path = ["_static"]
@@ -50,7 +55,7 @@ html_theme_options = {
     "source_branch": "main",
     "source_directory": "docs/",
     "show_back_to_top": True,
-    "fix_header_nav": False,
+    "fix_header_nav": True,
     "logo":{
         "text": "Logo",
         "logo": "_static/logo.png"
