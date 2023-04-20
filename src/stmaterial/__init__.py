@@ -191,6 +191,29 @@ def _update_config(app: sphinx.application.Sphinx) -> None:
                 icon["svg"] = svg
 
 
+def update_and_remove_templates(
+    app: sphinx.application.Sphinx, pagename: str, templatename: str, context, doctree
+) -> None:
+    template_sections = [
+        "theme_footer",
+        "theme_footer_content",
+        "sidebars",
+    ]
+
+    for section in template_sections:
+        if context.get(section):
+            # Break apart `,` separated strings so we can use , in the defaults
+            if isinstance(context.get(section), str):
+                context[section] = [
+                    ii.strip() for ii in context.get(section).split(",")
+                ]
+
+            # Add `.html` to templates with no suffix
+            for ii, template in enumerate(context.get(section)):
+                if not os.path.splitext(template)[1]:
+                    context[section][ii] = template + ".html"
+
+
 def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
     """Entry point for sphinx theming."""
     theme_dir = _get_html_theme_path()
@@ -203,6 +226,7 @@ def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
     app.add_message_catalog(MESSAGE_CATALOG_NAME, locale_dir)
 
     app.connect("html-page-context", _html_page_context)
+    app.connect("html-page-context", update_and_remove_templates)
     app.connect("builder-inited", _builder_inited)
     app.connect("builder-inited", _update_config)
     app.connect("html-page-context", add_toctree_functions)
