@@ -69,6 +69,26 @@ def _compute_hide_sidenav(
     if "hide-sidenav" in file_meta:
         return True
     
+    if "full-width" in file_meta:
+        return True
+    
+    return False
+
+
+def _compute_hide_tocnav(
+    context: Dict[str, Any],
+    *,
+    builder: StandaloneHTMLBuilder,
+    docname: str,
+) -> bool:
+    # Should the sidenav be hidden?
+    file_meta = context.get("meta", None) or {}
+    if "hide-tocnav" in file_meta:
+        return True
+    
+    if "full-width" in file_meta:
+        return True
+    
     return False
 
 
@@ -105,6 +125,9 @@ def _html_page_context(
         context, builder=app.builder, docname=pagename
     )
     context["hide_sidenav"] = _compute_hide_sidenav(
+        context, builder=app.builder, docname=pagename
+    )
+    context["hide_tocnav"] = _compute_hide_tocnav(
         context, builder=app.builder, docname=pagename
     )
     # Basic constants

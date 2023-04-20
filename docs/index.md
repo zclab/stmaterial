@@ -1,6 +1,5 @@
 ---
-hide-toc: true
-hide-sidenav: true
+full-width: true
 ---
 
 

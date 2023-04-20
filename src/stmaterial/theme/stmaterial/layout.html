@@ -9,15 +9,6 @@ includehidden=True,
 titles_only=True)
 -%}
 
-{%- set page_toc = generate_toc_html() -%}
-{%- if page_toc | length >= 1 %}
-{%- set have_toc = true -%}
-{%- else -%}
-{%- set have_toc = false -%}
-{%- endif -%}
-
-{%- set remove_toc = hide_toc or not have_toc -%}
-
 
 {% block htmlbody -%}
 {{ super() }}
@@ -45,7 +36,7 @@ titles_only=True)
         <main class="stm-content">
             <div class="container">
                 <div class="row">
-                    <div class="stm-article section col s12 {% if not remove_toc %} m10 xl9 {% endif %}">
+                    <div class="stm-article section col s12 {% if not hide_tocnav %} m10 xl9 {% endif %}">
                         <article role="main" class="section">
                             {% block body %}{{ body }}{% endblock %}
                         </article>
@@ -66,8 +57,15 @@ titles_only=True)
                         </div>
                     </div>
 
-                    {%- if not remove_toc %}
-                    {% include "sections/page-toc.html" %}
+                    {% if not hide_tocnav %}
+                    {% set page_toc = generate_toc_html() %}
+                    {%- if page_toc | length >= 1 %}
+                    <div class="stm-toc col m2 xl3 {% if hide_toc %} hide {% else %} hide-on-small-only {% endif %}">
+                        <div class="toc-wrapper toc-scroll">
+                            {{ page_toc }}
+                        </div>
+                    </div>
+                    {% endif %}
                     {% endif %}
                 </div>
             </div>
