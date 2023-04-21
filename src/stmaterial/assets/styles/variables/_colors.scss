@@ -55,15 +55,26 @@
   --carousel-indicator-color: rgba(255, 255, 255, 0.45);
   --carousel-indicator-active-color: #FFF;
   --md_sys_color_on-surface: 28, 27, 31;
-  --color-background-hover--transparent: #efeff400;
-  --color-background-border: #eeebee;
-  --color-highlight-on-target: #ffffcc;
-  --color-table-border: var(--color-background-border);
 
   //dependent variables
   --color-highlighted-background: var(--focus-color);
   --color-highlighted-text: var(--secondary-color-focus-solid);
   --button-raised-background-hover: var(--primary-color-raised-hover-solid);
+
+  // colors from furo
+  --color-background-hover--transparent: #efeff400;
+  --color-background-border: #eeebee;
+  --color-highlight-on-target: #ffffcc;
+  --color-background-hover: #efeff4ff;
+  --color-problematic: #b30000;
+  --color-table-border: var(--color-background-border);
+  --color-api-background: var(--color-background-hover--transparent);
+  --color-api-background-hover: var(--color-background-hover);
+  --color-api-overall: var(--font-color-medium);
+  --color-api-name: var(--color-problematic);
+  --color-api-pre-name: var(--color-problematic);
+  --color-api-paren: var(--font-color-medium);
+  --color-api-keyword: var(--font-color-main);
 }
 
 @mixin colors-dark {
@@ -105,11 +116,17 @@
   --slider-track-color: rgba(255, 255, 255, 0.26);
   --switch-thumb-off-color: #bababa;
   --md_sys_color_on-surface: 230, 225, 229;
-  --color-background-hover--transparent: #1e212400;
-  --color-background-border: #303335;
-  --color-highlight-on-target: #333300;
+
 
   //tmp definition
   --color-highlighted-background: var(--focus-color);
   --color-highlighted-text: var(--secondary-color-focus-solid);
+
+  // colors from furo
+  --color-background-hover: #1e2124ff;
+  --color-problematic: #ee5151;
+  --color-background-hover--transparent: #1e212400;
+  --color-background-border: #303335;
+  --color-highlight-on-target: #333300;
+  --color-api-keyword: var(--font-color-medium);
 }
