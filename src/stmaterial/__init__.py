@@ -1,6 +1,10 @@
 import hashlib
 import logging
 import os
+from pygments.formatters import HtmlFormatter
+from pygments.style import Style
+from pygments.token import Text
+from sphinx.highlighting import PygmentsBridge
 import sphinx.application
 from functools import lru_cache
 from pathlib import Path
@@ -14,8 +18,129 @@ from .directives import GalleryDirective
 
 
 __version__ = "0.0.6.dev"
-MESSAGE_CATALOG_NAME = "stmaterial"
 logger = logging.getLogger(__name__)
+
+MESSAGE_CATALOG_NAME = "stmaterial"
+_KNOWN_STYLES_IN_USE: Dict[str, Optional[Style]] = {
+    "light": None,
+    "dark": None,
+}
+
+
+def update_known_styles_state(app: sphinx.application.Sphinx) -> None:
+    """Update a global store of known styles of this application."""
+    global _KNOWN_STYLES_IN_USE
+
+    _KNOWN_STYLES_IN_USE = {
+        "light": _get_light_style(app),
+        "dark": _get_dark_style(app),
+    }
+
+
+def _get_light_style(app: sphinx.application.Sphinx) -> Style:
+    return app.builder.highlighter.formatter_args["style"]
+
+
+def _get_dark_style(app: sphinx.application.Sphinx) -> Style:
+    
+    # HACK: begins here
+    dark_style = None
+    try:
+        if (
+            hasattr(app.config, "_raw_config")
+            and isinstance(app.config._raw_config, dict)
+            and "pygments_dark_style" in app.config._raw_config
+        ):
+            dark_style = app.config._raw_config["pygments_dark_style"]
+    except (AttributeError, KeyError) as e:
+        logger.warning(
+            (
+                "ssdoc could not determine the value of `pygments_dark_style`. "
+                "Falling back to using the value provided by Sphinx.\n"
+                "Caused by %s"
+            ),
+            e,
+        )
+
+    if dark_style is None:
+        dark_style = app.config.pygments_dark_style
+
+    return PygmentsBridge("html", dark_style).formatter_args["style"]
+
+
+def get_pygments_style_colors(
+    style: Style, *, fallbacks: Dict[str, str]
+) -> Dict[str, str]:
+    """Get background/foreground colors for given pygments style."""
+    background = style.background_color
+    text_colors = style.style_for_token(Text)
+    foreground = text_colors["color"]
+
+    if not background:
+        background = fallbacks["background"]
+
+    if not foreground:
+        foreground = fallbacks["foreground"]
+    else:
+        foreground = f"#{foreground}"
+
+    return {"background": background, "foreground": foreground}
+
+
+@lru_cache(maxsize=2)
+def get_colors_for_codeblocks(
+    highlighter: PygmentsBridge, *, fg: str, bg: str
+) -> Dict[str, str]:
+    """Get background/foreground colors for given pygments style."""
+    return get_pygments_style_colors(
+        highlighter.formatter_args["style"],
+        fallbacks={
+            "foreground": fg,
+            "background": bg,
+        },
+    )
+
+
+def _get_styles(formatter: HtmlFormatter, *, prefix: str) -> Iterator[str]:
+    """Get styles out of a formatter, where everything has the correct prefix."""
+    for line in formatter.get_linenos_style_defs():
+        yield f"{prefix} {line}"
+    yield from formatter.get_background_style_defs(prefix)
+    yield from formatter.get_token_style_defs(prefix)
+
+
+def get_pygments_stylesheet() -> str:
+    """Generate the theme-specific pygments.css.
+
+    There is no way to tell Sphinx how the theme handles dark mode; at this time.
+    """
+    light_formatter = HtmlFormatter(style=_KNOWN_STYLES_IN_USE["light"])
+    dark_formatter = HtmlFormatter(style=_KNOWN_STYLES_IN_USE["dark"])
+
+    lines: List[str] = []
+
+    lines.extend(_get_styles(light_formatter, prefix=".highlight"))
+
+    dark_prefix = ':root[theme=dark] .highlight'
+    lines.extend(_get_styles(dark_formatter, prefix=dark_prefix))
+
+    return "\n".join(lines)
+
+
+def _overwrite_pygments_css(
+    app: sphinx.application.Sphinx,
+    exception: Optional[Exception],
+) -> None:
+    if exception is not None:
+        return
+
+    assert app.builder
+    with open(
+        os.path.join(app.builder.outdir, "_static", "pygments.css"),
+        "w",
+        encoding="utf-8",
+    ) as f:
+        f.write(get_pygments_stylesheet())
 
 
 def _get_html_theme_path():
@@ -130,9 +255,27 @@ def _html_page_context(
     context["hide_tocnav"] = _compute_hide_tocnav(
         context, builder=app.builder, docname=pagename
     )
+
+    # Inject information about styles
+    context["stmaterial_pygments"] = {
+        "light": get_pygments_style_colors(
+            _KNOWN_STYLES_IN_USE["light"],
+            fallbacks=dict(
+                foreground="black",
+                background="white",
+            ),
+        ),
+        "dark": get_pygments_style_colors(
+            _KNOWN_STYLES_IN_USE["dark"],
+            fallbacks=dict(
+                foreground="white",
+                background="black",
+            ),
+        ),
+    }
+
     # Basic constants
     context["theme_version"] = __version__
-
 
     # Translations
     translation = get_translation(MESSAGE_CATALOG_NAME)
@@ -164,6 +307,8 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
     assert (
         builder.dark_highlighter is None
     ), "this shouldn't be a dark style known to Sphinx"
+
+    update_known_styles_state(app)
 
     def _update_default(key: str, *, new_default: Any) -> None:
         app.config.values[key] = (new_default, *app.config.values[key][1:])
@@ -216,6 +361,12 @@ def update_and_remove_templates(
 
 def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
     """Entry point for sphinx theming."""
+    app.require_sphinx("3.0")
+
+    app.add_config_value(
+        "pygments_dark_style", default="native", rebuild="env", types=[str]
+    )
+
     theme_dir = _get_html_theme_path()
     app.add_html_theme("stmaterial", theme_dir)
 
@@ -227,9 +378,10 @@ def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
 
     app.connect("html-page-context", _html_page_context)
     app.connect("html-page-context", update_and_remove_templates)
+    app.connect("html-page-context", add_toctree_functions)
     app.connect("builder-inited", _builder_inited)
     app.connect("builder-inited", _update_config)
-    app.connect("html-page-context", add_toctree_functions)
+    app.connect("build-finished", _overwrite_pygments_css)
     app.config.html_static_path.append(str(theme_dir / "static/images"))
 
     extensions = ["sphinx_design", "sphinx_copybutton", "sphinx_togglebutton", "sphinx_subfigure"]
