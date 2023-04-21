@@ -184,18 +184,6 @@ function init_materialize() {
     M.Sidenav.init(document.querySelectorAll('.stm-sidenav'), {});
     M.Dropdown.init(document.querySelectorAll('.dropdown-trigger'), { constrainWidth: false, });
 
-    M.FloatingActionButton.init(document.querySelectorAll('.fixed-action-btn'), {});
-    M.FloatingActionButton.init(document.querySelectorAll('.fixed-action-btn.horizontal'), {
-        direction: 'left'
-    });
-    M.FloatingActionButton.init(document.querySelectorAll('.fixed-action-btn.click-to-toggle'), {
-        direction: 'left',
-        hoverEnabled: false
-    });
-    M.FloatingActionButton.init(document.querySelectorAll('.fixed-action-btn.toolbar'), {
-        toolbarEnabled: true
-    });
-
 }
 
 
