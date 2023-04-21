@@ -1,13 +1,11 @@
-.sidenav-logo {
-    align-items: center;
-    display: flex !important;
-    color: inherit !important;
-    max-height: $navbar-height;
-    min-height: $navbar-height;
-    max-width: $sidenav-width - 40px;
-    // margin: 0 0 0 30px;
-}
+.stm-sidenav-logo {
+    width: $sidenav-width;
 
+    img {
+        max-height: 64px;
+        padding-right: 15px;
+    }
+}
 
 aside.stm-sidenav {
     border-right: 1px solid var(--separator-color);
