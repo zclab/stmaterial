@@ -1,20 +1,18 @@
-.sidenav-logo {
-    align-items: center;
-    display: flex !important;
-    color: inherit !important;
-    max-height: $navbar-height;
-    min-height: $navbar-height;
-    max-width: $sidenav-width - 40px;
-    // margin: 0 0 0 30px;
-}
+.stm-sidenav-logo {
+    display: flex;
 
+    img {
+        max-height: 64px;
+        padding-right: 15px;
+    }
+}
 
 aside.stm-sidenav {
     border-right: 1px solid var(--separator-color);
     clip-path: inset(0);
     display: block;
     background-color: var(--background-color-sidenav);
-    margin-top: calc($navbar-height *-1);
+    margin-top: calc($navbar-height *-1 - 2px); // 2px because of box shadow is 2px height offset of nav, see z-depth-1
     width: $sidenav-width;
 
     .sidenav-viewport {
