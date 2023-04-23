@@ -9,7 +9,7 @@ copyright = "2023"
 author = "zclab"
 master_doc = "index"
 version = stmaterial.__version__
-language = 'en'
+language = 'en' #'zh_CN'
 
 extensions = [
     "sphinx.ext.autodoc",
