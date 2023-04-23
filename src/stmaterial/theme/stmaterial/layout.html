@@ -69,6 +69,15 @@ titles_only=True)
                     {% endif %}
                 </div>
             </div>
+
+            {% if theme_footer_content %}
+            <div class="stm-content-footer">
+                {%- for footer_item in theme_footer_content %}
+                {%- include footer_item %}
+                {%- endfor %}
+            </div>
+            {% endif %}
+
         </main>
     </div>
 </div>

@@ -4,8 +4,9 @@
 
 .stm-content-footer {
     margin-top: auto;
-    margin-bottom: 10px;
+    padding: 10px 20px;
     border-top: 1px solid var(--separator-color);
+    background-color: var(--background-color);
 }
 
 .stm-edit-update-meta {
