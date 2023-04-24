@@ -1,27 +1,27 @@
 .section {
-    padding-top: 0
+  padding-top: 0
 }
 
 .stm-content-footer {
-    margin-top: auto;
-    padding: 10px 20px;
-    border-top: 1px solid var(--separator-color);
-    background-color: var(--background-color);
-    color: var(--font-color-medium);
+  margin-top: auto;
+  padding: 10px 20px;
+  border-top: 1px solid var(--separator-color);
+  background-color: var(--background-color);
+  color: var(--font-color-medium);
 }
 
 .stm-edit-update-meta {
-    padding: 0 5px;
+  padding: 0 5px;
 
-    .right {
-        display: flex;
-        gap: 0.25rem;
-    }
+  .right {
+    display: flex;
+    gap: 0.25rem;
+  }
 }
 
 .toc-title {
-    display: flex;
-    gap: 0.25em;
-    padding-left: 16px;
-    border-left: 1px solid var(--separator-color);
+  display: flex;
+  gap: 0.25em;
+  padding-left: 16px;
+  border-left: 1px solid var(--separator-color);
 }

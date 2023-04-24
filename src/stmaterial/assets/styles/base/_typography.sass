@@ -1,57 +1,57 @@
 body
-    display: flex
-    min-height: 100vh
-    flex-direction: column
+  display: flex
+  min-height: 100vh
+  flex-direction: column
 
 main 
-    display: flex
-    flex-grow: 1
-    width: calc(100% - $sidenav-width)
-    flex-direction: column
+  display: flex
+  flex-grow: 1
+  width: calc(100% - $sidenav-width)
+  flex-direction: column
 
 .stm-main
+  display: flex
+  flex: 1 0 auto
+  flex-direction: column
+
+  .main-wrapper
     display: flex
     flex: 1 0 auto
-    flex-direction: column
-
-    .main-wrapper
-        display: flex
-        flex: 1 0 auto
 
 .container
-    width: 94%
-    height: 100%
+  width: 94%
+  height: 100%
 
 .row
-    height: 100%
+  height: 100%
 
 .stm-article
-    display: flex
-    flex-direction: column
-    justify-content: start
-    height: 100%
+  display: flex
+  flex-direction: column
+  justify-content: start
+  height: 100%
 
 .stm-article-footer
-    margin-top: auto
-    margin-bottom: 20px
+  margin-top: auto
+  margin-bottom: 20px
 
 a
-    &.github,
-    &.gitlab
-        &::before
-            color: var(--color-link)
-            font: var(--fa-font-brands)
-            margin-right: 0.25rem
+  &.github,
+  &.gitlab
+    &::before
+      color: var(--color-link)
+      font: var(--fa-font-brands)
+      margin-right: 0.25rem
 
-    &.github::before
-        content: "\f09b"
+  &.github::before
+    content: "\f09b"
 
-    &.gitlab::before
-        content: "\f296"
+  &.gitlab::before
+    content: "\f296"
 
 
 b, strong
-    font-weight: 900
+  font-weight: 900
 
 .centered
-    text-align: center
+  text-align: center
