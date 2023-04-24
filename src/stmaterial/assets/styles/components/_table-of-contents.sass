@@ -1,48 +1,48 @@
 .stm-toc
-    display: flex
-    height: 100%
+  display: flex
+  height: 100%
 
 .toc-wrapper
-    position: sticky
-    top: calc($navbar-height + 2.8rem)
-    overflow: auto
-    max-height: calc(100vh - $navbar-height - 2.8rem)
+  position: sticky
+  top: calc($navbar-height + 2.8rem)
+  overflow: auto
+  max-height: calc(100vh - $navbar-height - 2.8rem)
 
 .toc-scroll
-    .nav
-        display: none
+  .nav
+    display: none
 
-        &.visible
-            display: block
+    &.visible
+      display: block
 
-        >.active>ul 
-            display: block
+    >.active>ul 
+      display: block
 
 ul.table-of-contents
-    margin-bottom: 0
-    margin-top: 0
-    font-size: 1rem
+  margin-bottom: 0
+  margin-top: 0
+  font-size: 1rem
 
-    li
-        width: 100%
-        word-wrap: break-word
-        border-left: 1px solid var(--separator-color)
+  li
+    width: 100%
+    word-wrap: break-word
+    border-left: 1px solid var(--separator-color)
 
-        a
-            display: inline-block
-            font-size: 14px
-            font-weight: 400
-            color: var(--font-color-medium)
-            padding-left: 16px
-            height: 2rem
-            line-height: 2rem
-            width: 100%
-            word-wrap: break-word
+    a
+      display: inline-block
+      font-size: 14px
+      font-weight: 400
+      color: var(--font-color-medium)
+      padding-left: 16px
+      height: 2rem
+      line-height: 2rem
+      width: 100%
+      word-wrap: break-word
 
-        ul
-            padding: 0 0 0 1rem
+    ul
+      padding: 0 0 0 1rem
 
-        &.scroll-current >.reference
-            border-left: 1px solid var(--primary-color-raised-focus-solid)
-            color: var(--primary-color-raised-focus-solid)
-            font-weight: bold
+    &.scroll-current >.reference
+      border-left: 1px solid var(--primary-color-raised-focus-solid)
+      color: var(--primary-color-raised-focus-solid)
+      font-weight: bold
