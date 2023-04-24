@@ -9,7 +9,7 @@ copyright = "2023"
 author = "zclab"
 master_doc = "index"
 version = stmaterial.__version__
-language = 'en'
+language = 'en' #'zh_CN'
 
 extensions = [
     "sphinx.ext.autodoc",
@@ -71,6 +71,7 @@ html_theme_options = {
         {"name":"Email", "url": "example@example.com", "material_icons":"email"},
     ],
     "use_edit_page_button": True,
+    "toc_title": "On this page",
     "custom_fonts": {
         "name": 'LXGWWenKaiLite',
         "type": 'truetype',
@@ -103,12 +104,12 @@ fontawesome_included = True
 
 html_sidebars = {
     "posts/**": [
-        "sidebar/brand.html", "sidebar/search.html", "ablog/postcard.html","ablog/categories.html","ablog/tagcloud.html", "ablog/recentposts.html",
+        "sidebar/search.html", "ablog/postcard.html","ablog/categories.html","ablog/tagcloud.html", "ablog/recentposts.html",
     ],
     "blog": [
-        "sidebar/brand.html", "sidebar/search.html", "ablog/categories.html","ablog/tagcloud.html","ablog/archives.html","ablog/recentposts.html",
+        "sidebar/search.html", "ablog/categories.html","ablog/tagcloud.html","ablog/archives.html","ablog/recentposts.html",
     ],
     "blog/**": [
-        "sidebar/brand.html", "sidebar/search.html", "ablog/categories.html","ablog/tagcloud.html","ablog/archives.html","ablog/recentposts.html",
+        "sidebar/search.html", "ablog/categories.html","ablog/tagcloud.html","ablog/archives.html","ablog/recentposts.html",
     ],
 }

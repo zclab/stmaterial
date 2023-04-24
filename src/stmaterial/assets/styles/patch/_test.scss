@@ -4,8 +4,10 @@
 
 .stm-content-footer {
     margin-top: auto;
-    margin-bottom: 10px;
+    padding: 10px 20px;
     border-top: 1px solid var(--separator-color);
+    background-color: var(--background-color);
+    color: var(--font-color-medium);
 }
 
 .stm-edit-update-meta {
@@ -15,4 +17,11 @@
         display: flex;
         gap: 0.25rem;
     }
+}
+
+.toc-title {
+    display: flex;
+    gap: 0.25em;
+    padding-left: 16px;
+    border-left: 1px solid var(--separator-color);
 }
