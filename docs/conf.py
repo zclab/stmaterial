@@ -71,6 +71,7 @@ html_theme_options = {
         {"name":"Email", "url": "example@example.com", "material_icons":"email"},
     ],
     "use_edit_page_button": True,
+    "toc_title": "On this page",
     "custom_fonts": {
         "name": 'LXGWWenKaiLite',
         "type": 'truetype',

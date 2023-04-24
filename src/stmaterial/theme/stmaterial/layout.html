@@ -62,6 +62,11 @@ titles_only=True)
                     {%- if page_toc | length >= 1 %}
                     <div class="stm-toc col m2 xl3 {% if hide_toc %} hide {% else %} hide-on-small-only {% endif %}">
                         <div class="toc-wrapper toc-scroll">
+                            {% if theme_toc_title %}
+                            <div class="toc-title">
+                                <span class="material-icons">list</span> {{ theme_toc_title }}
+                            </div>
+                            {% endif %}
                             {{ page_toc }}
                         </div>
                     </div>

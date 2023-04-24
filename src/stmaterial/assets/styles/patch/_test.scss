@@ -18,3 +18,10 @@
         gap: 0.25rem;
     }
 }
+
+.toc-title {
+    display: flex;
+    gap: 0.25em;
+    padding-left: 16px;
+    border-left: 1px solid var(--separator-color);
+}
