@@ -13,7 +13,7 @@ from sphinx.builders.html import StandaloneHTMLBuilder
 from sphinx.locale import get_translation
 from ._navigation import add_toctree_functions
 from ._transforms import ShortenLinkTransform, WrapTableAndMathInAContainerTransform
-from .utils import get_theme_options, activate_extensions
+from .utils import get_theme_options, activate_extensions, config_provided_by_user
 from .directives import GalleryDirective
 
 
@@ -309,6 +309,15 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
     ), "this shouldn't be a dark style known to Sphinx"
 
     update_known_styles_state(app)
+
+    if "ablog" in app.config.extensions:
+        if not config_provided_by_user(
+            app, "post_show_prev_next"
+        ) or app.config.post_show_prev_next == True:
+            app.config.post_show_prev_next = False
+
+        else:
+            app.config.post_show_prev_next = ''
 
     def _update_default(key: str, *, new_default: Any) -> None:
         app.config.values[key] = (new_default, *app.config.values[key][1:])

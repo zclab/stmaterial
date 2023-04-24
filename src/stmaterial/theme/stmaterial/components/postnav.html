@@ -1,0 +1,31 @@
+{# prev/next are not set for drafts #}
+{% if ablog is defined and ablog[pagename].published and not ablog.post_show_prev_next
+and ablog.post_show_prev_next !='' %}
+{% set post = ablog[pagename] %}
+<div class="stm-prev">
+    {%- if post.prev %}
+    <a class="btn-large btn-flat left-align" href="{{ pathto(post.prev.docname) }}{{ anchor(post.prev) }}">
+        <div class="left-prev">
+            <i class="material-icons">chevron_left</i>
+            <div class="prev-next-info">
+                <p class="prev-next-subtitle">{{ _("Previous") }}</p>
+                <p class="prev-next-title">{{ post.prev.title }}</p>
+            </div>
+        </div>
+    </a>
+    {%- endif %}
+</div>
+<div class="stm-next">
+    {%- if post.next %}
+    <a class="btn-large btn-flat right-align" href="{{ pathto(post.next.docname) }}{{ anchor(post.next) }}">
+        <div class="right-next">
+            <div class="prev-next-info">
+                <p class="prev-next-subtitle">{{ _("Next") }}</p>
+                <p class="prev-next-title">{{ post.next.title }}</p>
+            </div>
+            <i class="material-icons">chevron_right</i>
+        </div>
+    </a>
+    {%- endif %}
+</div>
+{% endif %}
