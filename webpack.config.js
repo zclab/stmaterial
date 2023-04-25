@@ -54,7 +54,7 @@ function macroTemplate({ compilation }) {
             AUTO-GENERATED from webpack.config.js, do **NOT** edit by hand.
             These are re-used in layout.html
         -->
-        {# Load FontAwesome icons #}
+        {# Load Material icons #}
         {% macro head_pre_icons() %}
             ${ma_stylesheets.map(stylesheet.bind(compilation)).join("\n")}
             ${ma_fonts.map(font).join("\n")}
