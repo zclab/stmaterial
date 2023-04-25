@@ -76,6 +76,11 @@
   --color-api-pre-name: var(--color-problematic);
   --color-api-paren: var(--font-color-medium);
   --color-api-keyword: var(--font-color-main);
+
+  // GUI Labels
+  --color-guilabel-background: #ddeeff80;
+  --color-guilabel-border: #bedaf580;
+  --color-guilabel-text: var(--font-color-main);
 }
 
 @mixin colors-dark {
@@ -130,4 +135,8 @@
   --color-background-border: #303335;
   --color-highlight-on-target: #333300;
   --color-api-keyword: var(--font-color-medium);
+
+  // GUI Labels
+  --color-guilabel-background: #08356380;
+  --color-guilabel-border: #13395f80;
 }
