@@ -30,7 +30,8 @@ exclude_patterns = [
     "_build", 
     "Thumbs.db", 
     ".DS_Store",
-    "contributing"
+    "contributing",
+    "user_guide/*"
 ]
 
 intersphinx_mapping = {
@@ -51,7 +52,7 @@ todo_include_todos = True
 
 
 html_theme_options = {
-    "header_links_before_dropdown": 5,
+    "header_links_before_dropdown": 4,
     "source_repository": "https://github.com/zclab/stmaterial",
     "source_branch": "main",
     "source_directory": "docs/",
