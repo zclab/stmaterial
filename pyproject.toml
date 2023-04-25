@@ -1,5 +1,5 @@
 [build-system]
-requires = ["sphinx-theme-builder >= 0.2.0a10"]
+requires = ["sphinx-theme-builder >= 0.2.0b2"]
 build-backend = "sphinx_theme_builder"
 
 [tool.sphinx-theme-builder]
@@ -25,10 +25,6 @@ dependencies = [
   "sphinx >= 5.0,<7.0",
   "sphinx-basic-ng",
   "pygments >= 2.7",
-  "sphinx-design2",
-  "sphinx-copybutton",
-  "sphinx-togglebutton",
-  "sphinx-subfigure",
 ]
 
 license = { file = "LICENSE" }
@@ -36,7 +32,6 @@ authors = [{ name = "zclab", email = "syfhub@hotmail.com" }]
 classifiers = [
   "Framework :: Sphinx",
   "Framework :: Sphinx :: Theme",
-  "Development Status :: 5 - Production/Stable",
   "License :: OSI Approved :: MIT License",
   "Environment :: Web Environment",
   "Intended Audience :: Developers",
@@ -52,7 +47,7 @@ classifiers = [
 ]
 
 [project.optional-dependencies]
-dev = ['sphinx-theme-builder[cli] >= 0.2.0a10']
+dev = ['sphinx-theme-builder[cli] >= 0.2.0b2']
 
 [project.entry-points]
 "sphinx.html_themes" = { stmaterial = "stmaterial" }

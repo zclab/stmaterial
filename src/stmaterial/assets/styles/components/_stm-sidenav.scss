@@ -4,9 +4,10 @@
 
 .stm-sidenav-logo {
   display: flex;
+  height: $navbar-height;
 
   img {
-    max-height: 64px;
+    max-height: $navbar-height;
     padding-right: 15px;
   }
 }
@@ -92,7 +93,7 @@ aside.stm-sidenav {
     cursor: pointer;
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: flex-end;
 
     i {
       display: inline-block;

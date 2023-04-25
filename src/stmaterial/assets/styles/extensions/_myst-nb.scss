@@ -1,7 +1,9 @@
-details.hide {
-  display: inherit !important;
-}
+div.cell {
+  details.hide {
+    display: inherit !important;
+  }
 
-details div.cell_output {
-  padding-left: 0em;
+  .cell_output {
+    padding-left: 0em;
+  }
 }

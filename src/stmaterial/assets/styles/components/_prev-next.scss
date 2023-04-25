@@ -1,6 +1,5 @@
 .prev-next-area {
   display: flex;
-  justify-content: space-between;
 
   a {
     overflow-x: hidden;
@@ -12,13 +11,15 @@
 
     &.btn-large {
       height: auto;
-      width: 48%;
+      width: 100%;
       line-height: 30px;
       padding: 10px;
       border: 1px solid var(--separator-color);
 
       &:hover {
-        background-color: var(--button-raised-background-hover);
+        background-color: var(--background-color);
+        border-color: var(--button-raised-background-hover);
+        transform: scale(1.01);
       }
 
       div.right-next {
@@ -42,4 +43,16 @@
       }
     }
   }
+}
+
+.stm-next {
+  display: flex;
+  margin-left: auto;
+  width: 45%;
+}
+
+.stm-prev {
+  display: flex;
+  margin-right: auto;
+  width: 45%;
 }

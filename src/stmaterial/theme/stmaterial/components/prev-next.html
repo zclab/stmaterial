@@ -1,24 +1,28 @@
-{%- if prev %}
-<a class="btn-large btn-flat left-align" href="{{ prev.link|e }}" title="{{ _('previous page') }}">
-    <div class="left-prev">
-        <i class="material-icons">chevron_left</i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">{{ _("previous") }}</p>
-            <p class="prev-next-title">{{ prev_title or prev.title }}</p>
+{%- if prev or next %}
+<div class="stm-prev">
+    {%- if prev %}
+    <a class="btn-large btn-flat left-align" href="{{ prev.link|e }}" title="{{ _('previous page') }}">
+        <div class="left-prev">
+            <i class="material-icons">chevron_left</i>
+            <div class="prev-next-info">
+                <p class="prev-next-subtitle">{{ _("previous") }}</p>
+                <p class="prev-next-title">{{ prev_title or prev.title }}</p>
+            </div>
         </div>
-    </div>
-</a>
-{% else %}
-<div></div>
-{%- endif %}
-{%- if next %}
-<a class="btn-large btn-flat right-align" href="{{ next.link|e }}" title="{{ _('next page') }}">
-    <div class="right-next">
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">{{ _("next") }}</p>
-            <p class="prev-next-title">{{ next_title or next.title }}</p>
+    </a>
+    {%- endif %}
+</div>
+<div class="stm-next">
+    {%- if next %}
+    <a class="btn-large btn-flat right-align" href="{{ next.link|e }}" title="{{ _('next page') }}">
+        <div class="right-next">
+            <div class="prev-next-info">
+                <p class="prev-next-subtitle">{{ _("next") }}</p>
+                <p class="prev-next-title">{{ next_title or next.title }}</p>
+            </div>
+            <i class="material-icons">chevron_right</i>
         </div>
-        <i class="material-icons">chevron_right</i>
-    </div>
-</a>
+    </a>
+    {%- endif %}
+</div>
 {%- endif %}

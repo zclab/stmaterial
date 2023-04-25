@@ -1,0 +1,51 @@
+nav {
+  background-color: var(--primary-color);
+  position: relative;
+
+  @media (min-width: $medium-screen-up) {
+    z-index: 1099;
+  }
+
+  .nav-wrapper {
+    @media (max-width: $medium-screen-up) {
+      padding-left: 0
+    }
+  }
+
+  .stm-doc-logo {
+    width: $sidenav-width;
+    height: $navbar-height;
+  }
+
+  ul {
+    a {
+      display: flex;
+      padding: 0 var(--header-horizontal-spacing);
+    }
+
+    li {
+      img {
+        max-height: $navbar-height;
+      }
+
+      a {
+        &.ext-link {
+          img {
+            max-width: 26px;
+            margin: 20px 0;
+
+            @media (max-width: $medium-screen-up) {
+              margin: 15px 0;
+            }
+          }
+        }
+
+        &.nav-external {
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+        }
+      }
+    }
+  }
+}

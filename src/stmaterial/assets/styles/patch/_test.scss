@@ -11,12 +11,21 @@
 }
 
 .stm-edit-update-meta {
+  display: flex;
   padding: 0 5px;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .right {
-    display: flex;
-    gap: 0.25rem;
-  }
+.edit-this-page {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.last-updated {
+  font-style: italic;
+  color: var(--font-color-medium);
 }
 
 .toc-title {
@@ -24,4 +33,20 @@
   gap: 0.25em;
   padding-left: 16px;
   border-left: 1px solid var(--separator-color);
+}
+
+.sidenav-menu,
+.toc-wrapper {
+  scrollbar-width: thin;
+  scrollbar-color: var(--font-color-medium) transparent;
+
+  &::-webkit-scrollbar {
+    width: 0.25rem;
+    height: 0.25rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--font-color-medium);
+    border-radius: 0.125rem;
+  }
 }
