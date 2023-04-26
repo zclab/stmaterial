@@ -17,7 +17,6 @@ name = "stmaterial"
 description = "A sphinx theme of materializecss."
 dynamic = ["version"]
 readme = "README.md"
-urls = { Organization = "https://github.com/zclab/stmaterial" }
 
 requires-python = ">=3.8"
 dependencies = [
@@ -30,6 +29,7 @@ dependencies = [
 license = { file = "LICENSE" }
 authors = [{ name = "zclab", email = "syfhub@hotmail.com" }]
 classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
   "Framework :: Sphinx",
   "Framework :: Sphinx :: Theme",
   "License :: OSI Approved :: MIT License",
@@ -51,3 +51,7 @@ dev = ['sphinx-theme-builder[cli] >= 0.2.0b2']
 
 [project.entry-points]
 "sphinx.html_themes" = { stmaterial = "stmaterial" }
+
+[project.urls]
+Repository = "https://github.com/zclab/stmaterial"
+Documentation = "https://zclab.github.io/stmaterial/"
