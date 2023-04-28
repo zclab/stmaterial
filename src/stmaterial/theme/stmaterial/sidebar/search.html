@@ -1,6 +1,6 @@
-<form class="search-wrapper" method="get" action="{{ pathto('search') }}" role="search">
-    <input class="search-docs" placeholder="{{ _(" Search") }}" name="q" aria-label="{{ _(" Search" ) }}">
-    <input type="hidden" name="check_keywords" value="yes">
-    <input type="hidden" name="area" value="default">
-</form>
-<div id="searchbox"></div>
+<div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+        {% include "components/search-field.html" %}
+    </div>
+</div>

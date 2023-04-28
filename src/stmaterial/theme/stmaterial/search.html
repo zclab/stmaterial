@@ -21,6 +21,16 @@
 </noscript>
 
 <div id="search-results"></div>
+
+<script>
+    // Activate the search field on page load
+    let searchInput = document.querySelector("form.search-wrapper input");
+    if (searchInput) {
+        searchInput.focus();
+        searchInput.select();
+        console.log("[PST]: Set focus on search field.");
+    }
+</script>
 {% endblock %}
 
 {% block scripts -%}

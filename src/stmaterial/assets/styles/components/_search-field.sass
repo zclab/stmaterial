@@ -1,6 +1,16 @@
+.search-wrapper
+  display: flex
+  align-items: center
+
+  .search-button__kbd-shortcut
+    display: flex
+    position: absolute
+    right: 0
+
+
 input:not([type]):not(.browser-default)
   border-top: $input-border
-  margin: 2.8rem 0 1.68rem
+  margin: 1.68rem 0 1.68rem
 
   &:focus:not([readonly])
     border-top: 1px solid $input-focus-color
