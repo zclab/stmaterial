@@ -1,16 +1,22 @@
 .search-wrapper
   display: flex
   align-items: center
+  position: relative
+
+  span.material-icons
+    display: flex
+    position: absolute
 
   .search-button__kbd-shortcut
     display: flex
     position: absolute
-    right: 0
+    right: 5px
 
 
 input:not([type]):not(.browser-default)
   border-top: $input-border
   margin: 1.68rem 0 1.68rem
+  padding-left: calc(var(--header-horizontal-spacing) + 10px)
 
   &:focus:not([readonly])
     border-top: 1px solid $input-focus-color
