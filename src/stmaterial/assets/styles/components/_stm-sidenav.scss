@@ -17,8 +17,11 @@ aside.stm-sidenav {
   clip-path: inset(0);
   display: block;
   background-color: var(--background-color-sidenav);
-  margin-top: calc($navbar-height *-1 - 2px); // 2px because of box shadow is 2px height offset of nav, see z-depth-1
   width: $sidenav-width;
+
+  @media (min-width: $medium-screen-up) {
+    margin-top: calc($navbar-height *-1 - 2px); // 2px because of box shadow is 2px height offset of nav, see z-depth-1
+  }
 
   .sidenav-viewport {
     height: 100%;
