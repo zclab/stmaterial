@@ -162,3 +162,21 @@ aside.stm-sidenav {
     }
   }
 }
+
+
+
+.sidenav-header-items {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0 var(--header-horizontal-spacing);
+}
+
+.sidenav-header-items__center {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidenav-header-items__end {
+  display: flex;
+  align-items: center;
+}
