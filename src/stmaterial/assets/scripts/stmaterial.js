@@ -140,9 +140,9 @@ function init_materialize() {
   }
 
   // Mobile Overflow
-  if (is_touch_device()) {
-    document.querySelector('#nav-mobile').style.overflow = 'auto';
-  }
+  // if (is_touch_device()) {
+  //   document.querySelector('#nav-mobile').style.overflow = 'auto';
+  // }
 
   // Theme
   const theme = localStorage.getItem('theme');
