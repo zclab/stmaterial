@@ -17,7 +17,11 @@ titles_only=True)
 
 {% block docs_headnav %}
 <header>
-    {% include "sections/headnav.html" %}
+    <div class="{% if theme_fix_header_nav -%} navbar-fixed {% endif %}">
+        <nav>
+            {% include "sections/headnav.html" %}
+        </nav>
+    </div>
 </header>
 {% endblock docs_headnav %}
 
