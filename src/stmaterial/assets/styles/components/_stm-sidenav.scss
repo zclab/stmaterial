@@ -179,4 +179,14 @@ aside.stm-sidenav {
 .sidenav-header-items__end {
   display: flex;
   align-items: center;
+
+  ul {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  img {
+    height: 25px;
+    background-color: var(--font-color-main);
+  }
 }
