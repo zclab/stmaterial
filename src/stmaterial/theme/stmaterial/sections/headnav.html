@@ -1,12 +1,20 @@
-<div class="sidenav-drawer">
-    <div class="sidenav-logo">
-        {%- include "sidebar/brand.html" %}
+<div class="nav-wrapper">
+    <label class="sidebar-toggle primary-toggle" for="__primary">
+        <i class="material-icons">menu</i>
+    </label>
+    <div class="headnav-items__start">
+        <div class="headnav-item">
+            <a class="stm-doc-logo" href="{{ pathto(root_doc) }}"><img src="{{ logo_url }}" alt="Logo" /></a>
+        </div>
     </div>
-    <div class="sidenav-header-items hide-on-large-only">
-        <div class="sidenav-header-items__center">
+    <div class="headnav-items__content">
+        <div class="me-auto headnav-items__center">
             {% include "components/headnav-items.html" %}
         </div>
-        <div class="sidenav-header-items__end">
+        <div class="headnav-items__end">
+            <div class="headnav-item">
+                <a id="theme-switch" href="#"><i class="material-icons">dark_mode</i></a>
+            </div>
             <div class="headnav-item">
                 <ul>
                     {% if theme_header_icons -%}
@@ -28,10 +36,5 @@
                 </ul>
             </div>
         </div>
-    </div>
-    <div class="sidenav-menu">
-        {%- for sidebar_section in sidebars %}
-        {%- include sidebar_section %}
-        {%- endfor %}
     </div>
 </div>

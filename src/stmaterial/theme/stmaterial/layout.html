@@ -11,22 +11,28 @@ titles_only=True)
 
 
 {% block htmlbody -%}
-{{ super() }}
+{# checkbox to toggle primary sidebar #}
+<input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary" />
+<label class="overlay overlay-primary" for="__primary"></label>
+
+{% block docs_headnav %}
+<header>
+    <div class="{% if theme_fix_header_nav -%} navbar-fixed {% endif %}">
+        <nav>
+            {% include "sections/headnav.html" %}
+        </nav>
+    </div>
+</header>
+{% endblock docs_headnav %}
 
 {% block mainbody -%}
-
-<header>
-    {% include "sections/navbar.html" %}
-</header>
-
 <div class="stm-main">
     <div class="main-wrapper">
         {% if theme_show_back_to_top %}
         {%- include "components/back-to-top.html" -%}
         {% endif %}
 
-        <aside class="stm-sidenav {% if hide_sidenav %} hide {% else %} hide-on-small-only {% endif %} "
-            id="nav-mobile">
+        <aside class="stm-sidenav {% if hide_sidenav %} hide {% endif %} ">
             <div class="sidenav-viewport">
                 {% block left_sidebar %}
                 {%- include "sections/sidenav.html" -%}

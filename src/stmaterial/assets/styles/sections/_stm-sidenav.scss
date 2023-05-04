@@ -17,8 +17,11 @@ aside.stm-sidenav {
   clip-path: inset(0);
   display: block;
   background-color: var(--background-color-sidenav);
-  margin-top: calc($navbar-height *-1 - 2px); // 2px because of box shadow is 2px height offset of nav, see z-depth-1
   width: $sidenav-width;
+
+  @media (min-width: $medium-screen-up) {
+    margin-top: calc($navbar-height *-1 - 2px); // 2px because of box shadow is 2px height offset of nav, see z-depth-1
+  }
 
   .sidenav-viewport {
     height: 100%;
@@ -157,5 +160,33 @@ aside.stm-sidenav {
     ~label i {
       transform: rotate(180deg);
     }
+  }
+}
+
+
+
+.sidenav-header-items {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0 var(--header-horizontal-spacing);
+}
+
+.sidenav-header-items__center {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidenav-header-items__end {
+  display: flex;
+  align-items: center;
+
+  ul {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  img {
+    height: 25px;
+    background-color: var(--font-color-main);
   }
 }

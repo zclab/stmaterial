@@ -140,9 +140,9 @@ function init_materialize() {
   }
 
   // Mobile Overflow
-  if (is_touch_device()) {
-    document.querySelector('#nav-mobile').style.overflow = 'auto';
-  }
+  // if (is_touch_device()) {
+  //   document.querySelector('#nav-mobile').style.overflow = 'auto';
+  // }
 
   // Theme
   const theme = localStorage.getItem('theme');
@@ -181,7 +181,7 @@ function init_materialize() {
   }
 
 
-  M.Sidenav.init(document.querySelectorAll('.stm-sidenav'), {});
+  // M.Sidenav.init(document.querySelectorAll('.stm-sidenav'), {});
   M.Dropdown.init(document.querySelectorAll('.dropdown-trigger'), { constrainWidth: false, });
 
 }
