@@ -17,7 +17,7 @@ from .utils import get_theme_options, activate_extensions, config_provided_by_us
 from .directives import GalleryDirective
 
 
-__version__ = "0.0.3"
+__version__ = "0.0.4.dev"
 logger = logging.getLogger(__name__)
 
 MESSAGE_CATALOG_NAME = "stmaterial"

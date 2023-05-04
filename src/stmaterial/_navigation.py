@@ -259,7 +259,7 @@ def add_toctree_functions(app, pagename, templatename, context, doctree):
             links_dropdown_html = "\n".join(links_dropdown)
             out_headnav += f"""
             <li class="nav-item dropdown">
-                <a class='dropdown-trigger' href='#' data-target='dropdown1'>More <i class="material-icons">arrow_drop_down</i></a>
+                <a class='dropdown-trigger' href='#' data-target='dropdown1'>{context["theme_dropdown_label_name"]} <i class="material-icons">arrow_drop_down</i></a>
                 <ul id='dropdown1' class='dropdown-content'>
                     {links_dropdown_html}
                 </ul>
@@ -268,7 +268,7 @@ def add_toctree_functions(app, pagename, templatename, context, doctree):
 
             out_sidenav += f"""
             <li class="nav-item dropdown">
-                <a class='dropdown-trigger' href='#' data-target='dropdown2'>More <i class="material-icons">arrow_drop_down</i></a>
+                <a class='dropdown-trigger' href='#' data-target='dropdown2'>{context["theme_dropdown_label_name"]} <i class="material-icons">arrow_drop_down</i></a>
                 <ul id='dropdown2' class='dropdown-content'>
                     {links_dropdown_html}
                 </ul>
