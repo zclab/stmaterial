@@ -58,7 +58,7 @@ nav {
     width: $sidenav-width;
 
     img {
-      max-width: $sidenav-width;
+      max-width: calc($sidenav-width - var(--header-horizontal-spacing)*2); // $sidenav-width - 30px; 
       max-height: $navbar-height;
     }
   }
