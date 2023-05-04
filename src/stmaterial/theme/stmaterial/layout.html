@@ -36,7 +36,7 @@ titles_only=True)
         {%- include "components/back-to-top.html" -%}
         {% endif %}
 
-        <aside class="stm-sidenav {% if hide_sidenav %} hide {% endif %} ">
+        <aside class="stm-sidenav {% if hide_sidenav %} hide-on-large-only {% endif %} ">
             <div class="sidenav-viewport">
                 {% block left_sidebar %}
                 {%- include "sections/sidenav.html" -%}
