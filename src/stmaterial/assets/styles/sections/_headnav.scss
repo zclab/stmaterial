@@ -76,9 +76,11 @@ nav {
 
       a {
         &.ext-link {
+          display: flex;
+
           img {
-            max-width: 26px;
-            margin: 20px 0;
+            display: block;
+            padding: 18px 0;
 
             @media (max-width: $medium-screen-up) {
               margin: 15px 0;

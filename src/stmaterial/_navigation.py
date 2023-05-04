@@ -250,13 +250,14 @@ def add_toctree_functions(app, pagename, templatename, context, doctree):
 
         # The first links will always be visible
         links_solo = links_html[:n_links_before_dropdown]
-        out = "\n".join(links_solo)
+        out_headnav = "\n".join(links_solo)
+        out_sidenav = "\n".join(links_solo)
 
         # Wrap the final few header items in a "more" dropdown
         links_dropdown = links_html[n_links_before_dropdown:]
         if links_dropdown:
             links_dropdown_html = "\n".join(links_dropdown)
-            out += f"""
+            out_headnav += f"""
             <li class="nav-item dropdown">
                 <a class='dropdown-trigger' href='#' data-target='dropdown1'>More <i class="material-icons">arrow_drop_down</i></a>
                 <ul id='dropdown1' class='dropdown-content'>
@@ -265,7 +266,16 @@ def add_toctree_functions(app, pagename, templatename, context, doctree):
             </li>
             """  # noqa
 
-        return out
+            out_sidenav += f"""
+            <li class="nav-item dropdown">
+                <a class='dropdown-trigger' href='#' data-target='dropdown2'>More <i class="material-icons">arrow_drop_down</i></a>
+                <ul id='dropdown2' class='dropdown-content'>
+                    {links_dropdown_html}
+                </ul>
+            </li>
+            """  # noqa
+
+        return out_headnav, out_sidenav
 
     # Cache this function because it is expensive to run, and becaues Sphinx
     # somehow runs this twice in some circumstances in unpredictable ways.
