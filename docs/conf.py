@@ -18,9 +18,13 @@ extensions = [
     "sphinx.ext.todo",
     "sphinx.ext.viewcode",
     "stmaterial.demo.sphinxext",
+    "ablog",
     "myst_parser",
     "sphinx_inline_tabs",
-    "ablog",
+    "sphinx_design",
+    "sphinx_copybutton",
+    "sphinx_togglebutton",
+    "sphinx_subfigure",
     "sphinx_tippy"
 ]
 

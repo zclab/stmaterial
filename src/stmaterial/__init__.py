@@ -13,7 +13,7 @@ from sphinx.builders.html import StandaloneHTMLBuilder
 from sphinx.locale import get_translation
 from ._navigation import add_toctree_functions
 from ._transforms import ShortenLinkTransform, WrapTableAndMathInAContainerTransform
-from .utils import get_theme_options, activate_extensions, config_provided_by_user
+from .utils import get_theme_options, config_provided_by_user
 from .directives import GalleryDirective
 
 
@@ -393,8 +393,8 @@ def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
     app.connect("build-finished", _overwrite_pygments_css)
     app.config.html_static_path.append(str(theme_dir / "static/images"))
 
-    extensions = ["sphinx_design", "sphinx_copybutton", "sphinx_togglebutton", "sphinx_subfigure"]
-    activate_extensions(app, extensions)
+    # extensions = ["sphinx_design", "sphinx_copybutton", "sphinx_togglebutton", "sphinx_subfigure"]
+    # activate_extensions(app, extensions)
 
     app.add_directive("gallery-grid", GalleryDirective)
 
