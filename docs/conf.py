@@ -95,7 +95,8 @@ html_theme_options = {
         "primary-color-dark": "#283593",
         "primary-color-raised-hover-solid": "#7986cb",
         "primary-color-raised-focus-solid":"#7986cb",
-    }
+    },
+    "navigation_with_keys": True,
 }
     
 
