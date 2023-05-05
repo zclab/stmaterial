@@ -197,6 +197,7 @@ aside.stm-sidenav {
 
   ul {
     display: flex;
+    align-items: center;
     gap: 0.5rem;
     margin: 0;
   }
@@ -208,5 +209,13 @@ aside.stm-sidenav {
 
   a.ext-link {
     display: flex;
+  }
+
+  a#theme-switch--mobile {
+    display: flex;
+  }
+
+  i.fa-brands {
+    font-size: 20px;
   }
 }
