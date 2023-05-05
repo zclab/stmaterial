@@ -1,9 +1,9 @@
 .page-footer {
-  padding: 0 var(--footer-horizontal-spacing);
+  padding: 10px var(--footer-horizontal-spacing);
 }
 
 .docs-footer {
-  background-color: red;
+  background-color: var(--background-color);
   border-top: 1px solid var(--separator-color);
   color: inherit;
   position: relative;
@@ -23,7 +23,7 @@
 
 .stm-content-footer {
   margin-top: auto;
-  padding: 10px 20px;
+  padding: 10px var(--footer-horizontal-spacing);
   border-top: 1px solid var(--separator-color);
   background-color: var(--background-color);
   color: var(--font-color-medium);
