@@ -73,7 +73,8 @@ html_theme_options = {
     ],
     "show_toc_level": 1,
     "header_icons": [
-        {"name":"Github", "url": "http://github.com/zclab/stmaterial", "svg":"github.svg"},
+        # {"name":"Github", "url": "http://github.com/zclab/stmaterial", "svg":"github.svg"},
+        {"name":"Github", "url": "http://github.com/zclab/stmaterial", "fontawesome":"fa-brands fa-github"},
         {"name":"Email", "url": "example@example.com", "material_icons":"email"},
     ],
     "use_edit_page_button": True,
@@ -104,10 +105,6 @@ blog_authors = {
     "zclab": ("子川", "https://github.com/zclab"),
 }
 
-# https://github.com/hung1001/font-awesome-pro-v6
-fontawesome_link_cdn = "https://cdn.staticaly.com/gh/hung1001/font-awesome-pro-v6/44659d9/css/all.min.css"
-fontawesome_included = True
-
 html_sidebars = {
     "posts/**": [
         "sidebar/search.html", "ablog/postcard.html","ablog/categories.html","ablog/tagcloud.html", "ablog/recentposts.html",
@@ -119,3 +116,9 @@ html_sidebars = {
         "sidebar/search.html", "ablog/categories.html","ablog/tagcloud.html","ablog/archives.html","ablog/recentposts.html",
     ],
 }
+
+# https://github.com/hung1001/font-awesome-pro-v6
+html_css_files = [
+      "https://cdn.staticaly.com/gh/hung1001/font-awesome-pro-v6/44659d9/css/all.min.css",
+]
+fontawesome_included = True
