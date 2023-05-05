@@ -184,6 +184,12 @@ aside.stm-sidenav {
     display: flex;
     align-items: center;
   }
+
+  a.nav-external {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
 }
 
 .sidenav-header-items__end {
