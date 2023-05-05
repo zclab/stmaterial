@@ -20,8 +20,7 @@
                     {% if theme_header_icons -%}
                     {% for icon_dict in theme_header_icons -%}
                     <li>
-                        <a href="{{ icon_dict.url }}" target="_blank" aria-label="{{ icon_dict.name }}"
-                            class="ext-link">
+                        <a href="{{ icon_dict.url }}" target="_blank" title="{{ icon_dict.name }}" class="ext-link">
                             {% if icon_dict.class %}
                             <i class="{{ icon_dict.class }}"></i>
                             {% elif icon_dict.svg %}
