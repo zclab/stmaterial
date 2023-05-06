@@ -107,14 +107,15 @@ blog_authors = {
 }
 
 html_sidebars = {
+    "index":[],
     "posts/**": [
-        "sidebar/search.html", "ablog/postcard.html","ablog/categories.html","ablog/tagcloud.html", "ablog/recentposts.html",
+        "search-field.html", "ablog/postcard.html","ablog/categories.html","ablog/tagcloud.html", "ablog/recentposts.html",
     ],
     "blog": [
-        "sidebar/search.html", "ablog/categories.html","ablog/tagcloud.html","ablog/archives.html","ablog/recentposts.html",
+        "search-field.html", "ablog/categories.html","ablog/tagcloud.html","ablog/archives.html","ablog/recentposts.html",
     ],
     "blog/**": [
-        "sidebar/search.html", "ablog/categories.html","ablog/tagcloud.html","ablog/archives.html","ablog/recentposts.html",
+        "search-field.html", "ablog/categories.html","ablog/tagcloud.html","ablog/archives.html","ablog/recentposts.html",
     ],
 }
 

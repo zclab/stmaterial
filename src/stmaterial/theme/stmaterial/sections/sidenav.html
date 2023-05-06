@@ -1,6 +1,6 @@
 <div class="sidenav-drawer">
     <div class="sidenav-logo">
-        {%- include "sidebar/brand.html" %}
+        {%- include "sidenav-brand.html" %}
     </div>
     <div class="sidenav-header-items hide-on-large-only">
         <div class="sidenav-header-items__center">
@@ -13,9 +13,6 @@
         <div class="sidenav-header-items__end">
             <div class="headnav-item">
                 <ul>
-                    <li>
-                        <a id="theme-switch--mobile" href="#"><i class="material-icons">dark_mode</i></a>
-                    </li>
                     {% if theme_header_icons -%}
                     {% for icon_dict in theme_header_icons -%}
                     <li>

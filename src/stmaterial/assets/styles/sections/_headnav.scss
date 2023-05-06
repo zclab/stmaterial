@@ -33,6 +33,14 @@
   align-items: center;
 }
 
+.headnav-persistent--mobile {
+  margin-left: auto;
+
+  @media (min-width: $medium-screen-up) {
+    display: none;
+  }
+}
+
 nav {
   background-color: var(--primary-color);
   position: relative;

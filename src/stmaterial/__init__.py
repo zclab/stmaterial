@@ -17,7 +17,7 @@ from .utils import get_theme_options, config_provided_by_user
 from .directives import GalleryDirective
 
 
-__version__ = "0.0.4.dev1"
+__version__ = "0.0.4.dev2"
 logger = logging.getLogger(__name__)
 
 MESSAGE_CATALOG_NAME = "stmaterial"
@@ -391,6 +391,8 @@ def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
     app.connect("builder-inited", _builder_inited)
     app.connect("builder-inited", _update_config)
     app.connect("build-finished", _overwrite_pygments_css)
+    # Include component templates
+    app.config.templates_path.append(str(theme_dir / "components"))
     app.config.html_static_path.append(str(theme_dir / "static/images"))
 
     # extensions = ["sphinx_design", "sphinx_copybutton", "sphinx_togglebutton", "sphinx_subfigure"]
