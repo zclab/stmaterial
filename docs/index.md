@@ -11,6 +11,13 @@ This is a materialize based sphinx theme, see the [materialize documentation](ht
 ```{toctree}
 :maxdepth: 2
 
+user_guide/index
+```
+
+
+```{toctree}
+:maxdepth: 2
+
 examples/index
 ```
 
