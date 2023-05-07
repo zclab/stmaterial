@@ -1,3 +1,6 @@
 <a class="stm-brand-logo" href="{{ pathto(root_doc) }}">
     <img src="{{ logo_url }}" alt="Logo" />
+    {% if theme_logo and theme_logo.get("text") %}
+    <span class="stm-brand-logo-text">{{ theme_logo.get("text") }}</span>
+    {%- endif %}
 </a>

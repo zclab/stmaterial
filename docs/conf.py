@@ -50,7 +50,7 @@ html_theme = "stmaterial"
 html_title = "sphinx theme of material"
 html_favicon = "_static/favicon.png"
 html_last_updated_fmt = ""
-html_logo = "_static/logo.png"
+html_logo = "_static/logo-.png"
 
 todo_include_todos = True
 
@@ -63,7 +63,7 @@ html_theme_options = {
     "show_back_to_top": True,
     "fix_header_nav": False,
     "logo":{
-        "text": "Logo",
+        "text": "Stmaterial",
         "logo": "_static/logo.png"
     },
     "external_links": [
