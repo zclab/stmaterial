@@ -1,0 +1,19 @@
+.stm-brand-logo {
+  display: flex;
+  padding-left: 15px;
+  height: $navbar-height;
+  width: $sidenav-width;
+
+  @media (max-width: $medium-screen-up) {
+    height: $navbar-height-mobile;
+  }
+
+  img {
+    max-width: calc($sidenav-width - var(--header-horizontal-spacing)*2); // $sidenav-width - 30px; 
+    max-height: $navbar-height;
+
+    @media (max-width: $medium-screen-up) {
+      max-height: $navbar-height-mobile;
+    }
+  }
+}

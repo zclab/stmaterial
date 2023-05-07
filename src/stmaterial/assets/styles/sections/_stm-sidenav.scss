@@ -1,24 +1,5 @@
 .sidenav-logo {
-  padding: 0 0 0 var(--header-horizontal-spacing);
-}
-
-.stm-sidenav-logo {
   display: flex;
-  height: $navbar-height;
-
-  @media (max-width: $medium-screen-up) {
-    height: $navbar-height-mobile;
-  }
-
-  img {
-    max-height: $navbar-height;
-
-    @media (max-width: $medium-screen-up) {
-      max-height: $navbar-height-mobile;
-    }
-
-    padding-right: 15px;
-  }
 }
 
 aside.stm-sidenav {

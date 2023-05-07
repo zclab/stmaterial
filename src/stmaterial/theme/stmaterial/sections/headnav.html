@@ -3,8 +3,8 @@
         <i class="material-icons">menu</i>
     </label>
     <div class="headnav-items__start">
-        <div class="headnav-item">
-            <a class="stm-doc-logo" href="{{ pathto(root_doc) }}"><img src="{{ logo_url }}" alt="Logo" /></a>
+        <div class="headnav-item hide-on-small-only">
+            {%- include "brand-logo.html" %}
         </div>
     </div>
     <div class="headnav-items__content">
@@ -15,7 +15,7 @@
             <div class="headnav-item">
                 <ul>
                     <li>
-                        {% include "components/search-button.html" %}
+                        {% include "search-button.html" %}
                     </li>
                     <li>
                         <a id="theme-switch" href="#"><i class="material-icons">dark_mode</i></a>
