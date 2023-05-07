@@ -1,5 +1,7 @@
 .stm-brand-logo {
   display: flex;
+  align-items: center;
+  gap: 0.5rem;
   padding-left: 15px;
   height: $navbar-height;
   width: $sidenav-width;
@@ -16,4 +18,10 @@
       max-height: $navbar-height-mobile;
     }
   }
+}
+
+.stm-brand-logo-text {
+  font-size: 32px;
+  color: var(--font-color-main);
+  font-family: "Fira Sans";
 }
