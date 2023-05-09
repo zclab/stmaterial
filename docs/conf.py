@@ -78,6 +78,7 @@ html_theme_options = {
         {"name":"Email", "url": "example@example.com", "material_icons":"email"},
     ],
     "footer_icons": [
+        {"name":"Licence", "url": "https://github.com/zclab/stmaterial/blob/main/LICENSE", "fontawesome":"fa-solid fa-file"},
         {"name":"Github", "url": "http://github.com/zclab/stmaterial", "fontawesome":"fa-brands fa-github"},
     ],
     "use_edit_page_button": True,
@@ -124,6 +125,6 @@ html_sidebars = {
 
 # https://github.com/hung1001/font-awesome-pro-v6
 html_css_files = [
-      "https://cdn.staticaly.com/gh/hung1001/font-awesome-pro-v6/44659d9/css/all.min.css",
+      "https://cdn.jsdelivr.net/gh/duyplus/fontawesome-pro/css/all.min.css",
 ]
 fontawesome_included = True
