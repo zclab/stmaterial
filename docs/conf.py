@@ -77,6 +77,9 @@ html_theme_options = {
         {"name":"Github", "url": "http://github.com/zclab/stmaterial", "fontawesome":"fa-brands fa-github"},
         {"name":"Email", "url": "example@example.com", "material_icons":"email"},
     ],
+    "footer_icons": [
+        {"name":"Github", "url": "http://github.com/zclab/stmaterial", "fontawesome":"fa-brands fa-github"},
+    ],
     "use_edit_page_button": True,
     "toc_title": "On this page",
     "custom_fonts": {

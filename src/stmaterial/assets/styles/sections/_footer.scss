@@ -28,3 +28,25 @@
   background-color: var(--background-color);
   color: var(--font-color-medium);
 }
+
+.stm-bottom-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stm-right-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 24px;
+
+  a {
+    display: contents;
+    color: var(--font-color-medium);
+  }
+
+  i.material-icons {
+    font-size: 28px;
+  }
+}
