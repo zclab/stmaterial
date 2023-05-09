@@ -81,6 +81,8 @@
   --color-guilabel-background: #ddeeff80;
   --color-guilabel-border: #bedaf580;
   --color-guilabel-text: var(--font-color-main);
+  // Dropdown colors
+  --dropdown-color: var(--primary-color);
 }
 
 @mixin colors-dark {
