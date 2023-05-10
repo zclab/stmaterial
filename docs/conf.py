@@ -73,11 +73,11 @@ html_theme_options = {
     ],
     "show_toc_level": 1,
     "header_icons": [
-        # {"name":"Github", "url": "http://github.com/zclab/stmaterial", "svg":"github.svg"},
         {"name":"Github", "url": "http://github.com/zclab/stmaterial", "fontawesome":"fa-brands fa-github"},
-        {"name":"Email", "url": "example@example.com", "material_icons":"email"},
+        # {"name":"Email", "url": "example@example.com", "material_icons":"email"},
     ],
     "footer_icons": [
+        {"name":"PyPi", "url": "https://pypi.org/project/stmaterial/", "image":"https://img.shields.io/pypi/dw/stmaterial"},
         {"name":"Licence", "url": "https://github.com/zclab/stmaterial/blob/main/LICENSE", "fontawesome":"fa-solid fa-file"},
         {"name":"Github", "url": "http://github.com/zclab/stmaterial", "fontawesome":"fa-brands fa-github"},
     ],
