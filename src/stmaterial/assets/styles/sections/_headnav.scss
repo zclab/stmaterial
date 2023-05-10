@@ -91,3 +91,12 @@ nav {
     }
   }
 }
+
+
+a {
+  &.nav-external:after {
+    color: unset;
+    content: "\e89e";
+    font-family: Material Icons;
+  }
+}
