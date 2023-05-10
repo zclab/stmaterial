@@ -12,6 +12,9 @@
 }
 
 .last-updated {
+  display: flex;
+  align-items: center;
   font-style: italic;
   color: var(--font-color-medium);
+  gap: 0.25rem;
 }
