@@ -98,7 +98,11 @@ titles_only=True)
                         {%- endfor %}
                     </div>
                     <div class="stm-right-footer">
-                        {{ _icon_declare.declare_icon_links(theme_footer_icons) }}
+                        {% if theme_footer_icons %}
+                        <ul>
+                            {{ _icon_declare.declare_icon_links(theme_footer_icons) }}
+                        </ul>
+                        {% endif %}
                     </div>
                 </div>
             </div>
