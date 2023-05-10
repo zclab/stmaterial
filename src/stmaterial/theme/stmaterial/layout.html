@@ -98,21 +98,7 @@ titles_only=True)
                         {%- endfor %}
                     </div>
                     <div class="stm-right-footer">
-                        {% if theme_footer_icons -%}
-                        {% for icon_dict in theme_footer_icons -%}
-                        <a href="{{ icon_dict.url }}" target="_blank" title="{{ icon_dict.name }}" class="ext-link">
-                            {% if icon_dict.class %}
-                            <i class="{{ icon_dict.class }}"></i>
-                            {% elif icon_dict.material_icons %}
-                            <i class="material-icons">{{ icon_dict.material_icons }}</i>
-                            {% elif icon_dict.fontawesome %}
-                            <i class="{{ icon_dict.fontawesome }}"></i>
-                            {% elif icon_dict.image %}
-                            <img src="{{ icon_dict.image }}" class="stm-icon-image">
-                            {% endif %}
-                        </a>
-                        {% endfor %}
-                        {% endif %}
+                        {{ _icon_declare.declare_icon_links(theme_footer_icons) }}
                     </div>
                 </div>
             </div>
