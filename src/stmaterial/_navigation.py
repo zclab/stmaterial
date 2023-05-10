@@ -242,7 +242,7 @@ def add_toctree_functions(app, pagename, templatename, context, doctree):
                 f"""
                 <li class="md-tabs__item">
                   <a class="md-tabs__link nav-external" href="{ external_link["url"] }">
-                    { external_link["name"] } <span class="material-icons">open_in_new</span>
+                    { external_link["name"] } 
                   </a>
                 </li>
                 """
