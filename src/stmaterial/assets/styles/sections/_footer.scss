@@ -39,7 +39,6 @@
   font-size: 24px;
 
   a {
-    display: contents;
     color: var(--font-color-medium);
   }
 
@@ -52,9 +51,5 @@
     align-items: center;
     gap: 1.2rem;
     margin: 0;
-
-    li {
-      list-style-type: none;
-    }
   }
 }
