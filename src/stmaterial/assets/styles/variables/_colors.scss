@@ -83,6 +83,8 @@
   --color-guilabel-text: var(--font-color-main);
   // Dropdown colors
   --dropdown-color: var(--primary-color);
+
+  --input-focus-color: var(--secondary-color-focus-solid);
 }
 
 @mixin colors-dark {
