@@ -2,9 +2,13 @@
   <img src="docs/_static/logo.png" width="400">
 </h1>
 
-[![PyPI](https://img.shields.io/pypi/v/stmaterial?logo=python&logoColor=white&color=orange)](https://pypi.org/project/stmaterial/)
+
 [![deploy](https://github.com/zclab/stmaterial/actions/workflows/deploy-docs.yml/badge.svg)](https://zclab.github.io/stmaterial/)
+[![python](https://img.shields.io/pypi/pyversions/stmaterial.svg)](https://pypi.org/project/stmaterial/)
 [![release](https://img.shields.io/github/release/zclab/stmaterial.svg)](https://github.com/zclab/stmaterial/releases)
+[![PyPI](https://img.shields.io/pypi/v/stmaterial?logo=python&logoColor=white&color=orange)](https://pypi.org/project/stmaterial/)
+[![status](https://img.shields.io/pypi/status/stmaterial.svg)](https://pypi.org/project/stmaterial/)
+[![license](https://img.shields.io/pypi/l/stmaterial.svg)](https://github.com/zclab/stmaterial/blob/main/LICENSE)
 
 
 A Materialize based sphinx theme

@@ -13,24 +13,7 @@
         <div class="sidenav-header-items__end">
             <div class="headnav-item">
                 <ul>
-                    {% if theme_header_icons -%}
-                    {% for icon_dict in theme_header_icons -%}
-                    <li>
-                        <a href="{{ icon_dict.url }}" target="_blank" aria-label="{{ icon_dict.name }}"
-                            class="ext-link">
-                            {% if icon_dict.class %}
-                            <i class="{{ icon_dict.class }}"></i>
-                            {% elif icon_dict.svg %}
-                            <img src="{{ pathto(icon_dict.svg, 1) }}" style="transform: scale(0.8);">
-                            {% elif icon_dict.material_icons %}
-                            <i class="material-icons">{{ icon_dict.material_icons }}</i>
-                            {% elif icon_dict.fontawesome %}
-                            <i class="{{ icon_dict.fontawesome }}"></i>
-                            {% endif %}
-                        </a>
-                    </li>
-                    {% endfor %}
-                    {% endif %}
+                    {{ _icon_declare.declare_icon_links(theme_header_icons) }}
                 </ul>
             </div>
         </div>
