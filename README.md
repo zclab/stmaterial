@@ -1,7 +1,13 @@
 <h1 align="center">
-  <img src="docs/_static/logo.png" width="400">
+  <img src="https://cdn.jsdelivr.net/gh/zclab/stmaterial/docs/_static/logo.png" width="400">
 </h1>
 
+<p align="center">
+  <strong>
+    A 
+    <a href="https://materializeweb.com/">Materialize</a> based <a href="https://www.sphinx-doc.org/en/master/">sphinx</a> theme.
+  </strong>
+</p>
 
 [![deploy](https://github.com/zclab/stmaterial/actions/workflows/deploy-docs.yml/badge.svg)](https://zclab.github.io/stmaterial/)
 [![python](https://img.shields.io/pypi/pyversions/stmaterial.svg)](https://pypi.org/project/stmaterial/)
@@ -9,9 +15,6 @@
 [![PyPI](https://img.shields.io/pypi/v/stmaterial?logo=python&logoColor=white&color=orange)](https://pypi.org/project/stmaterial/)
 [![status](https://img.shields.io/pypi/status/stmaterial.svg)](https://pypi.org/project/stmaterial/)
 [![license](https://img.shields.io/pypi/l/stmaterial.svg)](https://github.com/zclab/stmaterial/blob/main/LICENSE)
-
-
-A Materialize based sphinx theme
 
 
 ## Installation and usage

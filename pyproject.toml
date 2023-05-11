@@ -53,4 +53,4 @@ dev = ['sphinx-theme-builder[cli] >= 0.2.0b2']
 
 [project.urls]
 Repository = "https://github.com/zclab/stmaterial"
-Documentation = "https://zclab.github.io/stmaterial/"
+Documentation = "https://stmaterial.readthedocs.io/en/latest/"
