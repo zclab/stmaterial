@@ -23,4 +23,6 @@ input:not([type]):not(.browser-default)
   color: var(--font-color-main)
 
   &:focus:not([readonly])
-    border-top: 1px solid $input-focus-color
+    border-top: 1px solid var(--input-focus-color)
+    border-bottom: 1px solid var(--input-focus-color)
+    box-shadow: 2px 4px 2px 1px rgba(0, 0, 0, 0.2)
