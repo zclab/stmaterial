@@ -18,6 +18,13 @@
             </div>
         </div>
     </div>
+    {% if theme_sidenav_icons %}
+    <div class="sidenav-icons">
+        <ul>
+            {{ _icon_declare.declare_icon_links(theme_sidenav_icons) }}
+        </ul>
+    </div>
+    {% endif %}
     <div class="sidenav-menu">
         {%- for sidebar_section in sidebars %}
         {%- include sidebar_section %}
