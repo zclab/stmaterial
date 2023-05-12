@@ -1,0 +1,14 @@
+.sidenav-icons {
+  padding: 0 0 0 var(--header-horizontal-spacing);
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0;
+
+    li>a {
+      display: flex;
+    }
+  }
+}
