@@ -77,7 +77,7 @@ html_theme_options = {
         # {"name":"Email", "url": "example@example.com", "material_icons":"email"},
     ],
     "footer_icons": [
-        {"name":"PyPi", "url": "https://pypi.org/project/stmaterial/", "image":"https://img.shields.io/pypi/dw/stmaterial"},
+        {"name":"PyPi", "url": "https://pypi.org/project/stmaterial/", "image":"https://img.shields.io/pypi/dm/stmaterial.svg?style=flat-square"},
         {"name":"Licence", "url": "https://github.com/zclab/stmaterial/blob/main/LICENSE", "fontawesome":"fa-solid fa-file"},
         {"name":"Github", "url": "http://github.com/zclab/stmaterial", "fontawesome":"fa-brands fa-github"},
     ],
