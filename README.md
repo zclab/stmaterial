@@ -9,12 +9,13 @@
   </strong>
 </p>
 
-[![deploy](https://github.com/zclab/stmaterial/actions/workflows/deploy-docs.yml/badge.svg)](https://zclab.github.io/stmaterial/)
-[![python](https://img.shields.io/pypi/pyversions/stmaterial.svg)](https://pypi.org/project/stmaterial/)
-[![release](https://img.shields.io/github/release/zclab/stmaterial.svg)](https://github.com/zclab/stmaterial/releases)
-[![PyPI](https://img.shields.io/pypi/v/stmaterial?logo=python&logoColor=white&color=orange)](https://pypi.org/project/stmaterial/)
-[![status](https://img.shields.io/pypi/status/stmaterial.svg)](https://pypi.org/project/stmaterial/)
-[![license](https://img.shields.io/pypi/l/stmaterial.svg)](https://github.com/zclab/stmaterial/blob/main/LICENSE)
+<!-- [![deploy](https://github.com/zclab/stmaterial/actions/workflows/deploy-docs.yml/badge.svg)](https://zclab.github.io/stmaterial/) -->
+[![deploy](https://img.shields.io/readthedocs/stmaterial?style=flat-square&logo=readthedocs&logoColor=white)](https://stmaterial.readthedocs.io/en/latest/)
+[![Downloads](https://img.shields.io/pypi/dm/stmaterial.svg?style=flat-square)](https://pypistats.org/packages/stmaterial)
+[![python](https://img.shields.io/pypi/pyversions/stmaterial.svg?style=flat-square)](https://pypi.org/project/stmaterial/)
+[![PyPI](https://img.shields.io/pypi/v/stmaterial?style=flat-square&logo=python&logoColor=white&color=orange)](https://pypi.org/project/stmaterial/)
+[![status](https://img.shields.io/pypi/status/stmaterial.svg?style=flat-square)](https://pypi.org/project/stmaterial/)
+[![license](https://img.shields.io/pypi/l/stmaterial.svg?style=flat-square&logo=opensourceinitiative&logoColor=white)](https://github.com/zclab/stmaterial/blob/main/LICENSE)
 
 
 ## Installation and usage
