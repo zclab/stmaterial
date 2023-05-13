@@ -25,7 +25,6 @@ extensions = [
     "sphinx_copybutton",
     "sphinx_togglebutton",
     "sphinx_subfigure",
-    "sphinx_tippy"
 ]
 
 
@@ -74,7 +73,6 @@ html_theme_options = {
     "show_toc_level": 1,
     "header_icons": [
         {"name":"Github", "url": "http://github.com/zclab/stmaterial", "fontawesome":"fa-brands fa-github"},
-        # {"name":"Email", "url": "example@example.com", "material_icons":"email"},
     ],
     "sidenav_icons": [
         {"name":"pypistats", "url": "https://pypistats.org/packages/stmaterial", "image":"https://img.shields.io/pypi/dm/stmaterial.svg?style=flat-square"},

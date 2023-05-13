@@ -39,4 +39,17 @@ hide-sidenav: true
 ```
 ````
 
+
+## Set up sidenav icons
+
+Stmaterial allows set up the icons that are presented in the sidenav, there is no sidenav icons by default. To add custom sidenav icons, you need to provide the `sidenav_icons` configuration value to Stmaterial. 
+
+```python
+html_theme_options = {
+    "sidenav_icons": [
+        {"name":"Gitlab", "url": "http://gitlabcom/zclab/stmaterial", "fontawesome":"fa-brands fa-gitlab"},
+    ],
+}
+```
+
 [sphinx-file-wide-metadata]: https://www.sphinx-doc.org/en/master/usage/restructuredtext/field-lists.html#metadata
