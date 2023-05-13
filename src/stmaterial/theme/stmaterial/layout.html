@@ -54,11 +54,18 @@ titles_only=True)
                             {% block body %}{{ body }}{% endblock %}
                         </article>
 
-                        <div class="stm-edit-update-meta">
-                            {% include "components/last-updated.html" %}
-                            {% if theme_use_edit_page_button %}
-                            {% include "components/edit-this-page.html" %}
-                            {% endif %}
+                        <div class="stm-article-metadata-info">
+                            <div class="metadata-info-area">
+                                <div class="metadata-left">
+                                    {% include "components/last-updated.html" %}
+                                </div>
+                                <div class="metadata-right">
+                                    {% include "components/sourcelink.html" %}
+                                    {% if theme_use_edit_page_button %}
+                                    {% include "components/edit-this-page.html" %}
+                                    {% endif %}
+                                </div>
+                            </div>
                         </div>
 
                         <div class="stm-article-footer">

@@ -3,7 +3,7 @@
 
 {%- macro page_edit_button(url) -%}
 <a class="edit-this-page" href="{{ url }}" title="{{ translate('Edit this page') }}">
-    <i class="material-icons">mode_edit</i> {{ translate('Edit this page') }}
+    <i class="material-icons">mode_edit</i> {% if not show_source %} {{ translate('Edit this page') }} {% endif %}
 </a>
 {%- endmacro -%}
 
