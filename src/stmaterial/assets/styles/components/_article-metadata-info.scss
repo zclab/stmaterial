@@ -1,11 +1,21 @@
-.stm-edit-update-meta {
+.metadata-info-area {
   display: flex;
   padding: 0 5px;
-  justify-content: space-between;
   align-items: center;
 }
 
-.edit-this-page {
+.metadata-right {
+  margin-left: auto;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.metadata-left {
+  margin-right: auto;
+}
+
+.edit-this-page,
+.sourcelink {
   display: flex;
   align-items: center;
   gap: 0.25rem;

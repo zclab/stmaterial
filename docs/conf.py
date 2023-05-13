@@ -50,6 +50,7 @@ html_title = "sphinx theme of material"
 html_favicon = "_static/favicon.png"
 html_last_updated_fmt = ""
 html_logo = "_static/logo-.png"
+html_show_sourcelink = False
 
 todo_include_todos = True
 
