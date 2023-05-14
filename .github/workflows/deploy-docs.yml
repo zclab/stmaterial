@@ -6,6 +6,22 @@ on:
   pull_request:
 
 jobs:
+  lint:
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ["3.11"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: "pip"
+          cache-dependency-path: "pyproject.toml"
+      - uses: pre-commit/action@v3.0.0
+
   build:
     runs-on: ubuntu-latest
     steps:
