@@ -1,8 +1,7 @@
 .dropdown-content {
   li {
-
-    &>a,
-    &>span {
+    & > a,
+    & > span {
       color: var(--dropdown-color);
     }
   }

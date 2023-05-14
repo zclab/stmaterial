@@ -3,8 +3,7 @@ from typing import Any, Dict, Iterator
 from docutils.nodes import Node
 
 
-
-def config_provided_by_user(app: Sphinx, key:str) -> bool:
+def config_provided_by_user(app: Sphinx, key: str) -> bool:
     """Check if the user has manually provided the config.
     REMOVE when pydata v0.14 is released and import from there.
     """
@@ -28,7 +27,7 @@ def get_theme_options(app: Sphinx):
 
 def activate_extensions(app: Sphinx, extensions):
     """Activate extensions bundled with this theme.
-    
+
     This also manually triggers the `config-inited` build step to account for
     added extensions that hook into this event.
     """
@@ -37,7 +36,7 @@ def activate_extensions(app: Sphinx, extensions):
     # We'll then re-trigger this event after adding extensions so that *only* their event hooks trigger
     old_listeners = app.events.listeners["config-inited"]
     app.events.listeners["config-inited"] = []
-    
+
     for extension in extensions:
         # If it's already been activated just skip it
         if extension in app.config.extensions:

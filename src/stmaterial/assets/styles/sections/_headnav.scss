@@ -53,7 +53,7 @@ nav {
     display: flex;
 
     @media (max-width: $medium-screen-up) {
-      padding-left: 0
+      padding-left: 0;
     }
   }
 
@@ -91,7 +91,6 @@ nav {
     }
   }
 }
-
 
 a {
   &.nav-external:after {

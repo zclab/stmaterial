@@ -9,7 +9,7 @@
 
 {% block link_available -%}
 {{ page_edit_button(determine_page_edit_link()) }}
-{%- endblock %}
+{%- endblock link_available %}
 
 {% block link_not_available %}
 {# Make nice things happen, on Read the Docs #}
@@ -19,4 +19,4 @@ github_version and pagename and page_source_suffix %}
 pagename + page_source_suffix %}
 {{ page_edit_button(url) }}
 {%- endif -%}
-{% endblock %}
+{% endblock link_not_available %}

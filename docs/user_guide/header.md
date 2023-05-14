@@ -10,10 +10,9 @@ html_theme_options = {
 }
 ```
 
-
 ## Changing header icons
 
-Stmaterial allows customising the icons that are presented in the header. These icons can be used to link to relevant resources for your project and documentation. To add custom header icons, you need to provide the `header_icons` configuration value to Stmaterial. 
+Stmaterial allows customising the icons that are presented in the header. These icons can be used to link to relevant resources for your project and documentation. To add custom header icons, you need to provide the `header_icons` configuration value to Stmaterial.
 
 ```python
 html_theme_options = {
@@ -23,7 +22,6 @@ html_theme_options = {
     ],
 }
 ```
-
 
 ````{note}
 If you wish to use Font Awesome icons in the header, Using `html_css_files` to add the CSS file(s) for Font Awesome.

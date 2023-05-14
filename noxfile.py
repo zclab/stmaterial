@@ -9,12 +9,12 @@ PACKAGE_NAME = "stmaterial"
 nox.options.sessions = ["lint", "test"]
 KWARGS = dict(level1=None, level2=9, level3=5)
 
+
 #
 # Helpers
 #
 def _versions_bump_helper(version_number, max_version=None):
-    
-    if not(max_version) or int(version_number) <= max_version:
+    if not (max_version) or int(version_number) <= max_version:
         return 0, int(version_number)
     else:
         return 1, 0
@@ -23,18 +23,18 @@ def _versions_bump_helper(version_number, max_version=None):
 def _determine_versions(current_version, **kwargs):
     """Returns (version_in_release, version_after_release)"""
     version_in_release = current_version.rsplit(".dev", 1)[0]
-    version_split = version_in_release.split('.')
+    version_split = version_in_release.split(".")
 
     plus, version_after_release = 1, []
     for idx, vs in enumerate(version_split[::-1]):
         vs = int(vs) + plus
-        max_version = kwargs[f'level{len(version_split)-idx}']
+        max_version = kwargs[f"level{len(version_split)-idx}"]
         plus, version_number = _versions_bump_helper(vs, max_version)
         version_after_release.insert(0, str(version_number))
 
     return (
         version_in_release,
-        '.'.join(version_after_release) + ".dev",
+        ".".join(version_after_release) + ".dev",
     )
 
 
@@ -137,9 +137,7 @@ def test(session):
 @nox.session
 def release(session):
     version_file = f"src/{PACKAGE_NAME}/__init__.py"
-    allowed_upstreams = [
-        f"git@github.com:zclab/{PACKAGE_NAME.replace('_', '-')}.git"
-    ]
+    allowed_upstreams = [f"git@github.com:zclab/{PACKAGE_NAME.replace('_', '-')}.git"]
 
     release_version, next_version = get_release_versions(version_file)
 

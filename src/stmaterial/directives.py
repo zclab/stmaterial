@@ -5,6 +5,7 @@ from docutils import nodes
 from docutils.parsers.rst import directives
 from sphinx.util.docutils import SphinxDirective
 from sphinx.util import logging
+
 SPHINX_LOGGER = logging.getLogger(__name__)
 
 TEMPLATE_GRID = """
@@ -23,6 +24,7 @@ GRID_CARD = """
 {content}
 ````
 """
+
 
 class GalleryDirective(SphinxDirective):
     """A directive to show a gallery of images and links in a grid."""
@@ -51,7 +53,7 @@ class GalleryDirective(SphinxDirective):
                 SPHINX_LOGGER.warn(f"Could not find grid data at {path_data}.")
                 nodes.text("No grid data found at {path_data}.")
                 return
-            yaml_string = path_data.read_text(encoding='utf-8')
+            yaml_string = path_data.read_text(encoding="utf-8")
         else:
             yaml_string = "\n".join(self.content)
 

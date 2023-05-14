@@ -1,1 +1,1 @@
-import "@materializecss/materialize"
+import "@materializecss/materialize";

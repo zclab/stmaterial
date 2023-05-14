@@ -2,7 +2,6 @@
 
 Stmaterial supports customising the elements that show up in the navigational sidebar (left). This is to provide documentation authors who are willing to work with HTML/CSS to change and tweak how the sidebar looks.
 
-
 ## Expectations
 
 It is expected that users who override the sidebar would also carefully consider how their documentation looks across various platforms (i.e. not take a "looks OK on my machine" approach) and would be willing to override Stmaterial's styles to make it work with their sidebar design.
@@ -26,7 +25,6 @@ start-after: "# sidebar-start"
 end-before: "# sidebar-end"
 ---
 ```
-
 
 ## Making changes
 
@@ -58,7 +56,6 @@ html_sidebars = {
     ]
 }
 ```
-
 
 [sphinx-templates_path]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-templates_path
 [sphinx-html_sidebars]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_sidebars

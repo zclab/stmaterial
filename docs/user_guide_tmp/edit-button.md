@@ -36,5 +36,4 @@ The `{filename}` component will be replaced with the full path to the file, as k
 Stmaterial does not enforce that the `source_edit_link` contains `{filename}` or any sort of correctness check on this URL. Make sure to manually confirm that the link works.
 ```
 
-
 [sphinx-html_theme_options]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_theme_options

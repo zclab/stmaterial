@@ -6,7 +6,6 @@ from sphinx.util.nodes import NodeMatcher
 from .utils import traverse_or_findall
 
 
-
 class ShortenLinkTransform(SphinxPostTransform):
     """
     Shorten link when they are coming from github or gitlab and add an extra class to the tag

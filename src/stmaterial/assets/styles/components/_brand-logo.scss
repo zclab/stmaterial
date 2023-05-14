@@ -11,7 +11,9 @@
   }
 
   img {
-    max-width: calc($sidenav-width - var(--header-horizontal-spacing)*2); // $sidenav-width - 30px; 
+    max-width: calc(
+      $sidenav-width - var(--header-horizontal-spacing) * 2
+    ); // $sidenav-width - 30px;
     max-height: $navbar-height;
 
     @media (max-width: $medium-screen-up) {

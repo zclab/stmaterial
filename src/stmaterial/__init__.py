@@ -42,7 +42,6 @@ def _get_light_style(app: sphinx.application.Sphinx) -> Style:
 
 
 def _get_dark_style(app: sphinx.application.Sphinx) -> Style:
-    
     # HACK: begins here
     dark_style = None
     try:
@@ -121,7 +120,7 @@ def get_pygments_stylesheet() -> str:
 
     lines.extend(_get_styles(light_formatter, prefix=".highlight"))
 
-    dark_prefix = ':root[theme=dark] .highlight'
+    dark_prefix = ":root[theme=dark] .highlight"
     lines.extend(_get_styles(dark_formatter, prefix=dark_prefix))
 
     return "\n".join(lines)
@@ -179,7 +178,7 @@ def _compute_hide_toc(
         return True
     elif not context["toc"]:
         return True
-    
+
     return False
 
 
@@ -193,10 +192,10 @@ def _compute_hide_sidenav(
     file_meta = context.get("meta", None) or {}
     if "hide-sidenav" in file_meta:
         return True
-    
+
     if "full-width" in file_meta:
         return True
-    
+
     return False
 
 
@@ -210,10 +209,10 @@ def _compute_hide_tocnav(
     file_meta = context.get("meta", None) or {}
     if "hide-tocnav" in file_meta:
         return True
-    
+
     if "full-width" in file_meta:
         return True
-    
+
     return False
 
 
@@ -297,7 +296,6 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
             "stmaterial is being used as an extension in a non-HTML build. "
             "This should not happen."
         )
-    
 
     builder = app.builder
     assert builder, "what?"
@@ -311,13 +309,14 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
     update_known_styles_state(app)
 
     if "ablog" in app.config.extensions:
-        if not config_provided_by_user(
-            app, "post_show_prev_next"
-        ) or app.config.post_show_prev_next == True:
+        if (
+            not config_provided_by_user(app, "post_show_prev_next")
+            or app.config.post_show_prev_next == True
+        ):
             app.config.post_show_prev_next = False
 
         else:
-            app.config.post_show_prev_next = ''
+            app.config.post_show_prev_next = ""
 
     def _update_default(key: str, *, new_default: Any) -> None:
         app.config.values[key] = (new_default, *app.config.values[key][1:])
@@ -331,10 +330,10 @@ def _update_config(app: sphinx.application.Sphinx) -> None:
 
     header_icons = theme_options.get("header_icons", [])
     source_repo = theme_options.get("source_repository", None)
-    if not(header_icons) and source_repo:
+    if not (header_icons) and source_repo:
         header_icons.append(
-            {"name":"Github", "url": source_repo, "class":"fa-brands fa-github"}
-            )
+            {"name": "Github", "url": source_repo, "class": "fa-brands fa-github"}
+        )
         theme_options["header_icons"] = header_icons
 
     else:

@@ -6,10 +6,11 @@
 <head>
     {%- block site_meta -%}
     <meta charset="utf-8" />
+    <meta name="keywords" content="python, sphinx, sphinx-theme, documentation" />
+    <meta name="description" content="A Materialize based sphinx theme" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="msapplication-tap-highlight" content="no">
-    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="msapplication-tap-highlight" content="no" />
 
     {%- if metatags %}{{ metatags }}{% endif -%}
 
@@ -73,16 +74,16 @@
     {#- Theme-related stylesheets -#}
     {%- block theme_styles %}
     {% include "partials/_head_css_variables.html" with context %}
-    {%- endblock -%}
+    {%- endblock theme_styles -%}
 
     {%- block extra_styles %}
-    {%- endblock -%}
+    {%- endblock extra_styles -%}
 
     {{ _webpack.head_js_preload() }}
     {%- endblock styles -%}
 
     {#- Custom front matter #}
-    {%- block extrahead -%}{%- endblock -%}
+    {%- block extrahead -%}{%- endblock extrahead -%}
     <script>
         const theme = localStorage.getItem('theme');
         if (theme) document.documentElement.setAttribute('theme', theme);
@@ -91,7 +92,7 @@
 
 <body>
     {% block htmlbody %}
-    {% endblock %}
+    {% endblock htmlbody %}
 
     {%- block scripts -%}
 
@@ -105,7 +106,7 @@
     {# Theme-related JavaScript code #}
     {%- block theme_scripts -%}
     {{ _webpack.body_post() }}
-    {%- endblock -%}
+    {%- endblock theme_scripts -%}
 
     {%- endblock scripts -%}
 </body>

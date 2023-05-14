@@ -27,7 +27,7 @@
     {%- for letter, entries in content %}
     <tr class="pcap">
         <td></td>
-        <td>&#160;</td>
+        <td>{# djlint:off #}&#160;{# djlint:on #}</td>
         <td></td>
     </tr>
     <tr class="cap" id="cap-{{ letter }}">
@@ -38,11 +38,11 @@
     {%- for (name, grouptype, page, anchor, extra, qualifier, description) in entries %}
     <tr{% if grouptype==2 %} class="cg-{{ groupid.current() }}" {% endif %}>
         <td>{% if grouptype == 1 -%}
-            <img src="{{ pathto('_static/minus.png', 1) }}" class="toggler" id="toggle-{{ groupid.next() }}"
-                style="display: none" alt="-" />
+            {# djlint:off #}<img src="{{ pathto('_static/minus.png', 1) }}" class="toggler"
+                id="toggle-{{ groupid.next() }}" style="display: none" alt="-" />{# djlint:on #}
             {%- endif %}
         </td>
-        <td>{% if grouptype == 2 %}&#160;&#160;&#160;{% endif %}
+        <td>{% if grouptype == 2 %}{# djlint:off #}&#160;&#160;&#160;{# djlint:on #}{% endif %}
             {% if page %}<a href="{{ pathto(page)|e }}#{{ anchor }}">{% endif -%}
                 <code class="xref">{{ name|e }}</code>
                 {%- if page %}</a>{% endif %}

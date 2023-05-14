@@ -10,20 +10,19 @@ tags: python, pathlib
 
 `pathlib` 是 python 3.4 才引进的一个较新的模块，`pathlib` 把每一个 `path` 封装成一个对象，通过操作对象来操作路径，非常体现类和对象的封装思想，而且通过对象操作，可以使用链式编程，非常方便。
 
-
 ## 实例化一个 `Path` 对象
 
 使用方法：`Path([path字符串])` -> `Path` 对象
 
 ```python
 >>> from pathlib import Path
- 
+
 #默认是当前目录‘.’
 >>> Path()
- 
+
 #将path路径实例化对象
 >>> Path('/etc/fstab')
- 
+
 #将path路径实例化对象
 >>> Path('a/b')
 ```
@@ -35,42 +34,41 @@ tags: python, pathlib
 ```python
 >>> str(Path('/etc/fs'))
 '/etc/fs'
- 
+
 >>> str(Path())
 '.'
- 
+
 >>> str(Path('a/b'))
 'a/b'
 ```
 
 ## 路径拼接操作符 `/`
 
- Path实例化后的路径对象可以通过操作符 `/` 进行路径拼接
+Path实例化后的路径对象可以通过操作符 `/` 进行路径拼接
 
- * `Path对象 / Path对象` -> `Path对象`
- * `Paht对象 / 路径字符串` 或者 `路径字符串 / Paht对象`  -> `Path对象`
+- `Path对象 / Path对象` -> `Path对象`
+- `Paht对象 / 路径字符串` 或者 `路径字符串 / Paht对象` -> `Path对象`
 
 ```python
 >>> P1 = Path('/root')
 >>> P2 = Path('/data')
 >>> P3 = Path('data')
- 
+
 >>> str(P1 / P2)
 '/data'
- 
+
 >>> str(P1 / P3)
 '/root/data'
- 
+
 >>> P1 / '/data'
 PosixPath('/data')
- 
+
 >>> P1 / 'data'
 PosixPath('/root/data')
- 
+
 >>> '/home' / P3
 PosixPath('/home/data')
 ```
-
 
 ## 路径拼接方法
 
@@ -82,20 +80,19 @@ PosixPath('/home/data')
 >>> P1 = Path('/root')
 >>> P2 = Path('/data')
 >>> P3 = Path('data')
- 
+
 >>> str(P1.joinpath(P2))
 '/data'
- 
+
 >>> str(P1.joinpath(P3))
 '/root/data'
- 
+
 >>> str(P1.joinpath('data'))
 '/root/data'
- 
+
 >>> str(P1.joinpath('/data'))
 '/data'
 ```
-
 
 ## 路径分解
 
@@ -108,11 +105,10 @@ PosixPath('/home/data')
 
 ```python
 >>> P1 = Path('/root/dir1/test1.py')
- 
+
 >>> P1.parts
 ('/', 'root', 'dir1', 'test1.py')
 ```
-
 
 ## 一级父目录
 
@@ -125,10 +121,10 @@ PosixPath('/home/data')
 
 ```python
 >>> P1 = Path('/root/dir1/test1.py')
- 
+
 >>> P1.parent
 PosixPath('/root/dir1')
- 
+
 >>> str(P1.parent.parent)
 '/root'
 ```
@@ -145,16 +141,16 @@ PosixPath('/root/dir1')
 
 ```python
 >>> P1 = Path('/root/dir1/test1.py')
- 
+
 >>> P1.parents
 <PosixPath.parents>
- 
+
 >>> list(P1.parents)
 [PosixPath('/root/dir1'), PosixPath('/root'), PosixPath('/')]
- 
+
 >>> for i in P1.parents:
 >>>     print(i)
- 
+
 /root/dir1
 /root
 /
@@ -170,16 +166,15 @@ PosixPath('/root/dir1')
 >>> P1 = Path('/root/dir1/test1.py')
 >>> P1.name
 'test1.py'
- 
+
 >>> P2 = Path('/root/dir1/test1.py/')
 >>> P2.name
 'test1.py'
- 
+
 >>> P3 = Path('/')
 >>> P3.name
 ''
 ```
-
 
 ## 查看Path对象的文件名称
 
@@ -194,17 +189,16 @@ PosixPath('/root/dir1')
 >>> P1 = Path('/root/dir1/test1.py')
 >>> P1.stem
 'test1'
- 
+
 #如果有多个后缀，只会去掉最后一个后缀
 >>> P2 = Path('/root/dir1/test1.tar.gz')
 >>> P2.stem
 'test1.tar'
- 
+
 >>> P3 = Path('/')
 >>> P3.stem
 ''
 ```
-
 
 ## 查看Path对象的文件名称后缀
 
@@ -218,33 +212,31 @@ PosixPath('/root/dir1')
 >>> P1 = Path('/root/dir1/test1.py')
 >>> P1.suffix
 '.py'
- 
+
 #如果有多个后缀，只会返回最后一个后缀名称
 >>> P2 = Path('/root/dir1/test1.tar.gz')
 >>> P2.suffix
 '.gz'
 ```
 
-
 ## 查看Path对象的文件名称后缀
 
 使用方法：`Path对象.suffixes` -> 后缀名称组成的列表
 
 说明：
+
 1. 将文件名的一个或多个后缀放到列表中
 2. 适合有多个后缀名称的文件
-
 
 ```python
 >>> P1 = Path('/root/dir1/test1.py')
 >>> P1.suffixes
 ['.py']
- 
+
 >>> P2 = Path('/root/dir1/test1.tar.gz')
 >>> P2.suffixes
 ['.tar', '.gz']
 ```
-
 
 ## 添加后缀名到路径尾部
 
@@ -259,11 +251,11 @@ PosixPath('/root/dir1')
 >>> P1 = Path('/root/dir1/test1.py')
 >>> P1.with_suffix('.gz')
 PosixPath('/root/dir1/test1.gz')
- 
+
 >>> P2 = Path('/root/dir1/test1')
 >>> P2.with_suffix('.gz')
 PosixPath('/root/dir1/test1.gz')
- 
+
 >>> P3 = Path('/root/dir1/test1/')
 >>> P3.with_suffix('.gz')
 PosixPath('/root/dir1/test1.gz')
@@ -277,12 +269,11 @@ PosixPath('/root/dir1/test1.gz')
 >>> P1 = Path('/root/dir1/test1.py')
 >>> P1.with_name('.gz')
 PosixPath('/root/dir1/.gz')
- 
+
 >>> P2 = Path('/root/dir1/test1/')
 >>> P2.with_name('good')
 PosixPath('/root/dir1/good')
 ```
-
 
 ## 返回当前工作目录
 
@@ -293,7 +284,6 @@ PosixPath('/root/dir1/good')
 PosixPath('/home/python/jupyter')
 ```
 
-
 ## 返回当前家目录
 
 使用方法：`Path.home()` -> `Path` 对象
@@ -302,7 +292,6 @@ PosixPath('/home/python/jupyter')
 >>> P1.home()
 PosixPath('/home/python')
 ```
-
 
 ## `is` 系列的判断
 
@@ -328,18 +317,17 @@ PosixPath('/home/python')
 >>> P1 = Path('/root/dir1/test1/')
 >>> P1.is_file()
 PermissionError: [Errno 13] Permission denied: '/root/dir1/test1'
- 
+
 >>> P2 = Path('/tmp/dirt/test1')
 >>> P2.is_dir()
 False
- 
+
 >>> P3 = Path('/etc/rc.local')
 >>> P3.is_file()
 True
 >>> P3.is_symlink()
 True
 ```
-
 
 ## 解析一个路径
 
@@ -356,13 +344,12 @@ True
 >>> P1 = Path('/etc/rc.local')
 >>> P1.resolve()
 PosixPath('/etc/rc.d/rc.local')
- 
+
 #普通文件，返回自身
 >>> P2 = Path('/etc/rc.d/rc.local')
 >>> P2.resolve()
 PosixPath('/etc/rc.d/rc.local')
 ```
-
 
 ## 删除一层空目录
 
@@ -374,21 +361,20 @@ PosixPath('/etc/rc.d/rc.local')
 
 ```python
 >>> P1 = Path('/tmp/test1.py')
- 
+
 #Path对象必须是一个空目录
 >>> P1.rmdir()
 NotADirectoryError: [Errno 20] Not a directory: '/tmp/test1.py'
- 
+
 #Path对象必须是一个空目录
 >>> P2 = Path('/tmp/test_go')
 >>> P2.rmdir()
 OSError: [Errno 39] Directory not empty: '/tmp/test_go'
- 
+
 #成功删除
 >>> P3 = Path('/tmp/test_go/dir2')
 P3.rmdir()
 ```
-
 
 ## 创建一个文件
 
@@ -403,11 +389,10 @@ P3.rmdir()
 ```python
 >>> P1 = Path('/tmp/test1.py')
 >>> P1.touch()
- 
+
 >>> P2 = Path('/tmp/test3.py')
 >>> P2.touch(0o777)
 ```
-
 
 ## 创建目录
 
@@ -421,27 +406,25 @@ P3.rmdir()
 
 ③ `exist_ok`：Fasle表示，如果目录已经存在，则抛出异常，True 表示，如果目录存在不抛出异常
 
-
 ```python
 >>> P1 = Path('/tmp/test_do')
 >>> P1.mkdir(mode=0o744)
- 
+
 #默认只能创建一层空目录
 >>> P2 = Path('/tmp/test_do/a/b/c')
 >>> P2.mkdir()
 FileNotFoundError: [Errno 2] No such file or directory: '/tmp/test_do/a/b/c'
- 
+
 #使用parents=True，可以递归创建目录
 >>> P2.mkdir(parents=True)
- 
+
 #目录已经存在，再创建抛出异常
 >>> P2.mkdir(parents=True)
 FileExistsError: [Errno 17] File exists: '/tmp/test_do/a/b/c'
- 
+
 #目录已经存在，指定了exitst_ok=True，所以不抛出异常
 >>> P2.mkdir(parents=True,exist_ok=True)
 ```
-
 
 ## 迭代当前目录
 
@@ -453,7 +436,6 @@ FileExistsError: [Errno 17] File exists: '/tmp/test_do/a/b/c'
 
 ② 返回一个生成器，可以使用for循环进行迭代
 
-
 ```shell
 [root@jimmy tmp]# tree test_go/
 test_go/
@@ -463,12 +445,12 @@ test_go/
 |-- test.p3
 |-- test.py1
 `-- test.py2
- 
+
 #对当前目录的所有文件（文件和目录）进行迭代
 >>> P1 = Path('/tmp/test_go')
 >>> for i in P1.iterdir():
 >>>     print(i)
-     
+
 /tmp/test_go/dir1
 /tmp/test_go/test.py2
 /tmp/test_go/dir3
@@ -488,7 +470,6 @@ test_go/
 
 ③ 生成器的每一个元素都是一个 `Path` 对象
 
-
 ```shell
 [root@jimmy tmp]# tree test_go/
 test_go/
@@ -499,17 +480,16 @@ test_go/
 |-- test.p3
 |-- test.py1
 `-- test.py2
- 
+
 >>> P1 = Path('/tmp/test_go')
- 
+
 >>> list(P1.glob("py*"))
 []
- 
+
 #当前目录只有两个以test.py开头的文件，不会递归子目录
 >>> list(P1.glob("test.py*"))
 [PosixPath('/tmp/test_go/test.py2'), PosixPath('/tmp/test_go/test.py1')]
 ```
-
 
 ## 通过通配符查询指定路径下的文件
 
@@ -523,18 +503,16 @@ test_go/
 
 ③ 生成器的每一个元素都是一个 `Path` 对象
 
-
 ```shell
 #当前所有目录有三个以test.py开头的文件，递归了子目录
 >>> list(P1.rglob("test.py*"))
 [PosixPath('/tmp/test_go/test.py2'),
  PosixPath('/tmp/test_go/test.py1'),
  PosixPath('/tmp/test_go/dir1/test.py')]
- ```
-
+```
 
 ## 查看文件详细信息
- 
+
 使用方法：`Path对象.stat()`
 
 说明：
@@ -547,17 +525,14 @@ test_go/
 >>> P1 = Path('/tmp/test_go')
 >>> P1.stat()
 os.stat_result(st_mode=16893, st_ino=256377, st_dev=64769, st_nlink=4, st_uid=1000, st_gid=1000, st_size=4096, st_atime=1554106724, st_mtime=1554186613, st_ctime=1554186613)
- 
+
 #返回一个stat对象，通过属性相关数值
 >>> P1.stat().st_uid
 100
 ```
-
-
 
 ## `Path` 使用总结
 
 ① 核心就是把一个路径封装成一个对象，通过对象的属性或者方法来操作路径
 
 ② 很多方法返回的仍然是一个 `Path` 对象，通过 `Path` 对象又可以访问属性或者调用访问，实现链式编程
-

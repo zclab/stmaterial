@@ -30,7 +30,6 @@ The filenames must be relative to the [`html_static_path`][sphinx-html_static_pa
 This is different from how `html_logo` works, which copies the given filename into the correct location automagically.
 ```
 
-
 [sphinx-html_logo]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_logo
 [sphinx-html_theme_options]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_theme_options
 [sphinx-html_static_path]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_static_path

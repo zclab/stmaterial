@@ -1,7 +1,6 @@
 # Changing sidenav elements
 
-Stmaterial supports customising the elements that show up in the sidenav (left). 
-
+Stmaterial supports customising the elements that show up in the sidenav (left).
 
 ## Default design
 
@@ -15,11 +14,9 @@ end-before: "# sidebar-end"
 ---
 ```
 
-
 ## Hiding sidenav
 
 Stmaterial supports hiding the sidenav. To explicitly hide it on a specific page, `hide-sidenav` can be set in the [File-Wide metadata][sphinx-file-wide-metadata] for that page..
-
 
 ````{tab} reStructuredText
 ```rst
@@ -39,10 +36,9 @@ hide-sidenav: true
 ```
 ````
 
-
 ## Set up sidenav icons
 
-Stmaterial allows set up the icons that are presented in the sidenav, there is no sidenav icons by default. To add custom sidenav icons, you need to provide the `sidenav_icons` configuration value to Stmaterial. 
+Stmaterial allows set up the icons that are presented in the sidenav, there is no sidenav icons by default. To add custom sidenav icons, you need to provide the `sidenav_icons` configuration value to Stmaterial.
 
 ```python
 html_theme_options = {

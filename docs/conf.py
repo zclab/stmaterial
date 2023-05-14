@@ -1,5 +1,6 @@
 import sys
 from os.path import abspath, join, dirname
+
 sys.path.insert(0, abspath(join(dirname(__file__), "../src")))
 import stmaterial
 
@@ -9,7 +10,7 @@ copyright = "2023"
 author = "zclab"
 master_doc = "index"
 version = stmaterial.__version__
-language = 'en' #'zh_CN'
+language = "en"  #'zh_CN'
 
 extensions = [
     "sphinx.ext.autodoc",
@@ -30,11 +31,11 @@ extensions = [
 
 myst_enable_extensions = ["colon_fence", "deflist"]
 exclude_patterns = [
-    "_build", 
-    "Thumbs.db", 
+    "_build",
+    "Thumbs.db",
     ".DS_Store",
     "contributing",
-    "user_guide_tmp/*"
+    "user_guide_tmp/*",
 ]
 
 intersphinx_mapping = {
@@ -62,49 +63,87 @@ html_theme_options = {
     "source_directory": "docs/",
     "show_back_to_top": True,
     "fix_header_nav": False,
-    "logo":{
-        "text": "Stmaterial",
-        "logo": "_static/logo.png"
-    },
+    "logo": {"text": "Stmaterial", "logo": "_static/logo.png"},
     "external_links": [
         {"name": "Furo", "url": "https://pradyunsg.me/furo/quickstart/"},
-        {"name": "Sphinx book theme", "url": "https://sphinx-book-theme.readthedocs.io/en/latest/"},
-        {"name": "Pydata sphinx theme", "url": "https://pydata-sphinx-theme.readthedocs.io/"},
+        {
+            "name": "Sphinx book theme",
+            "url": "https://sphinx-book-theme.readthedocs.io/en/latest/",
+        },
+        {
+            "name": "Pydata sphinx theme",
+            "url": "https://pydata-sphinx-theme.readthedocs.io/",
+        },
     ],
     "show_toc_level": 1,
     "header_icons": [
-        {"name":"Github", "url": "http://github.com/zclab/stmaterial", "fontawesome":"fa-brands fa-github"},
+        {
+            "name": "Github",
+            "url": "http://github.com/zclab/stmaterial",
+            "fontawesome": "fa-brands fa-github",
+        },
     ],
     "sidenav_icons": [
-        {"name":"pypistats", "url": "https://pypistats.org/packages/stmaterial", "image":"https://img.shields.io/pypi/dm/stmaterial.svg?style=flat-square"},
-        {"name":"Github Stars", "url": "https://github.com/zclab/stmaterial", "image":"https://img.shields.io/github/stars/zclab/stmaterial?style=flat-square&logo=github"},
+        {
+            "name": "pypistats",
+            "url": "https://pypistats.org/packages/stmaterial",
+            "image": "https://img.shields.io/pypi/dm/stmaterial.svg?style=flat-square",
+        },
+        {
+            "name": "Github Stars",
+            "url": "https://github.com/zclab/stmaterial",
+            "image": "https://img.shields.io/github/stars/zclab/stmaterial?style=flat-square&logo=github",
+        },
     ],
     "footer_icons": [
-        {"name":"Licence", "url": "https://github.com/zclab/stmaterial/blob/main/LICENSE", "fontawesome":"fa-solid fa-file"},
-        {"name":"Github", "url": "http://github.com/zclab/stmaterial", "fontawesome":"fa-brands fa-github"},
+        {
+            "name": "Licence",
+            "url": "https://github.com/zclab/stmaterial/blob/main/LICENSE",
+            "fontawesome": "fa-solid fa-file",
+        },
+        {
+            "name": "Github",
+            "url": "http://github.com/zclab/stmaterial",
+            "fontawesome": "fa-brands fa-github",
+        },
     ],
     "use_edit_page_button": True,
     "toc_title": "On this page",
     "custom_fonts": {
-        "name": 'LXGWWenKaiLite',
-        "type": 'truetype',
+        "name": "LXGWWenKaiLite",
+        "type": "truetype",
         "src": [
-            {"weight": 200, "url":"https://cdn.jsdelivr.net/gh/zclab/static/fonts/LxgwWenKai-Lite/LXGWWenKaiLite-Light.ttf"},
-            {"weight": 300, "url":"https://cdn.jsdelivr.net/gh/zclab/static/fonts/LxgwWenKai-Lite/LXGWWenKaiLite-Light.ttf"},
-            {"weight": 400, "url":"https://cdn.jsdelivr.net/gh/zclab/static/fonts/LxgwWenKai-Lite/LXGWWenKaiLite-Regular.ttf"},
-            {"weight": 500, "url":"https://cdn.jsdelivr.net/gh/zclab/static/fonts/LxgwWenKai-Lite/LXGWWenKaiLite-Bold.ttf"},
-            {"weight": 600, "url":"https://cdn.jsdelivr.net/gh/zclab/static/fonts/LxgwWenKai-Lite/LXGWWenKaiLite-Bold.ttf"},
+            {
+                "weight": 200,
+                "url": "https://cdn.jsdelivr.net/gh/zclab/static/fonts/LxgwWenKai-Lite/LXGWWenKaiLite-Light.ttf",
+            },
+            {
+                "weight": 300,
+                "url": "https://cdn.jsdelivr.net/gh/zclab/static/fonts/LxgwWenKai-Lite/LXGWWenKaiLite-Light.ttf",
+            },
+            {
+                "weight": 400,
+                "url": "https://cdn.jsdelivr.net/gh/zclab/static/fonts/LxgwWenKai-Lite/LXGWWenKaiLite-Regular.ttf",
+            },
+            {
+                "weight": 500,
+                "url": "https://cdn.jsdelivr.net/gh/zclab/static/fonts/LxgwWenKai-Lite/LXGWWenKaiLite-Bold.ttf",
+            },
+            {
+                "weight": 600,
+                "url": "https://cdn.jsdelivr.net/gh/zclab/static/fonts/LxgwWenKai-Lite/LXGWWenKaiLite-Bold.ttf",
+            },
         ],
     },
     "light_css_variables": {
         "primary-color": "#5c6bc0",
         "primary-color-dark": "#283593",
         "primary-color-raised-hover-solid": "#7986cb",
-        "primary-color-raised-focus-solid":"#7986cb",
+        "primary-color-raised-focus-solid": "#7986cb",
     },
     "navigation_with_keys": True,
 }
-    
+
 
 blog_path = "blog"
 blog_post_pattern = "posts/*/*"
@@ -113,20 +152,32 @@ blog_authors = {
 }
 
 html_sidebars = {
-    "index":[],
+    "index": [],
     "posts/**": [
-        "search-field.html", "ablog/postcard.html","ablog/categories.html","ablog/tagcloud.html", "ablog/recentposts.html",
+        "search-field.html",
+        "ablog/postcard.html",
+        "ablog/categories.html",
+        "ablog/tagcloud.html",
+        "ablog/recentposts.html",
     ],
     "blog": [
-        "search-field.html", "ablog/categories.html","ablog/tagcloud.html","ablog/archives.html","ablog/recentposts.html",
+        "search-field.html",
+        "ablog/categories.html",
+        "ablog/tagcloud.html",
+        "ablog/archives.html",
+        "ablog/recentposts.html",
     ],
     "blog/**": [
-        "search-field.html", "ablog/categories.html","ablog/tagcloud.html","ablog/archives.html","ablog/recentposts.html",
+        "search-field.html",
+        "ablog/categories.html",
+        "ablog/tagcloud.html",
+        "ablog/archives.html",
+        "ablog/recentposts.html",
     ],
 }
 
 # https://github.com/hung1001/font-awesome-pro-v6
 html_css_files = [
-      "https://cdn.jsdelivr.net/gh/duyplus/fontawesome-pro/css/all.min.css",
+    "https://cdn.jsdelivr.net/gh/duyplus/fontawesome-pro/css/all.min.css",
 ]
 fontawesome_included = True
