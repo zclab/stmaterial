@@ -4,7 +4,7 @@
 
 <p align="center">
   <strong>
-    A 
+    A
     <a href="https://materializeweb.com/">Materialize</a> based <a href="https://www.sphinx-doc.org/en/master/">sphinx</a> theme.
   </strong>
 </p>

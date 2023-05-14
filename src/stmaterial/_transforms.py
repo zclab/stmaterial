@@ -1,4 +1,4 @@
-from typing import Any, Dict, Iterator, List, Optional
+from typing import Any
 from urllib.parse import urlparse, urlunparse
 from docutils import nodes
 from sphinx.transforms.post_transforms import SphinxPostTransform

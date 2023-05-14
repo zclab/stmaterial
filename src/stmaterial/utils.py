@@ -1,5 +1,5 @@
 from sphinx.application import Sphinx
-from typing import Any, Dict, Iterator
+from typing import Iterator
 from docutils.nodes import Node
 
 

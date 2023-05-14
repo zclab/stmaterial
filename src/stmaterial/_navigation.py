@@ -1,12 +1,12 @@
 """Generate the navigation tree from Sphinx's toctree function's output."""
 
 import functools
-from urllib.parse import urlparse, urlunparse
+from urllib.parse import urlparse
 from docutils import nodes
 from sphinx.environment.adapters.toctree import TocTree
 from sphinx.addnodes import toctree as toctree_node
 from sphinx import addnodes
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
 
 
 def add_inline_math(node):
@@ -243,7 +243,7 @@ def add_toctree_functions(app, pagename, templatename, context, doctree):
                 f"""
                 <li class="md-tabs__item">
                   <a class="md-tabs__link nav-external" href="{ external_link["url"] }">
-                    { external_link["name"] } 
+                    { external_link["name"] }
                   </a>
                 </li>
                 """

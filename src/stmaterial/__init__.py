@@ -311,7 +311,7 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
     if "ablog" in app.config.extensions:
         if (
             not config_provided_by_user(app, "post_show_prev_next")
-            or app.config.post_show_prev_next == True
+            or app.config.post_show_prev_next
         ):
             app.config.post_show_prev_next = False
 
