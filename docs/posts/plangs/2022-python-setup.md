@@ -42,7 +42,6 @@ Python 库打包的格式包括 `Wheel` 和 `Egg`。Egg 格式是由 setuptools 
 
 详细描述可见：[Wheel vs Egg](https://packaging.python.org/discussions/wheel-vs-egg/)
 
-
 ## `setup.py` 文件
 
 Python 库打包分发的关键在于编写 `setup.py` 文件。`setup.py` 文件编写的规则是从 setuptools 或者 distuils 模块导入 setup 函数，并传入各类参数进行调用。
@@ -124,27 +123,27 @@ find_packages(where='.', exclude=(), include=('*',))
 
 - **`package_data`:**
 
-    该参数是一个从包名称到 glob 模式列表的字典。如果数据文件包含在包的子目录中，则 `glob` 可以包括子目录名称。其格式一般为 `{'package_name': ['files']}`，比如：`package_data={'mypkg': ['data/*.dat'],}`。
+  该参数是一个从包名称到 glob 模式列表的字典。如果数据文件包含在包的子目录中，则 `glob` 可以包括子目录名称。其格式一般为 `{'package_name': ['files']}`，比如：`package_data={'mypkg': ['data/*.dat'],}`。
 
 - **`include_package_data`:**
 
-    该参数被设置为 True 时自动添加包中受版本控制的数据文件，可替代 `package_data`，同时，`exclude_package_data` 可以排除某些文件。注意当需要加入没有被版本控制的文件时，还是仍然需要使用 `package_data` 参数才行。
+  该参数被设置为 True 时自动添加包中受版本控制的数据文件，可替代 `package_data`，同时，`exclude_package_data` 可以排除某些文件。注意当需要加入没有被版本控制的文件时，还是仍然需要使用 `package_data` 参数才行。
 
 - **`data_files`:**
 
-    该参数通常用于包含不在包内的数据文件，即包的外部文件，如：配置文件，消息目录，数据文件。其指定了一系列二元组，即`(目的安装目录，源文件)` ，表示哪些文件被安装到哪些目录中。如果目录名是相对路径，则相对于安装前缀进行解释。
+  该参数通常用于包含不在包内的数据文件，即包的外部文件，如：配置文件，消息目录，数据文件。其指定了一系列二元组，即`(目的安装目录，源文件)` ，表示哪些文件被安装到哪些目录中。如果目录名是相对路径，则相对于安装前缀进行解释。
 
 - **`manifest template`:**
 
-    `manifest template` 即编写 `MANIFEST.in` 文件，文件内容就是需要包含在分发包中的文件。一个 MANIFEST.in 文件如下：
+  `manifest template` 即编写 `MANIFEST.in` 文件，文件内容就是需要包含在分发包中的文件。一个 MANIFEST.in 文件如下：
 
-    ```
-    include *.txt
-    recursive-include examples *.txt *.py
-    prune examples/sample?/build
-    ```
+  ```
+  include *.txt
+  recursive-include examples *.txt *.py
+  prune examples/sample?/build
+  ```
 
-    **`MANIFEST.in`** 文件的编写规则可参考：[Creating a Source Distribution](https://docs.python.org/3.6/distutils/sourcedist.html)
+  **`MANIFEST.in`** 文件的编写规则可参考：[Creating a Source Distribution](https://docs.python.org/3.6/distutils/sourcedist.html)
 
 ### 生成脚本
 
@@ -216,7 +215,6 @@ setup(
 ```
 
 详细了解可参考：[preprocessor options](https://docs.python.org/3.6/distutils/setupscript.html#preprocessor-options)
-
 
 ### `zip_safe`
 
@@ -334,7 +332,6 @@ classifiers = [
 ]
 ```
 
-
 ## `setup.py` 命令
 
 `setup.py` 文件有很多内置命令可供使用，查看所有支持的命令：
@@ -345,49 +342,49 @@ classifiers = [
 
 - **`build`:**
 
-    构建安装时所需的所有内容
+  构建安装时所需的所有内容
 
 - **`build_ext`:**
 
-    构建扩展，如用 C/C++, Cython 等编写的扩展，在调试时通常加 `--inplace` 参数，表示原地编译，即生成的扩展与源文件在同样的位置。
+  构建扩展，如用 C/C++, Cython 等编写的扩展，在调试时通常加 `--inplace` 参数，表示原地编译，即生成的扩展与源文件在同样的位置。
 
 - **`sdist`:**
 
-    构建源码分发包，在 Windows 下为 zip 格式，Linux 下为 tag.gz 格式 。执行 sdist 命令时，默认会被打包的文件：
+  构建源码分发包，在 Windows 下为 zip 格式，Linux 下为 tag.gz 格式 。执行 sdist 命令时，默认会被打包的文件：
 
-    ```
-    所有 py_modules 或 packages 指定的源码文件
-    所有 ext_modules 指定的文件
-    所有 package_data 或 data_files 指定的文件
-    所有 scripts 指定的脚本文件
-    README、README.txt、setup.py 和 setup.cfg文件
-    ```
+  ```
+  所有 py_modules 或 packages 指定的源码文件
+  所有 ext_modules 指定的文件
+  所有 package_data 或 data_files 指定的文件
+  所有 scripts 指定的脚本文件
+  README、README.txt、setup.py 和 setup.cfg文件
+  ```
 
-    该命令构建的包主要用于发布，例如上传到 [pypi](https://pypi.org/) 上。
+  该命令构建的包主要用于发布，例如上传到 [pypi](https://pypi.org/) 上。
 
 - **`bdist`:**
 
-    构建一个二进制的分发包。
+  构建一个二进制的分发包。
 
 - **`bdist_egg`:**
 
-    构建一个 egg 分发包，经常用来替代基于 bdist 生成的模式
+  构建一个 egg 分发包，经常用来替代基于 bdist 生成的模式
 
 - **`bdist_wheel`:**
 
-    构建一个 wheel 分发包，egg 包是过时的，whl 包是新的标准
+  构建一个 wheel 分发包，egg 包是过时的，whl 包是新的标准
 
 - **`install`:**
 
-    安装包到系统环境中。
+  安装包到系统环境中。
 
 - **`develop`:**
 
-    以开发方式安装包，该命名不会真正的安装包，而是在系统环境中创建一个软链接指向包实际所在目录。这边在修改包之后不用再安装就能生效，便于调试。
+  以开发方式安装包，该命名不会真正的安装包，而是在系统环境中创建一个软链接指向包实际所在目录。这边在修改包之后不用再安装就能生效，便于调试。
 
 - **`register`、`upload`:**
 
-    用于包的上传发布，后文详述。
+  用于包的上传发布，后文详述。
 
 ## `setup.cfg` 文件
 
@@ -413,7 +410,7 @@ N.N[.N]+[{a|b|c|rc}N[.N]+][.postN][.devN]
 ## `easy_install` 与 `pip`
 
 `easy_insall` 是 setuptool 包提供的第三方包安装工具，而 `pip` 是 Python
- 中一个功能完备的包管理工具，是 `easy_install` 的改进版，提供更好的提示信息，删除包等功能。
+中一个功能完备的包管理工具，是 `easy_install` 的改进版，提供更好的提示信息，删除包等功能。
 
 `pip` 相对于 `easy_install` 进行了以下几个方面的改进:
 
@@ -476,11 +473,11 @@ python setup.py sdist bdist_wheel && twine upload dist/*
 ## 参考资料
 
 - [Building and Distributing Packages with Setuptools
-](https://setuptools.readthedocs.io/en/latest/setuptools.html)
+  ](https://setuptools.readthedocs.io/en/latest/setuptools.html)
 - [Python 包管理工具解惑](https://blog.zengrong.net/post/2169.html)
 - [Differences between distribute, distutils, setuptools and distutils2?
-](https://stackoverflow.com/questions/6344076/differences-between-distribute-distutils-setuptools-and-distutils2)
+  ](https://stackoverflow.com/questions/6344076/differences-between-distribute-distutils-setuptools-and-distutils2)
 - [如何打包你的Python代码](http://python-packaging-zh.readthedocs.io/zh_CN/latest/index.html)
 - [How to extend distutils with a simple post install script?
-](https://stackoverflow.com/questions/1321270/how-to-extend-distutils-with-a-simple-post-install-script/1321345)
+  ](https://stackoverflow.com/questions/1321270/how-to-extend-distutils-with-a-simple-post-install-script/1321345)
 - [Why use pip over easy_install?](https://stackoverflow.com/questions/3220404/why-use-pip-over-easy-install)

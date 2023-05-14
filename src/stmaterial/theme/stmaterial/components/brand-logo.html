@@ -1,5 +1,7 @@
 <a class="stm-brand-logo" href="{{ pathto(root_doc) }}">
+    {# djlint:off #}
     <img src="{{ logo_url }}" alt="Logo" />
+    {# djlint:on #}
     {% if theme_logo and theme_logo.get("text") %}
     <span class="stm-brand-logo-text">{{ theme_logo.get("text") }}</span>
     {%- endif %}

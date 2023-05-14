@@ -54,3 +54,20 @@ dev = ['sphinx-theme-builder[cli] >= 0.2.0b2']
 [project.urls]
 Repository = "https://github.com/zclab/stmaterial"
 Documentation = "https://stmaterial.readthedocs.io/en/latest/"
+
+[tool.ruff]
+ignore-init-module-imports = true
+fix = true
+ignore = [
+  "E501", # line too long | Black take care of it
+]
+
+[tool.djlint]
+profile = "jinja"
+extension = "html"
+indent = 2
+max_line_length = 120
+use_gitignore = true
+format_js = true
+format_css = true
+ignore = "H006,J018,T003,H025"

@@ -2,18 +2,15 @@
 full-width: true
 ---
 
-
 # A Materialize based sphinx theme
 
-This is a materialize based sphinx theme, see the [materialize documentation](https://materializeweb.com/) for reference. 
-
+This is a materialize based sphinx theme, see the [materialize documentation](https://materializeweb.com/) for reference.
 
 ```{toctree}
 :maxdepth: 2
 
 user_guide/index
 ```
-
 
 ```{toctree}
 :maxdepth: 2

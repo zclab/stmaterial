@@ -27,20 +27,18 @@ label.overlay {
 }
 
 input {
-
   // Show the correct overlay when its input is checked
-  &#__primary:checked+label.overlay.overlay-primary,
-  &#__secondary:checked+label.overlay.overlay-secondary {
+  &#__primary:checked + label.overlay.overlay-primary,
+  &#__secondary:checked + label.overlay.overlay-secondary {
     height: 100vh;
     width: 100vw;
   }
 
   // Primary sidebar slides in from the left
-  &#__primary:checked~.stm-main .stm-sidenav {
+  &#__primary:checked ~ .stm-main .stm-sidenav {
     visibility: visible;
     margin-left: 0;
   }
-
 }
 
 /*******************************************************************************
@@ -63,16 +61,13 @@ input {
   width: 75%;
   flex-grow: 0.75;
   max-width: 350px;
-  transition: visibility 0.3s ease-out,
-    margin 0.3s ease-out;
+  transition: visibility 0.3s ease-out, margin 0.3s ease-out;
   visibility: hidden;
 
-  @if $side =="right" {
+  @if $side == "right" {
     margin-right: -75%;
     right: 0;
-  }
-
-  @else {
+  } @else {
     margin-left: -75%;
     left: 0;
   }
@@ -85,7 +80,7 @@ input {
   }
 
   input#__primary {
-    &:checked+label.overlay.overlay-primary {
+    &:checked + label.overlay.overlay-primary {
       height: 0;
       width: 0;
     }
@@ -102,7 +97,6 @@ input {
     @include sliding-drawer("left");
   }
 }
-
 
 nav label.sidebar-toggle {
   align-items: center;

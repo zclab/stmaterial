@@ -1,10 +1,9 @@
-from typing import Any, Dict, Iterator, List, Optional
+from typing import Any
 from urllib.parse import urlparse, urlunparse
 from docutils import nodes
 from sphinx.transforms.post_transforms import SphinxPostTransform
 from sphinx.util.nodes import NodeMatcher
 from .utils import traverse_or_findall
-
 
 
 class ShortenLinkTransform(SphinxPostTransform):

@@ -4,7 +4,6 @@ body {
   flex-direction: column;
 }
 
-
 main {
   display: flex;
   flex-grow: 1;
@@ -45,7 +44,6 @@ main {
 }
 
 a {
-
   &.github,
   &.gitlab {
     &::before {

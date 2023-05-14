@@ -2,17 +2,13 @@
 
 Stmaterial allows customising the icons that are presented in the header. These icons can be used to link to relevant resources for your project and documentation.
 
-
 ## Default icons
 
 Stmaterial includes [Material Icons](https://marella.me/material-icons/demo/) as default, the use of Material Icons please refer to [Material Icons](https://marella.me/material-icons/demo/).
 
-
-
 ## Configuration
 
 To add custom header icons, you need to provide the `header_icons` configuration value to Stmaterial. If this configuration value is non-empty, the default header icons are disabled.
-
 
 ```python
 html_theme_options = {
@@ -27,7 +23,6 @@ The value for this configuration value is a list of dictionaries. Each dictionar
 
 - `name`: Describes what the destination location is. This is primarily for screen readers.
 - `url`: Where clicking on the icon will take users.
-
 
 ### Using icon packs
 
@@ -67,7 +62,6 @@ If you wish to use Font Awesome icons in the footer, it's a two step process.
   ```
 
   Note that the `fa-2x` is necessary to get a reasonable sized icon.
-
 
 [^1]: Yes, I'm aware that it can be argued that embedding raw HTML in a `conf.py` file is... ugly. :)
 [^2]: You need to use your browser's developer tools to get the SVG directly from the page: inspect element + copy svg element (ctrl+c) + paste.

@@ -9,7 +9,6 @@ This will download a local copy of NodeJS and build the theme's assets with the 
 
 This theme follows the [`sphinx-theme-builder` filesystem layout](https://sphinx-theme-builder.readthedocs.io/en/latest/reference/filesystem-layout/).
 
-
 ## Build the theme locally
 
 You can build the documentation for this theme to preview it.
@@ -23,6 +22,7 @@ To do so, follow these steps:
    ```console
    $ pip install nox
    ```
+
 2. Build the documentation:
 
    ```console

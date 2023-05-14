@@ -1,12 +1,12 @@
 """Generate the navigation tree from Sphinx's toctree function's output."""
 
 import functools
-from urllib.parse import urlparse, urlunparse
+from urllib.parse import urlparse
 from docutils import nodes
 from sphinx.environment.adapters.toctree import TocTree
 from sphinx.addnodes import toctree as toctree_node
 from sphinx import addnodes
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
 
 
 def add_inline_math(node):
@@ -93,7 +93,7 @@ def _add_collapse_checkboxes(soup):
             "label", attrs={"for": checkbox_name, "class": "toctree-toggle"}
         )
         toggle_icon = soup.new_tag("i", attrs={"class": "material-icons"})
-        toggle_icon.string="keyboard_arrow_down"
+        toggle_icon.string = "keyboard_arrow_down"
         label.append(toggle_icon)
         if "toctree-l0" in classes:
             # making label cover the whole caption text with css
@@ -117,7 +117,7 @@ def _add_collapse_checkboxes(soup):
             checkbox.attrs["checked"] = ""
 
         element.insert(1, checkbox)
-        
+
 
 def index_toctree(app, pagename: str, startdepth: int, collapse: bool = True, **kwargs):
     """
@@ -156,7 +156,6 @@ def index_toctree(app, pagename: str, startdepth: int, collapse: bool = True, **
 
 
 def add_toctree_functions(app, pagename, templatename, context, doctree):
-
     @functools.lru_cache(maxsize=None)
     def generate_header_nav_html(n_links_before_dropdown=5):
         """
@@ -205,7 +204,9 @@ def add_toctree_functions(app, pagename, templatename, context, doctree):
                 page = toc.attributes["parent"] if page == "self" else page
 
                 # If this is the active ancestor page, add a class so we highlight it
-                current = "active md-tabs__item--active" if page == active_header_page else ""
+                current = (
+                    "active md-tabs__item--active" if page == active_header_page else ""
+                )
 
                 # sanitize page title for use in the html output if needed
                 if title is None:
@@ -242,7 +243,7 @@ def add_toctree_functions(app, pagename, templatename, context, doctree):
                 f"""
                 <li class="md-tabs__item">
                   <a class="md-tabs__link nav-external" href="{ external_link["url"] }">
-                    { external_link["name"] } 
+                    { external_link["name"] }
                   </a>
                 </li>
                 """
@@ -341,7 +342,9 @@ def add_toctree_functions(app, pagename, templatename, context, doctree):
             if show_nav_level == 0:
                 partcaptions = soup.find_all("p", attrs={"class": "caption"})
                 if len(partcaptions):
-                    new_soup = BeautifulSoup("<ul class='list-caption'></ul>", "html.parser")
+                    new_soup = BeautifulSoup(
+                        "<ul class='list-caption'></ul>", "html.parser"
+                    )
                     for caption in partcaptions:
                         # Assume that the next <ul> element is the TOC list
                         # for this part
@@ -415,7 +418,7 @@ def add_toctree_functions(app, pagename, templatename, context, doctree):
             return out
         else:
             return soup
-    
+
     context["generate_header_nav_html"] = generate_header_nav_html
     context["generate_toctree_html"] = generate_toctree_html
     context["generate_toc_html"] = generate_toc_html

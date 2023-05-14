@@ -10,7 +10,9 @@ aside.stm-sidenav {
   width: $sidenav-width;
 
   @media (min-width: $medium-screen-up) {
-    margin-top: calc($navbar-height *-1 - 2px); // 2px because of box shadow is 2px height offset of nav, see z-depth-1
+    margin-top: calc(
+      $navbar-height * -1 - 2px
+    ); // 2px because of box shadow is 2px height offset of nav, see z-depth-1
   }
 
   .sidenav-viewport {
@@ -29,7 +31,7 @@ aside.stm-sidenav {
         flex-grow: 1;
         padding: 0 0 0 var(--header-horizontal-spacing);
         overflow: auto;
-        margin-top: 1.0rem;
+        margin-top: 1rem;
 
         .sidenav-menulist {
           list-style: none;
@@ -65,7 +67,7 @@ aside.stm-sidenav {
               &:not(.has-children) {
                 border-top: 1px solid var(--separator-color);
                 border-bottom: 1px solid var(--separator-color);
-                border-left: .2rem solid var(--primary-color-dark);
+                border-left: 0.2rem solid var(--primary-color-dark);
               }
             }
           }
@@ -74,7 +76,6 @@ aside.stm-sidenav {
     }
   }
 }
-
 
 aside.stm-sidenav {
   label.toctree-toggle {
@@ -119,11 +120,11 @@ aside.stm-sidenav {
     position: relative;
 
     &.has-children {
-      >.reference {
+      > .reference {
         padding-right: 30px;
       }
 
-      >ul {
+      > ul {
         background-color: var(--background-color-sidenav);
         padding: 0 0 0 1rem;
       }
@@ -134,27 +135,25 @@ aside.stm-sidenav {
     position: absolute;
     display: none;
 
-    ~ul {
+    ~ ul {
       display: none;
     }
 
-    ~label i {
+    ~ label i {
       transform: rotate(0deg);
     }
   }
 
   .toctree-checkbox:checked {
-    ~ul {
+    ~ ul {
       display: block;
     }
 
-    ~label i {
+    ~ label i {
       transform: rotate(180deg);
     }
   }
 }
-
-
 
 .sidenav-header-items {
   display: flex;

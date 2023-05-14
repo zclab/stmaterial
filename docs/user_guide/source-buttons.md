@@ -3,9 +3,11 @@
 Source buttons are links to the source of your page’s content (either on your site, or on hosting sites like GitHub).
 
 ## Add an edit button
-You can add a button to each page that will allow users to edit the page text directly and submit a pull request to update the documentation. 
+
+You can add a button to each page that will allow users to edit the page text directly and submit a pull request to update the documentation.
 
 ### With popular VCS hosts
+
 Provide the relevant VCS variables, by setting the following keys in [html_theme_options](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_theme_options):
 
 ```py
@@ -17,6 +19,7 @@ html_theme_options = {
 ```
 
 ### With arbitrary URLs
+
 Use arbitrary URLs for the edit button, by setting the following key in [html_theme_options](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_theme_options):
 
 ```py
@@ -27,8 +30,8 @@ html_theme_options = {
 
 The `{filename}` component will be replaced with the full path to the file, as known from the base of the documentation directory.
 
-
 ## View Source link
+
 By default, this theme adds a button link to view the source of a page. To disable it, use the following configuration:
 
 ```py

@@ -53,7 +53,6 @@ add(2)
 
 则可以正常输出结果 3。但如果我们传入的参数并不是我们期望的类型，比如传入一个字符类型，那么就会同样报刚才类似的错误。 但又由于 Python 的特性，很多情况下我们并不用去声明它的类型，因此从方法定义上面来看，我们实际上是不知道一个方法的参数到底应该传入什么类型的。 这样其实就造成了很多不方便的地方，在某些情况下一些复杂的方法，如果不借助于一些额外的说明，我们是不知道参数到底是什么类型的。 因此，Python 中的类型注解就显得比较重要了。
 
-
 ## 类型注解
 
 在 Python 3.5 中，Python PEP 484 引入了类型注解（type hints），在 Python 3.6 中，PEP 526 又进一步引入了变量注解（Variable Annotations），所以上面的代码我们改写成如下写法：
@@ -67,14 +66,14 @@ def add(a: int) -> int:
 ```
 
 具体的语法是可以归纳为两点：
-* 在声明变量时，变量的后面可以加一个冒号，后面再写上变量的类型，如 int、list 等等。
-* 在声明方法返回值的时候，可以在方法的后面加一个箭头，后面加上返回值的类型，如 int、list 等等。
 
+- 在声明变量时，变量的后面可以加一个冒号，后面再写上变量的类型，如 int、list 等等。
+- 在声明方法返回值的时候，可以在方法的后面加一个箭头，后面加上返回值的类型，如 int、list 等等。
 
 在 PEP 8 中，具体的格式是这样规定的：
-* 在声明变量类型时，变量后方紧跟一个冒号，冒号后面跟一个空格，再跟上变量的类型。
-* 在声明方法返回值的时候，箭头左边是方法定义，箭头右边是返回值的类型，箭头左右两边都要留有空格。
 
+- 在声明变量类型时，变量后方紧跟一个冒号，冒号后面跟一个空格，再跟上变量的类型。
+- 在声明方法返回值的时候，箭头左边是方法定义，箭头右边是返回值的类型，箭头左右两边都要留有空格。
 
 有了这样的声明，以后我们如果看到这个方法的定义，我们就知道传入的参数类型了，如调用 add 方法的时候，我们就知道传入的需要是一个数值类型的变量，而不是字符串类型，非常直观。 但值得注意的是，这种类型和变量注解实际上只是一种类型提示，对运行实际上是没有影响的，比如调用 add 方法的时候，我们传入的不是 int 类型，而是一个 float 类型，它也不会报错，也不会对参数进行类型转换，如：
 
@@ -115,7 +114,6 @@ operations: Dict[str, bool] = {'show': False, 'sort': True}
 
 这样一来，变量的类型便可以非常直观地体现出来了。 目前 `typing` 模块也已经被加入到 Python 标准库中，不需要安装第三方模块，我们就可以直接使用了。
 
-
 ## `typing`
 
 下面我们再来详细看下`typing` 模块的具体用法，这里主要会介绍一些常用的注解类型，如 `List`、`Tuple`、`Dict`、`Sequence` 等等，了解了每个类型的具体使用方法，我们可以得心应手的对任何变量进行声明了。 在引入的时候就直接通过 `typing` 模块引入就好了，例如：
@@ -123,7 +121,6 @@ operations: Dict[str, bool] = {'show': False, 'sort': True}
 ```python
 from typing import List, Tuple
 ```
-
 
 ### `List`
 
@@ -149,7 +146,6 @@ person: Tuple[str, int, float] = ('Mike', 22, 1.75)
 
 同样地也可以使用类型嵌套。 `NamedTuple`，是 `collections.namedtuple` 的泛型，实际上就和 `namedtuple` 用法完全一致，但个人其实并不推荐使用 `NamedTuple`，推荐使用 attrs 这个库来声明一些具有表征意义的类。
 
-
 ### `Dict`、`Mapping`、`MutableMapping`
 
 `Dict`、字典，是 dict 的泛型；`Mapping`，映射，是 `collections.abc.Mapping` 的泛型。根据官方文档，`Dict` 推荐用于注解返回类型，`Mapping` 推荐用于注解参数。它们的使用方法都是一样的，其后跟一个中括号，中括号内分别声明键名、键值的类型，如：
@@ -161,7 +157,6 @@ def size(rect: Mapping[str, int]) -> Dict[str, int]:
 
 这里将 Dict 用作了返回值类型注解，将 Mapping 用作了参数类型注解。 MutableMapping 则是 Mapping 对象的子类，在很多库中也经常用 MutableMapping 来代替 Mapping。
 
-
 ### `Set`、`AbstractSet`
 
 `Set`、集合，是 `set` 的泛型；`AbstractSet`、是 `collections.abc.Set` 的泛型。根据官方文档，Set 推荐用于注解返回类型，`AbstractSet` 用于注解参数。它们的使用方法都是一样的，其后跟一个中括号，里面声明集合中元素的类型，如：
@@ -172,7 +167,6 @@ def describe(s: AbstractSet[int]) -> Set[int]:
 ```
 
 这里将 Set 用作了返回值类型注解，将 `AbstractSet` 用作了参数类型注解。
-
 
 ### `Sequence`
 
@@ -192,7 +186,6 @@ def hello() -> NoReturn:
     print('hello')
 ```
 
-
 ### `Any`
 
 Any，是一种特殊的类型，它可以代表所有类型，静态类型检查器的所有类型都与 Any 类型兼容，所有的无参数类型注解和返回类型注解的都会默认使用 Any 类型，也就是说，下面两个方法的声明是完全等价的：
@@ -205,9 +198,7 @@ def add(a: Any) -> Any:
     return a + 1
 ```
 
-
 原理类似于 object，所有的类型都是 object 的子类。但如果我们将参数声明为 object 类型，静态参数类型检查便会抛出错误，而 Any 则不会，具体可以参考官方文档的说明：[Any 类型](https://docs.python.org/zh-cn/3/library/typing.html?highlight=typing#the-any-type)。
-
 
 ### `TypeVar`
 
@@ -222,7 +213,6 @@ def get_height() -> Height:
 
 这里我们使用 `TypeVar` 声明了一个 Height 类型，然后将其用于注解方法的返回结果。
 
-
 ### `NewType`
 
 `NewType`，我们可以借助于它来声明一些具有特殊含义的类型，例如像 `Tuple` 的例子一样，我们需要将它表示为 `Person`，即一个人的含义，但但从表面上声明为 `Tuple` 并不直观，所以我们可以使用 `NewType` 为其声明一个类型，如：
@@ -233,7 +223,6 @@ person = Person(('Mike', 22, 1.75))
 ```
 
 这里实际上 person 就是一个 tuple 类型，我们可以对其像 tuple 一样正常操作。
-
 
 ### `Callable`
 
@@ -260,7 +249,6 @@ def get_date_fn() -> Callable[[int, int, int], str]:
 ```
 
 这里首先声明了一个方法 date，接收三个 int 参数，返回一个 str 结果，`get_date_fn` 方法返回了这个方法本身，它的返回值类型就可以标记为 `Callable`，中括号内分别标记了返回的方法的参数类型和返回值类型。
-
 
 ### `Union`
 
@@ -301,7 +289,6 @@ def process(fn: Union[str, Callable]):
 
 这样的声明在一些类库方法定义的时候十分常见。
 
-
 ### `Optional`
 
 `Optional`，意思是说这个参数可以为空或已经声明的类型，即 `Optional[X]` 等价于 `Union[X, None]`。 但值得注意的是，这个并不等价于可选参数，当它作为参数类型注解的时候，不代表这个参数可以不传递了，而是说这个参数可以传为 `None`。 如当一个方法执行结果，如果执行完毕就不返回错误信息， 如果发生问题就返回错误信息，则可以这么声明：
@@ -310,7 +297,6 @@ def process(fn: Union[str, Callable]):
 def judge(result: bool) -> Optional[str]:
     if result: return 'Error Occurred'
 ```
-
 
 ### `Generator`
 
@@ -332,8 +318,6 @@ def infinite_stream(start: int) -> Generator[int, None, None]:
         yield start
         start += 1
 ```
-
-
 
 ## 案例实战
 

@@ -9,10 +9,8 @@ includehidden=True,
 titles_only=True)
 -%}
 
-
 {%- set head_nav_html = generate_header_nav_html(n_links_before_dropdown=theme_header_links_before_dropdown)
 -%}
-
 
 {% block htmlbody -%}
 {# checkbox to toggle primary sidebar #}
@@ -51,7 +49,7 @@ titles_only=True)
                     <div class="stm-article section col s12 {% if not hide_tocnav %} m10 xl9 {% endif %}">
                         {% include "components/searchbox.html" %}
                         <article role="main" class="section">
-                            {% block body %}{{ body }}{% endblock %}
+                            {% block body %}{{ body }}{% endblock body %}
                         </article>
 
                         <div class="stm-article-metadata-info">
@@ -123,7 +121,7 @@ titles_only=True)
 {% if theme_footer %}
 {% include "sections/footer.html" %}
 {% endif %}
-{% endblock %}
+{% endblock footer %}
 
-{%- endblock %}
-{%- endblock %}
+{%- endblock mainbody %}
+{%- endblock htmlbody %}

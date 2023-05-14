@@ -88,14 +88,16 @@ function setupScrollHandler() {
 }
 
 function addTOCInteractivity() {
-  document.addEventListener('gumshoeActivate', function (event) {
+  document.addEventListener("gumshoeActivate", function (event) {
     const navLinks = document.querySelectorAll(".table-of-contents li>a");
 
     navLinks.forEach((navLink) => {
       navLink.parentElement.classList.remove("active");
     });
 
-    const activeNavLinks = document.querySelectorAll(".table-of-contents li.scroll-current>a");
+    const activeNavLinks = document.querySelectorAll(
+      ".table-of-contents li.scroll-current>a",
+    );
     activeNavLinks.forEach((navLink) => {
       navLink.parentElement.classList.add("active");
     });
@@ -113,7 +115,7 @@ function setupScrollSpy() {
     recursive: true,
     navClass: "scroll-current",
     nested: true,
-    nestedClass: 'scroll-current', // 
+    nestedClass: "scroll-current", //
     events: true,
     offset: () => {
       let rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
@@ -132,7 +134,7 @@ function init_materialize() {
   // Detect touch screen and enable scrollbar if necessary
   function is_touch_device() {
     try {
-      document.createEvent('TouchEvent');
+      document.createEvent("TouchEvent");
       return true;
     } catch (e) {
       return false;
@@ -145,70 +147,67 @@ function init_materialize() {
   // }
 
   // Theme
-  const theme = localStorage.getItem('theme');
-  const themeSwitch = document.querySelector('#theme-switch');
-  const themeSwitch__mobile = document.querySelector('#theme-switch--mobile');
+  const theme = localStorage.getItem("theme");
+  const themeSwitch = document.querySelector("#theme-switch");
+  const themeSwitch__mobile = document.querySelector("#theme-switch--mobile");
   const setTheme = (isDark) => {
     if (isDark) {
-      themeSwitch.classList.add('is-dark');
-      themeSwitch.querySelector('i').innerText = 'light_mode';
-      themeSwitch.title = 'Switch to light mode';
+      themeSwitch.classList.add("is-dark");
+      themeSwitch.querySelector("i").innerText = "light_mode";
+      themeSwitch.title = "Switch to light mode";
 
-      themeSwitch__mobile.classList.add('is-dark');
-      themeSwitch__mobile.querySelector('i').innerText = 'light_mode';
-      themeSwitch__mobile.title = 'Switch to light mode';
-    }
-    else {
-      themeSwitch.classList.remove('is-dark');
-      themeSwitch.querySelector('i').innerText = 'dark_mode';
-      themeSwitch.title = 'Switch to dark mode';
+      themeSwitch__mobile.classList.add("is-dark");
+      themeSwitch__mobile.querySelector("i").innerText = "light_mode";
+      themeSwitch__mobile.title = "Switch to light mode";
+    } else {
+      themeSwitch.classList.remove("is-dark");
+      themeSwitch.querySelector("i").innerText = "dark_mode";
+      themeSwitch.title = "Switch to dark mode";
 
-      themeSwitch__mobile.classList.remove('is-dark');
-      themeSwitch__mobile.querySelector('i').innerText = 'dark_mode';
-      themeSwitch__mobile.title = 'Switch to dark mode';
+      themeSwitch__mobile.classList.remove("is-dark");
+      themeSwitch__mobile.querySelector("i").innerText = "dark_mode";
+      themeSwitch__mobile.title = "Switch to dark mode";
     }
-  }
+  };
   if (themeSwitch || themeSwitch__mobile) {
     // Load
     if (theme) setTheme(true);
     // Change
-    themeSwitch.addEventListener('click', e => {
+    themeSwitch.addEventListener("click", (e) => {
       e.preventDefault();
-      if (!themeSwitch.classList.contains('is-dark')) {
+      if (!themeSwitch.classList.contains("is-dark")) {
         // Dark Theme
-        document.documentElement.setAttribute('theme', 'dark');
-        localStorage.setItem('theme', 'dark');
+        document.documentElement.setAttribute("theme", "dark");
+        localStorage.setItem("theme", "dark");
         setTheme(true);
-      }
-      else {
+      } else {
         // Light Theme
-        document.documentElement.removeAttribute('theme');
-        localStorage.removeItem('theme');
+        document.documentElement.removeAttribute("theme");
+        localStorage.removeItem("theme");
         setTheme(false);
       }
     });
 
-    themeSwitch__mobile.addEventListener('click', e => {
+    themeSwitch__mobile.addEventListener("click", (e) => {
       e.preventDefault();
-      if (!themeSwitch__mobile.classList.contains('is-dark')) {
+      if (!themeSwitch__mobile.classList.contains("is-dark")) {
         // Dark Theme
-        document.documentElement.setAttribute('theme', 'dark');
-        localStorage.setItem('theme', 'dark');
+        document.documentElement.setAttribute("theme", "dark");
+        localStorage.setItem("theme", "dark");
         setTheme(true);
-      }
-      else {
+      } else {
         // Light Theme
-        document.documentElement.removeAttribute('theme');
-        localStorage.removeItem('theme');
+        document.documentElement.removeAttribute("theme");
+        localStorage.removeItem("theme");
         setTheme(false);
       }
     });
   }
 
-
   // M.Sidenav.init(document.querySelectorAll('.stm-sidenav'), {});
-  M.Dropdown.init(document.querySelectorAll('.dropdown-trigger'), { constrainWidth: false, });
-
+  M.Dropdown.init(document.querySelectorAll(".dropdown-trigger"), {
+    constrainWidth: false,
+  });
 }
 
 /*******************************************************************************
@@ -231,7 +230,7 @@ var findSearchInput = () => {
     } else {
       // must be at least one persistent form, use the first persistent one
       form = document.querySelector(
-        "div:not(.search-button__search-container) > form.search-wrapper"
+        "div:not(.search-button__search-container) > form.search-wrapper",
       );
     }
     return form.querySelector("input");
@@ -282,7 +281,7 @@ var addEventListenerForSearchKeyboard = () => {
         toggleSearchField();
       }
     },
-    true
+    true,
   );
 };
 
@@ -294,7 +293,7 @@ var changeSearchShortcutKey = () => {
   var isMac = window.navigator.platform.toUpperCase().indexOf("MAC") >= 0;
   if (isMac) {
     forms.forEach(
-      (f) => (f.querySelector("kbd.kbd-shortcut__modifier").innerText = "⌘")
+      (f) => (f.querySelector("kbd.kbd-shortcut__modifier").innerText = "⌘"),
     );
   }
 };
@@ -317,7 +316,6 @@ var setupSearchButtons = () => {
     overlay.onclick = toggleSearchField;
   }
 };
-
 
 ////////////////////////////////////////////////////////////////////////////////
 // Main entrypoint

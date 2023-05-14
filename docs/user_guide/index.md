@@ -1,6 +1,6 @@
 # User Guide
 
-This section serves to guide the user with customising stmaterial-based documentation. 
+This section serves to guide the user with customising stmaterial-based documentation.
 
 ```{toctree}
 :hidden:
