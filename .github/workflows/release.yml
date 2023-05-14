@@ -27,13 +27,13 @@ jobs:
           python -m build
 
       - name: Upload source distribution as an action artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: sdist
           path: dist/stmaterial-*.tar.gz
       
       - name: Upload wheel distribution as an action artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: wheel
           path: dist/stmaterial-*-py3-none-any.whl
