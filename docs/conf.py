@@ -135,10 +135,10 @@ html_theme_options = {
         ],
     },
     "light_css_variables": {
-        "primary-color": "#5c6bc0",
+        "primary-color": "#3949ab",
         "primary-color-dark": "#283593",
-        "primary-color-raised-hover-solid": "#7986cb",
-        "primary-color-raised-focus-solid": "#7986cb",
+        "primary-color-raised-hover-solid": "#5c6bc0",
+        "primary-color-raised-focus-solid": "#5c6bc0",
     },
     "navigation_with_keys": True,
 }
