@@ -32,8 +32,16 @@ The `{filename}` component will be replaced with the full path to the file, as k
 
 ## View Source link
 
-By default, this theme adds a button link to view the source of a page. To disable it, use the following configuration:
+By default, this theme adds a button link to view the source of a page at the top of the page. To disable it, use the following configuration:
 
 ```py
 html_show_sourcelink = False
+```
+
+You can also place the source link button at the bottom of a page using the following configuration:
+
+```py
+html_theme_options = {
+    article_bottom_right = sourcelink.html
+}
 ```
