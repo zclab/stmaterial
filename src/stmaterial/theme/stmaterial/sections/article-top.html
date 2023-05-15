@@ -1,0 +1,21 @@
+{% if (theme_article_top_left or theme_article_top_right) and (title and pagename != root_doc) %}
+<div class="stm-article-top">
+    <div class="stm-article-top-area">
+        {% if theme_article_top_left %}
+        <div class="stm-article-top-left">
+            {%- for top_left in theme_article_top_left %}
+            {%- include top_left %}
+            {%- endfor %}
+        </div>
+        {% endif %}
+
+        {% if theme_article_top_right %}
+        <div class="stm-article-top-right">
+            {%- for top_right in theme_article_top_right %}
+            {%- include top_right %}
+            {%- endfor %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endif %}

@@ -11,8 +11,8 @@ https://github.com/pydata/pydata-sphinx-theme/blob/main/src/pydata_sphinx_theme/
 
 
 {#- Hide breadcrumbs on the home page #}
-
-<div class="nav-breadcrumbs">
+{% if title and pagename != root_doc %}
+<div class="stm-article-breadcrumbs">
     <a href="{{ pathto(root_doc) }}" class="breadcrumb breadcrumb-home"><i class="material-icons">home</i></a>
     {%- for doc in parents %}
     {% if doc.link %}
@@ -23,5 +23,5 @@ https://github.com/pydata/pydata-sphinx-theme/blob/main/src/pydata_sphinx_theme/
     {%- endfor %}
     <a class="breadcrumb" aria-current="page">{{ title }}</a>
 </div>
-
+{% endif %}
 {%- endblock %}

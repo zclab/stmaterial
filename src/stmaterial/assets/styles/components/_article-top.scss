@@ -1,0 +1,19 @@
+.stm-article-top {
+  border-bottom: 1px solid var(--separator-color);
+}
+
+.stm-article-top-area {
+  display: flex;
+  padding: 10px 0;
+  align-items: center;
+}
+
+.stm-article-top-right {
+  margin-left: auto;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.stm-article-top-left {
+  margin-right: auto;
+}
