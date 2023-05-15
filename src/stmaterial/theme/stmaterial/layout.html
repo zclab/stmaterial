@@ -47,8 +47,8 @@ titles_only=True)
             <div class="container">
                 <div class="row">
                     <div class="stm-article section col s12 {% if not hide_tocnav %} m10 xl9 {% endif %}">
-                        {% include "components/searchbox.html" %}
                         {% include "sections/article-top.html" %}
+                        {% include "components/searchbox.html" %}
 
                         <article role="main" class="section">
                             {% block body %}{{ body }}{% endblock body %}
