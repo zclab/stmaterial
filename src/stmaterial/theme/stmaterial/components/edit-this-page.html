@@ -2,9 +2,11 @@
 {% from "basic-ng/components/edit-this-page.html" import determine_page_edit_link with context %}
 
 {%- macro page_edit_button(url) -%}
+{% if theme_use_edit_page_button %}
 <a class="edit-this-page" href="{{ url }}" title="{{ translate('Edit this page') }}">
     <i class="material-icons">mode_edit</i> {% if not show_source %} {{ translate('Edit this page') }} {% endif %}
 </a>
+{% endif %}
 {%- endmacro -%}
 
 {% block link_available -%}

@@ -1,0 +1,21 @@
+{% if theme_article_bottom_left or theme_article_bottom_right %}
+<div class="stm-article-bottom">
+    <div class="stm-article-bottom-area">
+        {% if theme_article_bottom_left %}
+        <div class="stm-article-bottom-left">
+            {%- for bottom_left in theme_article_bottom_left %}
+            {%- include bottom_left %}
+            {%- endfor %}
+        </div>
+        {% endif %}
+
+        {% if theme_article_bottom_right %}
+        <div class="stm-article-bottom-right">
+            {%- for bottom_right in theme_article_bottom_right %}
+            {%- include bottom_right %}
+            {%- endfor %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endif %}

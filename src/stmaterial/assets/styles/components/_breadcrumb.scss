@@ -1,0 +1,21 @@
+.stm-article-breadcrumbs {
+  display: flex;
+  align-items: center;
+
+  a {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.breadcrumb {
+  color: var(--primary-color);
+
+  &:last-child {
+    color: var(--font-color-main);
+  }
+
+  &::before {
+    color: var(--primary-color);
+  }
+}

@@ -48,23 +48,13 @@ titles_only=True)
                 <div class="row">
                     <div class="stm-article section col s12 {% if not hide_tocnav %} m10 xl9 {% endif %}">
                         {% include "components/searchbox.html" %}
+                        {% include "sections/article-top.html" %}
+
                         <article role="main" class="section">
                             {% block body %}{{ body }}{% endblock body %}
                         </article>
 
-                        <div class="stm-article-metadata-info">
-                            <div class="metadata-info-area">
-                                <div class="metadata-left">
-                                    {% include "components/last-updated.html" %}
-                                </div>
-                                <div class="metadata-right">
-                                    {% include "components/sourcelink.html" %}
-                                    {% if theme_use_edit_page_button %}
-                                    {% include "components/edit-this-page.html" %}
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </div>
+                        {% include "sections/article-bottom.html" %}
 
                         <div class="stm-article-footer">
                             <div class="prev-next-area">
