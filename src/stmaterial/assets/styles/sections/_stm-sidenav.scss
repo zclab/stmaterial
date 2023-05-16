@@ -7,7 +7,11 @@ aside.stm-sidenav {
   clip-path: inset(0);
   display: block;
   background-color: var(--background-color-sidenav);
-  width: $sidenav-width;
+  width: var(--sidenav-width);
+
+  @media (max-width: $medium-screen-up) {
+    width: 300px;
+  }
 
   @media (min-width: $medium-screen-up) {
     margin-top: calc(
