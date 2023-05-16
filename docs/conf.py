@@ -134,7 +134,7 @@ html_theme_options = {
             },
         ],
     },
-    "light_css_variables": {
+    "css_variables": {
         "primary-color": "#3949ab",
         "primary-color-dark": "#283593",
         "primary-color-raised-hover-solid": "#5c6bc0",
