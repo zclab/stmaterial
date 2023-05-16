@@ -1,7 +1,7 @@
 div#searchbox p.highlight-link {
   box-shadow: 0 0.2rem 0.5rem var(--surface-color),
     0 0 0.0625rem var(--surface-color) !important;
-  margin: 1rem 0;
+  margin: 0;
   width: fit-content;
 }
 
@@ -11,7 +11,7 @@ div#searchbox p.highlight-link a {
   border-radius: 0.25rem;
   color: #fff;
   font-size: 1.25rem;
-  padding: 0.75rem;
+  padding: 0.05rem 0.45rem;
   transition: box-shadow 0.25s ease-out;
 }
 
