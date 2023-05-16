@@ -141,6 +141,7 @@ html_theme_options = {
         "primary-color-raised-focus-solid": "#5c6bc0",
     },
     "navigation_with_keys": True,
+    "article_top_right": "searchbox.html",
 }
 
 

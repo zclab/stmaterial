@@ -2,17 +2,18 @@
 
 This section serves to guide the user with customising stmaterial-based documentation.
 
-```{toctree}
-:hidden:
-
-header
-sidenav
-source-buttons
-```
-
-## Installation
+## Get started
 
 ```{include} ../../README.md
 :start-after: <!-- start quickstart -->
 :end-before: <!-- end quickstart -->
+```
+
+```{toctree}
+:hidden:
+:maxdepth: 2
+
+header
+sidenav
+source-buttons
 ```
