@@ -16,4 +16,5 @@ This section serves to guide the user with customising stmaterial-based document
 header
 sidenav
 source-buttons
+variables
 ```

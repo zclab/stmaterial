@@ -4,7 +4,7 @@
   gap: 0.5rem;
   padding-left: 15px;
   height: $navbar-height;
-  width: $sidenav-width;
+  width: var(--sidenav-width);
 
   @media (max-width: $medium-screen-up) {
     height: $navbar-height-mobile;
@@ -12,7 +12,7 @@
 
   img {
     max-width: calc(
-      $sidenav-width - var(--header-horizontal-spacing) * 2
+      var(--sidenav-width) - var(--header-horizontal-spacing) * 2
     ); // $sidenav-width - 30px;
     max-height: $navbar-height;
 
