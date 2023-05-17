@@ -1,8 +1,8 @@
 ---
-hide-toc: true
+full-width: true
 ---
 
-# Page example with hidding table of contents
+# Page example with full width
 
 This next bit will explore how the various headings look. Think about how the content separation should work, and how the various headings should interact with the main content.
 

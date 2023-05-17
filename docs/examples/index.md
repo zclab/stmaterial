@@ -8,6 +8,7 @@ These sections show off various features and styles of this theme. They should h
 
 hidetoc
 hidetocnav
+fullwidth
 ```
 
 ```{toctree}
