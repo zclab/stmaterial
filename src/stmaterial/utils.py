@@ -5,7 +5,7 @@ from docutils.nodes import Node
 
 def config_provided_by_user(app: Sphinx, key: str) -> bool:
     """Check if the user has manually provided the config.
-    REMOVE when pydata v0.14 is released and import from there.
+    This is from pydata sphinx theme.
     """
     return any(key in ii for ii in [app.config.overrides, app.config._raw_config])
 
