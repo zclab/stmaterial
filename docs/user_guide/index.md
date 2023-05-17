@@ -17,4 +17,5 @@ header
 sidenav
 source-buttons
 variables
+tocnav
 ```
