@@ -2,7 +2,7 @@
 
 ## Hiding Table of Contents
 
-Stmaterial supports hiding the Table of Contents. To explicitly hide it on a specific page, `hide-toc` can be set in the [File-Wide metadata][sphinx-file-wide-metadata] for that page. See [Hide Table of contents example](../examples/hidetoc.md).
+Stmaterial supports hiding the Table of Contents. To explicitly hide it on a specific page, `hide-toc` can be set in the [File-Wide metadata][sphinx-file-wide-metadata] for that page. See [Page example with hidding table of contents](../examples/hidetoc.md).
 
 ````{tab} reStructuredText
 ```rst
@@ -24,7 +24,7 @@ hide-toc: true
 
 ## Hiding Table of Contents navigation
 
-Stmaterial supports hiding the Table of Contents navigation. To explicitly hide it on a specific page, `hide-tocnav` can be set in the [File-Wide metadata][sphinx-file-wide-metadata] for that page. See [Hiding Table of Contents navigation example](../examples/hidetocnav.md).
+Stmaterial supports hiding the Table of Contents navigation. To explicitly hide it on a specific page, `hide-tocnav` can be set in the [File-Wide metadata][sphinx-file-wide-metadata] for that page. See [Page example with hidding table of contents navigation](../examples/hidetocnav.md).
 
 ````{tab} reStructuredText
 ```rst
