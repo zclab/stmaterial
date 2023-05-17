@@ -16,13 +16,26 @@ html_theme_options = {
 }
 ```
 
-## changing colors
+## changing appearance colors of the theme
 
-You can change the colors of the theme by specifying corresponding variables, for example:
+You can change the appearance colors of the theme by specifying corresponding variables, for example:
 
 ```py
 html_theme_options = {
     "css_variables": {
+        "primary-color": "#3949ab",
+        "primary-color-dark": "#283593",
+        "primary-color-raised-hover-solid": "#5c6bc0",
+        "primary-color-raised-focus-solid": "#5c6bc0",
+    },
+}
+```
+
+Your can also change the dark appearance of the theme by specifying corresponding dark css variables, for example:
+
+```py
+html_theme_options = {
+    "dark_css_variables": {
         "primary-color": "#3949ab",
         "primary-color-dark": "#283593",
         "primary-color-raised-hover-solid": "#5c6bc0",
