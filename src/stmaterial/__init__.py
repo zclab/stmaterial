@@ -287,7 +287,7 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
     if "stmaterial" in app.config.extensions:
         raise Exception(
             "Did you list 'stmaterial' in the `extensions` in conf.py? "
-            "If so, please remove it. ssdoc does not work with non-HTML builders "
+            "If so, please remove it. stmaterial does not work with non-HTML builders "
             "and specifying it as an `html_theme` is sufficient."
         )
 
@@ -416,9 +416,6 @@ def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
     # Include component templates
     app.config.templates_path.append(str(theme_dir / "components"))
     app.config.html_static_path.append(str(theme_dir / "static/images"))
-
-    # extensions = ["sphinx_design", "sphinx_copybutton", "sphinx_togglebutton", "sphinx_subfigure"]
-    # activate_extensions(app, extensions)
 
     app.add_directive("gallery-grid", GalleryDirective)
 
