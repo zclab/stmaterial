@@ -144,6 +144,9 @@ html_theme_options = {
     "article_top_right": "searchbox.html",
 }
 
+html_theme_options["analytics"] = {
+    "google_analytics_id": "376537184",
+}
 
 blog_path = "blog"
 blog_post_pattern = "posts/*/*"

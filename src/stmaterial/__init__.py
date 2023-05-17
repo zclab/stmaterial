@@ -343,6 +343,25 @@ def _update_config(app: sphinx.application.Sphinx) -> None:
                 svg = f"_static/{svg}"
                 icon["svg"] = svg
 
+    # Add an analytics ID to the site if provided
+    analytics = theme_options.get("analytics", {})
+    if analytics:
+        # Google Analytics
+        gid = analytics.get("google_analytics_id")
+
+        if gid:
+            gid_js_path = f"https://www.googletagmanager.com/gtag/js?id={gid}"
+            gid_script = f"""
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){{ dataLayer.push(arguments); }}
+                gtag('js', new Date());
+                gtag('config', '{gid}');
+            """
+
+            # Link the JS files
+            app.add_js_file(gid_js_path, loading_method="async")
+            app.add_js_file(None, body=gid_script)
+
 
 def update_and_remove_templates(
     app: sphinx.application.Sphinx, pagename: str, templatename: str, context, doctree
