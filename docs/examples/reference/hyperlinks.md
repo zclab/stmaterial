@@ -8,7 +8,7 @@ Hyperlinks can take various forms, so here's a list of them:
 - standalone hyperlink: <https://python.org/>
 - hyperlink using references: [link][markdown-external-hyperlink]
 - hyperlink with inline URL: [link](https://python.org/)
-- hyperlink to a different page: [link](../../user_guide/quickstart)
+- hyperlink to a different page: [link](../../user_guide/sidenav)
 - hyperlink to a specific API element: {class}`pathlib.Path`
 
 [markdown-external-hyperlink]: https://python.org/
@@ -20,7 +20,7 @@ Hyperlinks can take various forms, so here's a list of them:
 - standalone hyperlink: https://python.org/
 - hyperlink using references: `link <link>`__
 - hyperlink with inline URL: `link <https://python.org/>`_
-- hyperlink to a different page: :doc:`link <../../user_guide/quickstart>`
+- hyperlink to a different page: :doc:`link <../../user_guide/sidenav>`
 - hyperlink to a specific API element: :class:`pathlib.Path`
 
 .. _link: https://python.org/
