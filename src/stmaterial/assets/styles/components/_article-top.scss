@@ -1,5 +1,9 @@
 .stm-article-top {
   border-bottom: 1px solid var(--separator-color);
+  position: var(--article-top-position);
+  top: 0;
+  background-color: var(--background-color);
+  z-index: 899;
 }
 
 .stm-article-top-area {

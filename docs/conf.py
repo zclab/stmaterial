@@ -61,7 +61,7 @@ html_theme_options = {
     "source_branch": "main",
     "source_directory": "docs/",
     "show_back_to_top": True,
-    "fix_header_nav": True,
+    "fix_header_nav": False,
     "logo": {"text": "Stmaterial", "logo": "_static/logo.png"},
     "external_links": [
         {"name": "Furo", "url": "https://pradyunsg.me/furo/quickstart/"},
