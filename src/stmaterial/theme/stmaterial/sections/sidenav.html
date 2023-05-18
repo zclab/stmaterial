@@ -27,7 +27,10 @@
     {% endif %}
     <div class="sidenav-menu">
         {%- for sidebar_section in sidebars %}
+        {% if hide_sidenav and sidebar_section=="search-field.html" %}
+        {% else %}
         {%- include sidebar_section %}
+        {% endif %}
         {%- endfor %}
     </div>
 </div>
