@@ -1,0 +1,17 @@
+.sidenav-toggle {
+  &.btn-flat {
+    display: contents;
+  }
+}
+
+@media (min-width: $medium-screen-up) {
+  input#__primary:checked ~ .stm-main aside.stm-sidenav {
+    margin-left: calc(var(--sidenav-width) * -1);
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  input#__primary:checked ~ .stm-main .sidenav-toggle span.material-icons {
+    transform: rotate(180deg);
+  }
+}
