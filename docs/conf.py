@@ -151,7 +151,6 @@ blog_authors = {
 }
 
 html_sidebars = {
-    "index": [],
     "posts/**": [
         "search-field.html",
         "ablog/postcard.html",
