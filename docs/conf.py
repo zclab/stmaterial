@@ -50,7 +50,7 @@ html_title = "sphinx theme of material"
 html_favicon = "_static/favicon.png"
 html_last_updated_fmt = ""
 html_logo = "_static/logo-.png"
-html_show_sourcelink = False
+html_show_sourcelink = True
 
 todo_include_todos = True
 
@@ -61,7 +61,7 @@ html_theme_options = {
     "source_branch": "main",
     "source_directory": "docs/",
     "show_back_to_top": True,
-    "fix_header_nav": True,
+    "fix_header_nav": False,
     "logo": {"text": "Stmaterial", "logo": "_static/logo.png"},
     "external_links": [
         {"name": "Furo", "url": "https://pradyunsg.me/furo/quickstart/"},
@@ -141,7 +141,7 @@ html_theme_options = {
         "primary-color-raised-focus-solid": "#5c6bc0",
     },
     "navigation_with_keys": True,
-    "article_top_right": "searchbox.html",
+    "article_top_right": ["searchbox.html", "sourcelink.html"],
 }
 
 blog_path = "blog"
