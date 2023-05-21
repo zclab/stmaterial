@@ -16,7 +16,7 @@ end-before: "# sidebar-end"
 
 ## Hiding sidenav
 
-Stmaterial supports hiding the sidenav. To explicitly hide it on a specific page, `hide-sidenav` can be set in the [File-Wide metadata][sphinx-file-wide-metadata] for that page. See [Page example with hidding sidenav](../examples/hidesidenav.md).
+Stmaterial supports hiding the sidenav. To explicitly hide it on a specific page, `hide-sidenav` can be set in the [File-Wide metadata][sphinx-file-wide-metadata] for that page. See [Page example with hidding sidenav](../examples/pages/hidesidenav.md).
 
 ````{tab} reStructuredText
 ```rst

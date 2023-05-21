@@ -6,10 +6,7 @@ These sections show off various features and styles of this theme. They should h
 :caption: Theme-specific styles
 :maxdepth: 2
 
-hidetoc
-hidetocnav
-hidesidenav
-fullwidth
+pages/index
 ```
 
 ```{toctree}
