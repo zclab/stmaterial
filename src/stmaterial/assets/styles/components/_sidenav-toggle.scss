@@ -4,6 +4,12 @@
   &.btn-flat {
     display: contents;
   }
+
+  svg {
+    display: inline-block;
+    height: 1.8rem;
+    width: 1.8rem;
+  }
 }
 
 @media (min-width: $medium-screen-up) {
@@ -13,7 +19,7 @@
     opacity: 0;
   }
 
-  input#__primary:checked ~ .stm-main .sidenav-toggle span.material-icons {
+  input#__primary:checked ~ .stm-main .sidenav-toggle svg {
     transform: rotate(180deg);
   }
 }
