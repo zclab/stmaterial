@@ -1,5 +1,6 @@
 div#searchbox p.highlight-link {
-  box-shadow: 0 0.2rem 0.5rem var(--surface-color),
+  box-shadow:
+    0 0.2rem 0.5rem var(--surface-color),
     0 0 0.0625rem var(--surface-color) !important;
   margin: 0;
   width: fit-content;
