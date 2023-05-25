@@ -14,37 +14,7 @@ This is where user-provided CSS variables get converted into actual values.
 {%- endif %}
 {%- endmacro %}
 
-{% macro declare_font_variables(user_customisations) -%}
-{% if user_customisations -%}
-{% for src in user_customisations.src -%}
-@font-face {
-font-family: {{ user_customisations.name }};
-font-weight: {{ src.weight }};
-font-style: normal;
-font-display: swap;
-src: url({{ src.url }}) format({{ user_customisations.type }});
-}
-{% endfor %}
-{% if user_customisations.font_stack -%}
-:root {
---font-stack: {{ user_customisations.font_stack }}, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
-}
-{% else %}
-:root {
---font-stack: Georgia, {{ user_customisations.name }}, STXihei, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
-}
-{%- endif %}
-{%- endif %}
-{%- endmacro %}
-
-
 <style>
-    {{ declare_font_variables(theme_custom_fonts) }}
-
-    html {
-        font-family: var(--font-stack);
-    }
-
     :root {
         {{ declare_css_variables(theme_css_variables, stmaterial_pygments.light, theme_fix_header_nav) }}
     }
