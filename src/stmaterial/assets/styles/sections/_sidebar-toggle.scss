@@ -61,7 +61,9 @@ input {
   width: 75%;
   flex-grow: 0.75;
   max-width: 350px;
-  transition: visibility 0.3s ease-out, margin 0.3s ease-out;
+  transition:
+    visibility 0.3s ease-out,
+    margin 0.3s ease-out;
   visibility: hidden;
 
   @if $side == "right" {
