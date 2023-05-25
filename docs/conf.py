@@ -108,33 +108,8 @@ html_theme_options = {
     ],
     "use_edit_page_button": True,
     "toc_title": "On this page",
-    "custom_fonts": {
-        "name": "LXGWWenKaiLite",
-        "type": "truetype",
-        "src": [
-            {
-                "weight": 200,
-                "url": "https://cdn.jsdelivr.net/gh/zclab/static/fonts/LxgwWenKai-Lite/LXGWWenKaiLite-Light.ttf",
-            },
-            {
-                "weight": 300,
-                "url": "https://cdn.jsdelivr.net/gh/zclab/static/fonts/LxgwWenKai-Lite/LXGWWenKaiLite-Light.ttf",
-            },
-            {
-                "weight": 400,
-                "url": "https://cdn.jsdelivr.net/gh/zclab/static/fonts/LxgwWenKai-Lite/LXGWWenKaiLite-Regular.ttf",
-            },
-            {
-                "weight": 500,
-                "url": "https://cdn.jsdelivr.net/gh/zclab/static/fonts/LxgwWenKai-Lite/LXGWWenKaiLite-Bold.ttf",
-            },
-            {
-                "weight": 600,
-                "url": "https://cdn.jsdelivr.net/gh/zclab/static/fonts/LxgwWenKai-Lite/LXGWWenKaiLite-Bold.ttf",
-            },
-        ],
-    },
     "css_variables": {
+        "font-stack": "Georgia, LXGWWenKaiLite, STXihei, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji",
         "primary-color": "#3949ab",
         "primary-color-dark": "#283593",
         "primary-color-raised-hover-solid": "#5c6bc0",
@@ -177,5 +152,6 @@ html_sidebars = {
 # https://github.com/hung1001/font-awesome-pro-v6
 html_css_files = [
     "https://cdn.jsdelivr.net/gh/duyplus/fontawesome-pro/css/all.min.css",
+    "https://cdn.jsdelivr.net/gh/zclab/static/fonts/customfonts.css",
 ]
 fontawesome_included = True
