@@ -1,7 +1,16 @@
+html {
+  font-family: var(--font-stack);
+}
+
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  color: var(--font-color-main);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--background-color);
 }
 
 main {
